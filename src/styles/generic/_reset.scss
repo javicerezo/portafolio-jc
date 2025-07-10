@@ -1,5 +1,5 @@
-@use 'settings/variables' as v;
-@use 'tools/mixins' as m;
+@use '../settings/variables' as v;
+@use '../tools/mixins' as m;
 
 /* Reseteamos los margin y paddings de todas las etiquetas */
 * , *::before , *::after{
