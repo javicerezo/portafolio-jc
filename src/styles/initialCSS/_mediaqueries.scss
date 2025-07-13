@@ -1,0 +1,32 @@
+@use '../variables/variables' as v;
+@use '../mixins/mixins' as m;
+
+// (opcional) Respetamos preferencia usuario de animaciones y transiciones reducidas
+@media (prefers-reduced-motion: reduce) {
+  * {
+    -webkit-animation: none !important;
+            animation: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+  }
+}
+
+// // (Opcional) Respetamos preferencia usuario por tema configurado oscuro
+// @media (prefers-color-scheme: dark) {
+//   body{
+//     background-color: map-get(v.$colores, negro);
+//     color: map-get(v.$colores, blanco);
+//   }
+//   ::selection {
+//     background-color: map-get(v.$colores, blanco);
+//     color: map-get(v.$colores, negro);
+//   }
+// }
+
+// // (Opcional) Respetamos preferencia usuario por tema configurado contraste alto
+// @media (prefers-color-scheme: more) {
+//   body{
+//     background-color: map-get(v.$colores, blanco-contraste);
+//     color: map-get(v.$colores, negro-contraste);
+//   }
+// }
