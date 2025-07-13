@@ -1,0 +1,79 @@
+@use '../variables/variables' as v;
+@use '../mixins/mixins' as m;
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    text-align: center;
+    font-family: map-get( v.$fuentes , tipo-secundaria);
+}
+
+h4 {
+    font-weight: normal;
+}
+
+body {
+    max-width: 112.5rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    background-color: map-get(v.$colores, negro);
+    color: map-get(v.$colores, blanco);
+    // transition: all 0.5s ease;
+    
+    // &.darkmode {
+    //     color: map-get(v.$colores, blanco);
+    //     background-color: map-get(v.$colores, negro);
+    //     ::selection {
+    //         background-color: map-get(v.$colores, color-secundario);
+    //         color: map-get(v.$colores, color-primario);
+    //     }
+    //     .Header{
+    //         &-img {
+    //             right: -6.7rem;
+    //         }
+    //         &-span{    
+    //             background-color: map-get(v.$colores, img-JC-dark);
+    //             color: map-get(v.$colores, blanco);
+    //         }
+    //     }
+    // }
+        // .c-cuadro{
+        //     &__sup {
+        //         background-color: map-get(v.$colores, color-fondo);
+        //     }
+        //     &__der {
+        //         background-color: map-get(v.$colores, color-fondo);
+        //     }
+        //     &__inf {
+        //         background-color: map-get(v.$colores, color-fondo);
+        //     }
+        //     &__izq {
+        //         background-color: map-get(v.$colores, color-fondo);
+        //     }
+        //     &__p {
+        //         color: map-get(v.$colores, color-primario);   
+        //     }
+        // }
+        // .c-efecto {
+        //     &__ola-1 {
+        //         fill: map-get(v.$colores, color-ola-1-dark);
+        //     }
+        //     &__ola-2 {
+        //         fill: map-get(v.$colores, color-ola-2-dark);
+        //     }
+        //     &__ola-3 {
+        //         fill: map-get(v.$colores, color-ola-3-dark);
+        //     }
+        // }
+        // .c-portada {
+        //     background-image: url(../img/portada2.jpg);
+        // }
+        // .c-contacto {
+        //     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../img/oficina2.jpg");
+        // }
+        // .c-modal {
+        //     &__contenedor {
+        //         color: map-get(v.$colores, color-secundario);
+        //         background-color: map-get(v.$colores, color-primario);
+        //     }
+        // }
+}

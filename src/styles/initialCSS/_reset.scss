@@ -1,0 +1,124 @@
+@use '../variables/variables' as v;
+@use '../mixins/mixins' as m;
+
+
+/* Reseteamos los margin y paddings de todas las etiquetas */
+* , *::before , *::after{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  vertical-align: baseline;
+}
+*::before , *::after{
+  display: block;
+}
+
+/* Evitamos problemas con las imagenes */
+img , picture , video , iframe , figure{
+  display: block;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  // /* (Opcional) */ object-fit: cover;        
+  // /* (Opcional) */ object-position: center center;
+}
+
+/* Reseteamos los enlaces para funcionar como cajas... */
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
+/* ... excepto los que se encuentran en párrafos */
+p a {
+  display: inline;
+}
+
+/* Quitamos los puntos de los <li> */
+li, menu, summary {
+  list-style-type: none;
+}
+ul, ol{
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* (Opcional) Configuramos anclas suaves */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Desactivamos estilos por defecto de las principales etiquetas de texto */
+h1, h2, h3, h4, h5, h6, p, span, a, strong, blockquote, i, b, u, em, mark, del, pre, code {
+  font:inherit;
+  line-height: 1em;
+  color: inherit;
+  text-decoration: none;
+  text-transform: none;
+  text-wrap: pretty;
+}
+mark{
+  background-color: transparent;
+}
+/* Evitamos problemas con los pseudoelementos de quotes */
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* Nivelamos problemas de tipografías y colocación de formularios */
+form, input, textarea, select, button, label {
+  font:inherit;
+  hyphens: auto;
+  background-color: transparent;
+  color: inherit;
+  display: block;
+}
+textarea {
+  white-space: pre-wrap;
+}
+::placeholder {
+  color: unset;
+}
+button , label{
+  cursor: pointer;
+}
+
+/* Reseteamos las tablas */
+table, tr, td , th, thead, tbody, tfoot{
+  border-collapse: collapse;
+  border-spacing: 0;
+  font:inherit;
+}
+
+/* Evitamos problemas con los SVG */
+svg{
+  width: 100%;
+  display: block;
+  height: initial;
+  fill: currentColor;
+}
+// p svg{
+//   display: inline;
+//   width: initial;
+// }
+
+/* Configuramos la tipografía para toda la web */
+body {
+  min-height: 100vh;
+  line-height: 1.5em;
+  color: inherit;
+  hyphens: auto;
+  font-smooth: always;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+/* (Opcional) Configuramos el texto que seleccionamos */
+::selection {
+  background-color: map-get(v.$colores, negro);
+  color: map-get(v.$colores, blanco);
+}

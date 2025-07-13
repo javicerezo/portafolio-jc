@@ -1,0 +1,25 @@
+/*  tamaños para media queries (desde este tamaño en adelante, ej: @media (min-width: $tablet) */
+$medidas: (
+    "telefono-m": 20rem,
+    "telefono-xl": 30rem, //por encima pasamos a tablet
+    "tablet": 48rem,
+    "desktop": 60rem, // por encima pasamos a ordenador
+    "desktop-m": 64rem,
+    "desktop-xl": 90rem
+);
+
+/* fuente principal */
+$fuentes: (
+    "tipo-principal": Helvetica Arial sans-serif,
+    "tipo-secundaria": Verdana
+);
+
+/* colores */
+$colores: (
+    "negro": #393939,
+    "negro-contraste": #000,
+    "blanco": #f5f5f5,
+    "blanco-contraste": #fff,
+    "img-JC": #ffc100e0,
+    "img-JC-dark": #343d5b,
+); 

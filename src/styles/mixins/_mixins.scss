@@ -1,4 +1,4 @@
-@use '../settings/variables' as v;
+@use '../variables/variables' as v;
 
 // RESPONSIVE
 @mixin telefono-m {
@@ -45,7 +45,7 @@
 }
 
 // FLEX
-@mixin flex ($flex-direction, $flex-wrap, $justify-content, $align-items) {
+@mixin flex ($flex-direction, $flex-wrap, $justify-content:null, $align-items:null) {
     display: flex;
     flex-flow: $flex-direction $flex-wrap;
     justify-content: $justify-content;
