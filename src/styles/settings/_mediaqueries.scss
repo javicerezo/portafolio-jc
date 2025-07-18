@@ -1,5 +1,5 @@
-@use '../variables/variables' as v;
-@use '../mixins/mixins' as m;
+@use './variables' as v;
+@use 'sass:map';
 
 // (opcional) Respetamos preferencia usuario de animaciones y transiciones reducidas
 @media (prefers-reduced-motion: reduce) {
@@ -14,19 +14,19 @@
 // // (Opcional) Respetamos preferencia usuario por tema configurado oscuro
 // @media (prefers-color-scheme: dark) {
 //   body{
-//     background-color: map-get(v.$colores, negro);
-//     color: map-get(v.$colores, blanco);
+//     background-color: map.get(v.$colores, negro);
+//     color: map.get(v.$colores, blanco);
 //   }
 //   ::selection {
-//     background-color: map-get(v.$colores, blanco);
-//     color: map-get(v.$colores, negro);
+//     background-color: map.get(v.$colores, blanco);
+//     color: map.get(v.$colores, negro);
 //   }
 // }
 
 // // (Opcional) Respetamos preferencia usuario por tema configurado contraste alto
 // @media (prefers-color-scheme: more) {
 //   body{
-//     background-color: map-get(v.$colores, blanco-contraste);
-//     color: map-get(v.$colores, negro-contraste);
+//     background-color: map.get(v.$colores, blanco-contraste);
+//     color: map.get(v.$colores, negro-contraste);
 //   }
 // }

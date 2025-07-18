@@ -1,6 +1,5 @@
-@use '../variables/variables' as v;
-@use '../mixins/mixins' as m;
-
+@use './variables' as v;
+@use 'sass:map';
 
 /* Reseteamos los margin y paddings de todas las etiquetas */
 * , *::before , *::after{
@@ -119,6 +118,6 @@ body {
 }
 /* (Opcional) Configuramos el texto que seleccionamos */
 ::selection {
-  background-color: map-get(v.$colores, negro);
-  color: map-get(v.$colores, blanco);
+  background-color: map.get(v.$colores, blanco);
+  color: map.get(v.$colores, negro);
 }

@@ -1,0 +1,14 @@
+@use './variables' as v;
+@use 'sass:map';
+
+@font-face {
+  font-family: #{map.get(v.$fuentes, 'titulos')};
+  src: url(../../../public/fonts/Orbitron-VariableFont_wght.ttf) format("truetype");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: #{map.get(v.$fuentes, 'textos')};
+  src: url(../../../public/fonts/RobotoMono-VariableFont_wght.ttf) format("truetype");
+  font-weight: 400;
+}

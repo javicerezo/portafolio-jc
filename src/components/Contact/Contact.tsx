@@ -1,4 +1,3 @@
-import './Contact.scss';
 
 export const Contact = () => {
 

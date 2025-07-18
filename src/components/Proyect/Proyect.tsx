@@ -1,4 +1,3 @@
-import './Proyect.scss';
 
 export const Proyect = () => {
 

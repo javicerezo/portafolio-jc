@@ -1,4 +1,3 @@
-import './AboutMe.scss';
 
 export const AboutMe = () => {
 
