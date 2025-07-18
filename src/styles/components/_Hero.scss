@@ -1,0 +1,249 @@
+@use '../../styles/settings/mixins' as m;
+@use '../../styles/settings/variables' as v;
+@use 'sass:map';
+
+.Hero {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+    &-container {
+        height: 100vh;
+        @include m.flex(column, nowrap, center, center);
+        @include m.telefono-xl {
+            @include m.flex(row, nowrap, center, center);
+        }
+    }
+    &-up {
+        @include m.telefono-xl {
+            width: 65%;
+        }
+        @include m.tablet {
+            width: 55%;
+        }
+    }
+    &-h1 {
+        font-size: 2rem;
+        margin: 2rem 0;
+        font-style: italic;
+        font-weight: bold;
+        font-family: map.get(v.$fuentes, titulos);
+        @include m.telefono-m {
+            font-size: 2.5rem;
+        }
+        @include m.tablet {
+            font-size: 3.3rem;
+        }
+        @include m.desktop {
+            font-size: 4rem;
+            margin-bottom: 3rem;
+        }
+        @include m.desktop-xl {
+            font-size: 5rem;
+            margin-bottom: 4rem;
+        }
+        &::before {
+            content: '👋 Hola, soy';
+            display: block;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            transform-origin: bottom center;
+            animation: wave 6s ease-in-out infinite ;
+            animation-delay: 3s;
+            font-family: map.get(v.$fuentes, titulos);
+            @include m.telefono-m {
+                font-size: 1.5rem;
+            }
+            @include m.tablet {
+                font-size: 2.5rem;
+            }
+        }
+    }
+    &-div {
+        margin-bottom: 1.5rem;
+        @include m.flex(column, nowrap, center, center);
+        }
+    &-props {
+        @include m.flex(column, nowrap, center, flex-start);
+        margin-left: 2.5rem;
+    }
+    &-h2 {
+        @include m.flex(row, nowrap, center, center);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+        font-family: map.get(v.$fuentes, textos);
+        @include m.telefono-m {
+            font-size: 1.2rem;
+        }
+        @include m.tablet {
+            font-size: 1.3rem;
+        }
+        @include m.desktop {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        @include m.desktop-xl {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        &--first {
+            margin-left: -4.5rem;
+            @include m.tablet{
+                margin-left: -5rem;
+
+            }
+            @include m.desktop{
+                margin-left: -7rem;
+
+            }
+            @include m.desktop-xl{
+                margin-left: -11rem;
+
+            }
+            &::before {
+                content: '< ';
+                display: block;
+                margin-right: 0.5rem;
+                @include m.telefono-m {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+        &--last {
+            &::after {
+                content: ' />';
+                display: block;
+                margin-left: 0.5rem;
+            }
+        }
+        &-icon{
+            margin: 0.5rem 0;
+            width: 40px;
+        }
+    }
+    &-ul{
+        margin-bottom: 1.5rem;
+        @include m.flex(row, wrap, space-between, center);
+    }
+    &-li{
+        width: 2.8rem;
+        padding: 0.5rem;
+        // @include m.tablet {
+        //     // width: 3.3rem;
+        // }
+        @include m.desktop-xl {
+            width: 5rem;
+        }
+    }
+    &-down {
+        display: none;
+        @include m.telefono-xl {
+            display: block;
+            position: relative;
+            width: 35%;
+        }
+        @include m.tablet {
+            width: 45%;
+        }
+    }
+    &-avatar{
+        position: relative;
+        margin: 1rem auto;
+        width: 90%;
+        max-width: 45rem;
+        @include m.desktop-m {
+            width: 80%;
+        }
+        // width: 40rem;
+        // width: 9.375rem;
+        // height: 9.375rem;
+        // border-radius: 50%;
+        // overflow: hidden;
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     top: -8px;
+        //     left: -8px;
+        //     width: calc(100% + 16px);
+        //     height: calc(100% + 16px);
+        //     // // border-radius: 50%;
+        //     box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+        //     animation: spin 5s linear infinite;
+        // }
+        // &::after {
+        //     content: "";
+        //     position: absolute;
+        //     top: -8px;
+        //     left: -8px;
+        //     width: calc(100% + 16px);
+        //     height: calc(100% + 16px);
+        //     border-radius: 50%;
+        //     background: conic-gradient(
+        //         rgba(0, 123, 255, 0.7) 0deg,
+        //         rgba(0, 255, 255, 0.7) 120deg,
+        //         rgba(0, 123, 255, 0.7) 240deg,
+        //         rgba(0, 123, 255, 0.7) 360deg
+        //     );
+        //     mask: radial-gradient(circle, transparent 60%, black 61%);
+        //     animation: spin 4s linear infinite;
+        // }
+        &::after {
+            content: "";
+            @include m.position(absolute, 0, 0, 0, 0);
+            width: calc(100%);
+            height: calc(100%);
+            border-radius: 50%;
+            box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
+            animation: pulse 2s ease-in-out infinite;
+        }
+    }
+    &-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    &-iconSocials {
+            // width: 3.3rem;
+        @include m.position(absolute, 0, null, null, 0);
+        &:hover {
+            cursor: pointer;
+        }
+        &--first {
+            // top: 3.8rem;
+            // left: -3.8rem;
+            @include m.desktop-m{
+                top: 5.8rem;
+                left: -3.8rem;
+            }
+        }
+        // &--second {
+        //     // left: -1.8rem;Hero-iconSocials
+        // }
+        &--last{
+            // top: -3.8rem;
+            // left: 3.8rem;
+            @include m.desktop-m {
+                top: -3.8rem;
+                left: 5.8rem;
+            }
+        }
+    }
+}
+@keyframes wave {
+    0%   { transform: rotate(0deg); }
+    5%   { transform: rotate(10deg); }
+    10%  { transform: rotate(-5deg); }
+    15%  { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes spin{
+    0%      { transform: rotate(0deg); }
+    100%    { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); }
+  50% { box-shadow: 0 0 25px rgba(0, 123, 255, 0.9); }
+  100% { box-shadow: 0 0 15px rgba(0, 123, 255, 0.3); }
+}
