@@ -14,14 +14,6 @@
             @include m.flex(row, nowrap, space-evenly, center);
         }
     }
-    // &-up {
-    //     // @include m.telefono-l {
-    //     //     width: 65%;
-    //     // }
-    //     // @include m.tablet {
-    //     //     width: 55%;
-    //     // }
-    // }
     &-h1 {
         font-size: 2em;
         margin: 2rem 0;
@@ -79,7 +71,6 @@
     }
     &-h2 {
         @include m.flex(row, nowrap, center, center);
-        // font-size: 1em;
         margin-bottom: 0.5rem;
         font-family: map.get(v.$fuentes, textos);
         @include m.telefono-m {
@@ -160,11 +151,7 @@
     &-avatar{
         position: relative;
         margin: 1rem auto;
-        // width: 90%;
         max-width: 45rem;
-        // @include m.desktop {
-        //     // width: 80%;
-        // }
         &::after {
             content: "";
             @include m.position(absolute, 0, 0, 0, 0);
@@ -181,7 +168,6 @@
         height: 100%;
     }
     &-iconSocials {
-            // width: 3.3rem;
             transition: all 0.8s ease;
             display: none;
             @include m.desktop {
@@ -193,19 +179,12 @@
             scale: 1.3;
         }
         &--first {
-            // top: 3.8rem;
-            // left: -3.8rem;
             @include m.desktop{
                 top: 6.8rem;
                 left: -4.8rem;
             }
         }
-        // &--second {
-        //     // left: -1.8rem;Hero-iconSocials
-        // }
         &--last{
-            // top: -3.8rem;
-            // left: 3.8rem;
             @include m.desktop {
                 top: -4.8rem;
                 left: 6.8rem;
