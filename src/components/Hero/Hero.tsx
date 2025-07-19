@@ -1,12 +1,12 @@
 import { SiHtml5, SiCss3, SiSass, SiJavascript, SiTypescript,
          SiReact, SiVite, SiNodedotjs, SiPostgresql, SiFirebase, SiAndroidstudio,
          SiKotlin } from 'react-icons/si';
-import { FaJava, FaGithub  } from "react-icons/fa";
-import { MdOutlineWeb } from "react-icons/md";
-import { FaLinkedin } from "react-icons/fa6";
+import { FaJava, FaGithub, FaLink  } from "react-icons/fa";
+import { RiLinkedinFill } from "react-icons/ri";
+
 export const Hero = () => {
-    const web = "${ web }";
-    const mobile = "${ móvil }";
+    const web = "{ web }";
+    const mobile = "{ móvil }";
 
     return (
         <section className='Hero'>
@@ -40,9 +40,9 @@ export const Hero = () => {
                     <div className="Hero-avatar">
                         <img className="Hero-img" src="/public/imgs/programer_transp.svg" alt="svg avatar" />
                     </div>
-                    <li className="Hero-li Hero-iconSocials Hero-iconSocials--first"><FaGithub color='#181717'/></li>
-                    <li className="Hero-li Hero-iconSocials Hero-iconSocials--second"><FaLinkedin color='#0D597F'/></li>
-                    <li className="Hero-li Hero-iconSocials Hero-iconSocials--last"><MdOutlineWeb color='#FFD800'/></li>
+                    <li className="Hero-li Hero-iconSocials Hero-iconSocials--first"><a href="https://github.com/javicerezo" target='_blank'><FaGithub color='#181717'/></a></li>
+                    <li className="Hero-li Hero-iconSocials Hero-iconSocials--second"><a href="https://www.linkedin.com/in/javicerezo/" target='_blank'><RiLinkedinFill color='#0D597F'/></a></li>
+                    <li className="Hero-li Hero-iconSocials Hero-iconSocials--last"><a href="https://javicerezo.netlify.app/" target='_blank'><FaLink color='#FFD800'/></a></li>
                     <ul className="Hero-socials">
                     </ul>
                 </div>

@@ -9,36 +9,40 @@
     padding: 0 1rem;
     &-container {
         height: 100vh;
-        @include m.flex(column, nowrap, center, center);
-        @include m.telefono-xl {
-            @include m.flex(row, nowrap, center, center);
+        @include m.flex(column, nowrap, space-evenly, center);
+        @include m.desktop {
+            @include m.flex(row, nowrap, space-evenly, center);
         }
     }
-    &-up {
-        @include m.telefono-xl {
-            width: 65%;
-        }
-        @include m.tablet {
-            width: 55%;
-        }
-    }
+    // &-up {
+    //     // @include m.telefono-l {
+    //     //     width: 65%;
+    //     // }
+    //     // @include m.tablet {
+    //     //     width: 55%;
+    //     // }
+    // }
     &-h1 {
-        font-size: 2rem;
+        font-size: 2em;
         margin: 2rem 0;
         font-style: italic;
         font-weight: bold;
         font-family: map.get(v.$fuentes, titulos);
         @include m.telefono-m {
-            font-size: 2.5rem;
+            font-size: 2.5em;
+        }
+        @include m.telefono-l {
+            font-size: 3.1rem;
+            margin-bottom: 2.5rem;
         }
         @include m.tablet {
             font-size: 3.3rem;
+            margin-bottom: 3rem;
         }
         @include m.desktop {
             font-size: 4rem;
-            margin-bottom: 3rem;
         }
-        @include m.desktop-xl {
+        @include m.desktop-l {
             font-size: 5rem;
             margin-bottom: 4rem;
         }
@@ -51,11 +55,17 @@
             animation: wave 6s ease-in-out infinite ;
             animation-delay: 3s;
             font-family: map.get(v.$fuentes, titulos);
-            @include m.telefono-m {
-                font-size: 1.5rem;
+            @include m.telefono-l {
+                font-size: 2.5rem;
             }
             @include m.tablet {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
+            }
+            @include m.desktop {
+                font-size: 3.2rem;
+            }
+            @include m.desktop-l {
+                font-size: 4rem;
             }
         }
     }
@@ -69,20 +79,23 @@
     }
     &-h2 {
         @include m.flex(row, nowrap, center, center);
-        font-size: 0.9rem;
+        // font-size: 1em;
         margin-bottom: 0.5rem;
         font-family: map.get(v.$fuentes, textos);
         @include m.telefono-m {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
+        }
+        @include m.telefono-l {
+            font-size: 1.75rem;
         }
         @include m.tablet {
-            font-size: 1.3rem;
+            font-size: 2rem;
         }
         @include m.desktop {
             font-size: 1.8rem;
             margin-bottom: 1rem;
         }
-        @include m.desktop-xl {
+        @include m.desktop-l {
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
@@ -96,7 +109,7 @@
                 margin-left: -7rem;
 
             }
-            @include m.desktop-xl{
+            @include m.desktop-l{
                 margin-left: -11rem;
 
             }
@@ -123,69 +136,34 @@
     }
     &-ul{
         margin-bottom: 1.5rem;
-        @include m.flex(row, wrap, space-between, center);
+        @include m.grid(5, 0.5rem);
+        @include m.telefono-l {
+            @include m.grid(7, 0.5rem);
+        }
+        @include m.desktop {
+            @include m.flex(row, wrap, space-between, center);
+        }
     }
     &-li{
-        width: 2.8rem;
+        width: 2.5rem;
         padding: 0.5rem;
-        // @include m.tablet {
-        //     // width: 3.3rem;
-        // }
-        @include m.desktop-xl {
-            width: 5rem;
+        @include m.telefono-m {
+            width: 2.8rem;
+        }
+        @include m.telefono-l {
+            width: 3.2rem;
         }
     }
     &-down {
-        display: none;
-        @include m.telefono-xl {
-            display: block;
-            position: relative;
-            width: 35%;
-        }
-        @include m.tablet {
-            width: 45%;
-        }
+        position: relative;
     }
     &-avatar{
         position: relative;
         margin: 1rem auto;
-        width: 90%;
+        // width: 90%;
         max-width: 45rem;
-        @include m.desktop-m {
-            width: 80%;
-        }
-        // width: 40rem;
-        // width: 9.375rem;
-        // height: 9.375rem;
-        // border-radius: 50%;
-        // overflow: hidden;
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     top: -8px;
-        //     left: -8px;
-        //     width: calc(100% + 16px);
-        //     height: calc(100% + 16px);
-        //     // // border-radius: 50%;
-        //     box-shadow: 0 0 15px rgba(0, 123, 255, 0.7);
-        //     animation: spin 5s linear infinite;
-        // }
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     top: -8px;
-        //     left: -8px;
-        //     width: calc(100% + 16px);
-        //     height: calc(100% + 16px);
-        //     border-radius: 50%;
-        //     background: conic-gradient(
-        //         rgba(0, 123, 255, 0.7) 0deg,
-        //         rgba(0, 255, 255, 0.7) 120deg,
-        //         rgba(0, 123, 255, 0.7) 240deg,
-        //         rgba(0, 123, 255, 0.7) 360deg
-        //     );
-        //     mask: radial-gradient(circle, transparent 60%, black 61%);
-        //     animation: spin 4s linear infinite;
+        // @include m.desktop {
+        //     // width: 80%;
         // }
         &::after {
             content: "";
@@ -204,16 +182,22 @@
     }
     &-iconSocials {
             // width: 3.3rem;
-        @include m.position(absolute, 0, null, null, 0);
+            transition: all 0.8s ease;
+            display: none;
+            @include m.desktop {
+                display: block;
+                @include m.position(absolute, -1.5rem, null, null, -1.5rem);
+            }
         &:hover {
             cursor: pointer;
+            scale: 1.3;
         }
         &--first {
             // top: 3.8rem;
             // left: -3.8rem;
-            @include m.desktop-m{
-                top: 5.8rem;
-                left: -3.8rem;
+            @include m.desktop{
+                top: 6.8rem;
+                left: -4.8rem;
             }
         }
         // &--second {
@@ -222,9 +206,9 @@
         &--last{
             // top: -3.8rem;
             // left: 3.8rem;
-            @include m.desktop-m {
-                top: -3.8rem;
-                left: 5.8rem;
+            @include m.desktop {
+                top: -4.8rem;
+                left: 6.8rem;
             }
         }
     }

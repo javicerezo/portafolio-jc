@@ -1,11 +1,20 @@
-/*  tamaños para media queries (desde este tamaño en adelante, ej: @media (min-width: $tablet) */
-$medidas: (
+/*  tamaños para media queries (desde este tamaño en adelante, ej: @media (min-width: $tablet),
+    Tamaños:
+    telefono-s < 320px 
+    320px < telefono-m < 375px 
+    375px < telefono-xl < 425px 
+    425px < TABLET ESTANDAR EN VERTICAL O MÓVIL EN HORIZONTAL < 768px 
+    768px < PANTALLA pequeña O TABLET HORIZONTAL < 1024px 
+    1024px < pantalla < 1280px 
+    1280px < pantalla-l < 1440px 
+    1440px < pantalla-xl < 2560px 
+    */
+    $medidas: (
     "telefono-m": 20rem,
-    "telefono-xl": 30rem, //por encima pasamos a tablet
-    "tablet": 48rem,
-    "desktop": 60rem, // por encima pasamos a ordenador
-    "desktop-m": 64rem,
-    "desktop-xl": 90rem
+    "telefono-l": 26.5625rem, //por encima pasamos a tablet vertital/móvil horizontal
+    "tablet": 48rem, // por encima pasamos pantalla pequeña/pantalla-z
+    "desktop": 65rem, // por encima pasamos pantalla estandar
+    "desktop-l": 90rem
 );
 
 /* fuente principal */

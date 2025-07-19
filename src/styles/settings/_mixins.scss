@@ -7,8 +7,8 @@
         @content;
     }
 }
-@mixin telefono-xl {
-    @media (min-width: map.get(v.$medidas, telefono-xl)){
+@mixin telefono-l {
+    @media (min-width: map.get(v.$medidas, telefono-l)){
         @content;
     }
 }
@@ -22,13 +22,8 @@
         @content;
     }
 }
-@mixin desktop-m {
-    @media (min-width: map.get(v.$medidas, desktop-m)){
-        @content;
-    }
-}
-@mixin desktop-xl {
-    @media (min-width: map.get(v.$medidas, desktop-xl)){
+@mixin desktop-l {
+    @media (min-width: map.get(v.$medidas, desktop-l)){
         @content;
     }
 }
