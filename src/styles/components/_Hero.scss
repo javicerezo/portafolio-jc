@@ -9,6 +9,7 @@
     padding: 0 1rem;
     &-container {
         height: 100vh;
+        // margin-top: 2rem;
         @include m.flex(column, nowrap, space-evenly, center);
         @include m.desktop {
             @include m.flex(row, nowrap, space-evenly, center);
@@ -17,6 +18,7 @@
     &-h1 {
         font-size: 2em;
         margin: 2rem 0;
+        margin-top: 6rem;
         font-style: italic;
         font-weight: bold;
         font-family: map.get(v.$fuentes, titulos);

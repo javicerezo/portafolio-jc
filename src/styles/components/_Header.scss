@@ -1,0 +1,97 @@
+@use '../../styles/settings/mixins' as m;
+@use '../../styles/settings/variables' as v;
+@use 'sass:map';
+
+.Header {
+    @include m.position(fixed, 0, 0, null, 0);
+    @include m.flex(row, wrap, flex-end, center);
+    width: 100%;
+    height: 4.75rem;
+    max-width: 112.5rem;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: map.get(v.$colores, amarillo-fondo-transp);
+    z-index: 10;
+    @include m.tablet {
+        @include m.flex(row, nowrap, center, center);
+        padding: 0.5rem;
+        height: auto;
+    }
+    &-divNav {
+        height: 100vh;
+        @include m.position(absolute, 4.75rem, -50rem, 0, 0);
+        @include m.flex(column, nowrap, center, center);
+        background-color: map.get(v.$colores, negro-transp);
+        backdrop-filter: blur(2px);
+        pointer-events: none;
+        transition: all 1.5s ease;
+        visibility: hidden;
+        opacity: 0;
+        overflow: hidden;
+        &--visible {
+            visibility: visible;
+            pointer-events: initial;
+            opacity: 1;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+        @include m.tablet {
+            @include m.position(relative, 0, 0, null, null);
+            background-color: transparent;
+            height: auto;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+    &-ul {
+        width: 100%;
+        @include m.flex(column, nowrap, center, center);
+        @include m.tablet {
+            @include m.flex(row, nowrap, center, center);
+        }
+    }
+    &-li {
+        padding: 1.5rem 1rem;
+        font-size: 2.7rem;
+        font-family: map.get(v.$fuentes, textos);
+        @include m.tablet {
+            padding: 0 2rem;
+            font-size: 1.5rem;
+        }
+    }
+    &-navBurger {
+        position: relative;
+        width: 2.8rem;
+        height: 2.8rem;
+        margin-right: 1rem;
+        @include m.tablet {
+            display: none;
+        }
+    }
+    &-icon {
+        @include m.position(absolute, 0, null, null, 0);
+        width: 100%;
+        transition: opacity 1.5s ease, transform 1.5s ease;
+        &--hidden {
+            opacity: 0;
+            transform:  rotate(-90deg);
+        }
+        &--visible {
+            opacity: 1;
+            transform: rotate(0);
+        }
+    }
+    &-socials{
+        @include m.flex(row, nowrap, center, center);
+        padding: 5rem;
+        @include m.tablet {
+            display: none;
+            padding: 0rem;
+        }
+        &Icon {
+            width: 2.5rem;
+            margin: 0 2rem;
+        }
+    }
+}
