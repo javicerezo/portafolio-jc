@@ -11,22 +11,29 @@
   }
 }
 
-// // (Opcional) Respetamos preferencia usuario por tema configurado oscuro
+// Preferencias para el modo oscuro
 // @media (prefers-color-scheme: dark) {
-//   body{
-//     background-color: map.get(v.$colores, negro);
-//     color: map.get(v.$colores, blanco);
-//   }
-//   ::selection {
-//     background-color: map.get(v.$colores, blanco);
-//     color: map.get(v.$colores, negro);
-//   }
+//     :root{
+//         --color-blanco: #f5f5f5;
+//         --color-negro: #393939;
+//     }
 // }
 
-// // (Opcional) Respetamos preferencia usuario por tema configurado contraste alto
-// @media (prefers-color-scheme: more) {
-//   body{
-//     background-color: map.get(v.$colores, blanco-contraste);
-//     color: map.get(v.$colores, negro-contraste);
-//   }
-// }
+// Preferencias para el modo claro
+// Por defecto está configurado en modo oscuro, si el usuario quiere o tiene la
+//preferencia activada, se cambiará a modo claro.
+@media (prefers-color-scheme: light) {
+    :root{
+        --color-blanco: #393939;
+        --color-negro: #f5f5f5;
+    }
+}
+
+
+// (Opcional) Respetamos preferencia usuario por tema configurado contraste alto
+@media (prefers-color-scheme: high) {
+  :root{
+        --color-blanco: #fff;
+        --color-negro: #000;
+    }
+}

@@ -118,6 +118,6 @@ body {
 }
 /* (Opcional) Configuramos el texto que seleccionamos */
 ::selection {
-  background-color: map.get(v.$colores, blanco);
-  color: map.get(v.$colores, negro);
+  background-color: var(--color-blanco);
+  color: var(--color-negro);
 }

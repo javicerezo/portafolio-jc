@@ -10,7 +10,7 @@
     max-width: 112.5rem;
     margin: 0 auto;
     padding: 1rem;
-    background-color: map.get(v.$colores, amarillo-fondo-transp);
+    background-color: var(--color-amarillo-fondo-transp);
     z-index: 10;
     @include m.tablet {
         @include m.flex(row, nowrap, center, center);
@@ -21,8 +21,8 @@
         height: 100vh;
         @include m.position(absolute, 4.75rem, -50rem, 0, 0);
         @include m.flex(column, nowrap, center, center);
-        background-color: map.get(v.$colores, negro-transp);
-        backdrop-filter: blur(2px);
+        background-color: var(--color-negro-transp);
+        backdrop-filter: blur(6px);
         pointer-events: none;
         transition: all 1.5s ease;
         visibility: hidden;
@@ -41,6 +41,7 @@
             background-color: transparent;
             height: auto;
             visibility: visible;
+            pointer-events: initial;
             opacity: 1;
         }
     }
@@ -55,10 +56,20 @@
         padding: 1.5rem 1rem;
         font-size: 2.7rem;
         font-family: map.get(v.$fuentes, textos);
-        @include m.tablet {
-            padding: 0 2rem;
-            font-size: 1.5rem;
+        transition: scale 1s ease;
+        &:hover {
+            cursor: pointer;
+            scale: 1.2;
+            color: var(--color-negro-contraste);
         }
+        @include m.tablet {
+            padding: 0.15em 3rem;
+            font-size: 1.25rem;
+        }
+    }
+    &-a{
+        font-weight: bold;
+        text-transform: uppercase;
     }
     &-navBurger {
         position: relative;
@@ -72,7 +83,8 @@
     &-icon {
         @include m.position(absolute, 0, null, null, 0);
         width: 100%;
-        transition: opacity 1.5s ease, transform 1.5s ease;
+        transition: opacity 1s ease, transform 1.5s ease;
+        filter: drop-shadow(0 0 1px var(--color-blanco));
         &--hidden {
             opacity: 0;
             transform:  rotate(-90deg);
