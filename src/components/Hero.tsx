@@ -1,3 +1,5 @@
+import { useLanguage } from '../utils/context/useLanguage';
+
 import { SiHtml5, SiCss3, SiSass, SiJavascript, SiTypescript,
          SiReact, SiVite, SiNodedotjs, SiPostgresql, SiFirebase, SiAndroidstudio,
          SiKotlin } from 'react-icons/si';
@@ -5,8 +7,7 @@ import { FaJava, FaGithub, FaLink  } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
 
 export const Hero = () => {
-    const web = "{ web }";
-    const mobile = "{ móvil }";
+    const { t } = useLanguage();
 
     return (
         <section className='Hero'>
@@ -14,10 +15,10 @@ export const Hero = () => {
                 <div className='Hero-up'>
                     <h1 className='Hero-h1'>Javi Cerezo</h1>
                     <div className="Hero-div">
-                        <h2 className='Hero-h2 Hero-h2--first'>Desarrollador:</h2> 
+                        <h2 className='Hero-h2 Hero-h2--first'>{t.developer}</h2> 
                         <div className='Hero-props'>
-                            <h2 className='Hero-h2 Hero-h2--second'>prop1 = {web}</h2> 
-                            <h2 className='Hero-h2 Hero-h2--last'>prop2 = {mobile}</h2>
+                            <h2 className='Hero-h2 Hero-h2--second'>{t.prop1}</h2> 
+                            <h2 className='Hero-h2 Hero-h2--last'>{t.prop2}</h2>
                         </div>
                     </div>
                     <ul className="Hero-ul">
@@ -41,7 +42,7 @@ export const Hero = () => {
                         <img className="Hero-img" src="/imgs/programer_transp.svg" alt="svg avatar" />
                     </div>
                     <li className="Hero-li Hero-iconSocials Hero-iconSocials--first"><a href="https://github.com/javicerezo" target='_blank'><FaGithub color='#181717'/></a></li>
-                    <li className="Hero-li Hero-iconSocials Hero-iconSocials--second"><a href="https://www.linkedin.com/in/javicerezo/" target='_blank'><RiLinkedinFill color='#0D597F'/></a></li>
+                    <li className="Hero-li Hero-iconSocials Hero-iconSocials--second"><a href="https://www.linkedin.com/in/javicerezo/" target='_blank'><RiLinkedinFill color='#0973a8'/></a></li>
                     <li className="Hero-li Hero-iconSocials Hero-iconSocials--last"><a href="https://javicerezo.netlify.app/" target='_blank'><FaLink color='#FFD800'/></a></li>
                     <ul className="Hero-socials">
                     </ul>

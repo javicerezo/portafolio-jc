@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { useLanguage } from "../utils/context/useLanguage";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TbLetterX } from "react-icons/tb";
 import { FaGithub, FaLink  } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
-// import { TbSquareRoundedLetterX } from "react-icons/tb";
 
 export const Header = () => {
     const [ menu, setMenu ] = useState(false);
+    const { t } = useLanguage();
     
     const onclick = ()=> {
         setMenu(!menu);
@@ -18,10 +19,10 @@ export const Header = () => {
         <section className="Header">
             <div className={`Header-divNav ${menu ? "Header-divNav--visible" : "" }`}>
                 <ul className="Header-ul">
-                    <li className="Header-li"><a href="#Top">Inicio</a></li>
-                    <li className="Header-li"><a href="#Proyect">Proyectos</a></li>
-                    <li className="Header-li"><a href="#About">Sobre mí</a></li>
-                    <li className="Header-li"><a href="Contact">Contacto</a></li>
+                    <li className="Header-li"><a className="Header-a" href="#Top">{t.init}</a></li>
+                    <li className="Header-li"><a className="Header-a" href="#Proyect">{t.proyect}</a></li>
+                    <li className="Header-li"><a className="Header-a" href="#About">{t.about}</a></li>
+                    <li className="Header-li"><a className="Header-a" href="Contact">{t.contact}</a></li>
                     <ul className="Header-socials">
                         <li className="Header-socialsIcon"><a href="https://github.com/javicerezo" target='_blank'><FaGithub color='#fff'/></a></li>
                         <li className="Header-socialsIcon"><a href="https://www.linkedin.com/in/javicerezo/" target='_blank'><RiLinkedinFill color='#fff'/></a></li>
