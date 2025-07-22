@@ -2,6 +2,6 @@
 export const AboutMe = () => {
 
     return (
-        <p>Soy la seccion de sobre mí</p>
+        <section className="AboutMe">Soy la seccion de sobre mí. SIGUENTE TAREA</section>
     );
 }

@@ -14,7 +14,7 @@ function App() {
       <Header />
       <Hero />
       <ButtonConfig />
-      <Proyect />S
+      <Proyect />
       <AboutMe />
       <Contact />
       <Footer />

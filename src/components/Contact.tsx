@@ -2,6 +2,8 @@
 export const Contact = () => {
 
     return (
-        <p>Soy la seccion de contactos</p>
+        <section className="Contact">
+            Soy la seccion de contactos
+        </section>
     );
 }
