@@ -16,7 +16,7 @@ export const Header = () => {
     
 
     return (
-        <section className="Header">
+        <header className="Header" id="Header">
             <div className={`Header-divNav ${menu ? "Header-divNav--visible" : "" }`}>
                 <ul className="Header-ul">
                     <li className="Header-li"><a className="Header-a" href="#Top">{t.init}</a></li>
@@ -36,6 +36,6 @@ export const Header = () => {
                     <TbLetterX className={`Header-icon ${menu ? "Header-icon--visible" : "Header-icon--hidden"}`}/>  
                 </button>
             </div>
-        </section>
+        </header>
     );
 }
