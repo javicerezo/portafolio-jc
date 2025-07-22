@@ -5,16 +5,17 @@ const es = {
   contact: "Contacto",
   hello: "Hola, soy ",
   h1: "Javi Cerezo",
-  developer: "Desarrollador: ",
-  prop1: "prop1: { web }",
-  prop2: "prop2: { móvil }",
+  developer: "Desarrollador",
+  prop1: "{ web }",
+  prop2: "{ móvil }",
   settings: "Configuración",
   darkMode: "Modo claro/oscuro",
   contrast: "Modo contraste alto",
   language: "Idioma",
   spanish: "Español",
   english: "Inglés",
-  catalan: "Catalán"
+  catalan: "Catalán",
+  footer: "Desarrollador web&móvil | Ingeniero industrial",
 };
 
 export default es;
