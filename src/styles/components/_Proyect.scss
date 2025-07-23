@@ -1,0 +1,29 @@
+@use '../settings/mixins' as m;
+@use '../settings/variables' as v;
+@use 'sass:map';
+
+.Proyect {
+    max-width: 112.5rem;
+    background-color: red;
+    margin-top: 3rem;
+    padding: 1rem;
+    &-tituloSeccion {
+        @include m.flex(row, nowrap, flex-start, center);
+        font-size: 1.5rem;
+        font-family: map.get(v.$fuentes, titulos);
+        font-weight: bold;
+        margin: 1rem;
+        margin-bottom: 2rem;
+        @include m.telefono-l {
+            font-size: 1.7rem;
+        }
+    }
+    &-container {
+        padding: 1rem 2rem;
+        @include m.tablet {
+            @include m.flex(row, nowrap, space-between, center);
+            padding: 1rem 4rem;
+            // width: 50%;
+        }
+    }
+}
