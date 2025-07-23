@@ -10,19 +10,19 @@
     max-width: 112.5rem;
     margin: 0 auto;
     padding: 1rem;
-    background-color: var(--color-amarillo-fondo-transp);
+    background-color: var(--color-amarillo-fondo);
     z-index: 10;
     @include m.tablet {
         @include m.flex(row, nowrap, center, center);
+        backdrop-filter: blur(4px);
         padding: 0.5rem;
         height: auto;
     }
     &-divNav {
         height: 100vh;
-        @include m.position(absolute, 4.75rem, -50rem, 0, 0);
+        @include m.position(absolute, 0, -50rem, 0, 0);
         @include m.flex(column, nowrap, center, center);
         background-color: var(--color-negro-transp);
-        backdrop-filter: blur(6px);
         pointer-events: none;
         transition: all 1.5s ease;
         visibility: hidden;
@@ -35,9 +35,11 @@
             right: 0;
             left: 0;
             bottom: 0;
+            backdrop-filter: blur(4px);
         }
         @include m.tablet {
             @include m.position(relative, 0, 0, null, null);
+            backdrop-filter: initial;
             background-color: transparent;
             height: auto;
             visibility: visible;
@@ -55,7 +57,7 @@
     &-li {
         padding: 1.5rem 1rem;
         font-size: 2.7rem;
-        font-family: map.get(v.$fuentes, textos);
+        font-family: map.get(v.$fuentes, titulos);
         transition: scale 1s ease;
         &:hover {
             cursor: pointer;

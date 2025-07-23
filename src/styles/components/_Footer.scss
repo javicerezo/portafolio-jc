@@ -4,10 +4,12 @@
 
 .Footer {
     background-color: var(--color-negro-contraste);
+    max-width: 112.5rem;
     margin-top: 3rem;
     padding: 1.5rem;
     @include m.tablet {
         @include m.flex(row, nowrap, space-between, center);
+        padding: 1.5rem 3rem;
     }
     &-name {
         font-family: map.get(v.$fuentes, textos);
