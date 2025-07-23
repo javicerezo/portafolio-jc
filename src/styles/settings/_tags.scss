@@ -17,6 +17,8 @@ body {
     color: var(--color-blanco);
     transition: all 1.5s ease;
 
+    // Estas clases son para cuando el usuario hace clic al botón de cambiar modo claro/oscuro o modo contraste alto,
+    // no confuncir con las @mediaqueries de las preferencias de configuración del usuario em _mediaqueries.scss
     &.lightMode {
         --color-blanco: #393939;
         --color-negro: #f5f5f5;
@@ -25,9 +27,11 @@ body {
     &.highLightMode {
         --color-blanco: #000;
         --color-negro: #fff;
+        --color-amarillo-fondo: #b8860b;
     }
     &.highDarkMode {
         --color-blanco: #fff;
         --color-negro: #000;
+        --color-amarillo-fondo: #b8860b;
     }
 }

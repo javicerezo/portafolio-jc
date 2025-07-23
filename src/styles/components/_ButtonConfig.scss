@@ -6,7 +6,7 @@
     &-button {
         z-index: 20;
         @include m.position(fixed, null, 0, 0, null);
-        background-color: var(--color-amarillo-fondo-transp);
+        background-color: var(--color-amarillo-fondo);
         border-radius: 25%;
         margin: 1rem;
         padding: 0.5rem 0.75rem;
@@ -36,7 +36,7 @@
     &-ul {
         @include m.position(absolute, null, -15rem, 3rem, null);
         @include m.flex(column, nowrap, center, center);
-        background-color: var(--color-amarillo-fondo-transp);
+        background-color: var(--color-amarillo-fondo);
         width: 15rem;
         margin: 1rem;
         border-radius: 5%;

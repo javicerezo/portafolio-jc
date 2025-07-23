@@ -1,76 +1,51 @@
 import { useState, useRef, useEffect } from "react";
-import { useLanguage } from "../utils/context/useLanguage";
-import type { Lang } from "../utils/context/LanguageContext";
+import { useLanguage } from "../../utils/context/useLanguage";
+import type { Lang } from "../../utils/context/LanguageContext";
+
+import { useDarkMode } from "./useDarkMode";
+import { useContrastMode } from "./useContrastMode";
 
 import { IoMdSettings } from "react-icons/io";
 import { TbLetterX } from "react-icons/tb";
 
 export const ButtonConfig = () => {
     const [ configON, setConfigON ] = useState(false);
-    const [ contrastON, setContrastON ] = useState(false);
-    const [ darkModeON, setDarkModeON ] = useState(true);
+    const [ darkModeON, toogleDarkMode ] = useDarkMode();
+    const [ contrastON, toogleContrastMode] = useContrastMode();
+    
     const { currentLang, setCurrentLang, t } = useLanguage();
 
     const buttonRef = useRef<HTMLButtonElement>(null);
     const modalRef = useRef<HTMLUListElement>(null);
 
-    const handleToggleConfig = () => {
-        setConfigON(!configON);
-    }
+    const handleToggleConfig = () => setConfigON(!configON);
 
-    const handleCloseConfig = () => {
-        setConfigON(false);
-    }
+    const handleCloseConfig = () => setConfigON(false);
 
-    const handleToogleContrastHighMode = ()=> {
-        setContrastON(!contrastON);
-        if(document.body.classList.contains("lightMode")) {
-            document.body.classList.toggle("highLightMode");
-        } else {
-            document.body.classList.toggle("highDarkMode");
-        }
-    }
+    const handleChangeLanguage = (e: React.ChangeEvent<HTMLSelectElement>) => setCurrentLang(e.target.value as Lang);
 
-    const handleToogleDarkMode = () => {
-        setDarkModeON(!darkModeON);
-
-        // Si tiene los contractes activados se desactivan
-        if(document.body.classList.contains("highLightMode")) {
-            document.body.classList.remove("highLightMode");
-            setContrastON(!contrastON);
-        }
-        if(document.body.classList.contains("highDarkMode")) {
-            document.body.classList.remove("highDarkMode");
-            setContrastON(!contrastON);  
-        }
-        document.body.classList.toggle("lightMode");
-    }
-
-    const handleChangeLanguage = (e: React.ChangeEvent<HTMLSelectElement>)=> {
-        setCurrentLang(e.target.value as Lang); 
+    const handleDarkMode = () => {
+        toogleDarkMode();
+        toogleContrastMode(false);
     }
 
     // Cierra modal si usuario hace clic fuera del modal (en el fondo)
     useEffect( ()=> {
         const handleClickOutside = (e: Event) => {
             const target = e.target as HTMLElement;
-
             if(modalRef.current && !modalRef.current.contains(target) 
                 && buttonRef.current && !buttonRef.current.contains(target)) 
             {
                 handleCloseConfig();
             }
-        }
-
+        };
         document.addEventListener("click", handleClickOutside);
 
         return () => {
             document.removeEventListener("click", handleClickOutside);
         };
-
     }, []);
     
-
     return (
         <div>
             <button 
@@ -103,7 +78,7 @@ export const ButtonConfig = () => {
                         <p>{t.darkMode}</p>
                         <button 
                             className={`ButtonConfig-icon ${darkModeON ? "ButtonConfig-icon--on" : ""}`} 
-                            onClick={handleToogleDarkMode}>
+                            onClick={handleDarkMode}>
                                 <span className={`ButtonConfig-iconCircle ${darkModeON ? "ButtonConfig-iconCircle--on" : ""}`}></span>
                         </button>
                     </li>
@@ -111,7 +86,7 @@ export const ButtonConfig = () => {
                         <p>{t.contrast}</p>
                         <button 
                             className={`ButtonConfig-icon ${contrastON ? "ButtonConfig-icon--on" : ""}`} 
-                            onClick={handleToogleContrastHighMode}
+                            onClick={ () => toogleContrastMode() }
                             >
                                 <span className={`ButtonConfig-iconCircle ${contrastON ? "ButtonConfig-iconCircle--on" : ""}`}></span>
                         </button>
@@ -120,4 +95,4 @@ export const ButtonConfig = () => {
             </div>
         </div>
     );
-}
+};
