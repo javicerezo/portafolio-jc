@@ -20,7 +20,6 @@
     &-container {
         padding: 1rem 2rem;
         @include m.desktop {
-            // @include m.flex(row, nowrap, space-between, center);
             @include m.flex(row, nowrap, space-evenly, center);
             padding: 1rem 4rem;
         }
@@ -75,22 +74,21 @@
         align-items: center;
         justify-content: center;
         font-weight: bold;
-        border: 1px solid #ccc;
+        border: 1px solid var(--color-gris);
         border-radius: 8px;
-        background: #fff;
     }
 
     &-cardFront {
-        background-color: #f0f0f0;
-        color: #333;
+        background-color: var(--color-blanco);
+        color: var(--color-negro);
         font-size: 0.9rem;
         @include m.tablet {
             font-size: 1rem;
         }
     }
     &-cardBack {
-        background-color: #333;
-        color: #fff;
+        background-color: var(--color-negro);
+        color: var(--color-blanco);
         transform: rotateY(180deg);
     }
     &-cardImg {
