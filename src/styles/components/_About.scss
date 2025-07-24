@@ -4,8 +4,8 @@
 
 .About {
     max-width: 112.5rem;
-    margin-top: 3rem;
     padding: 1rem;
+    padding-top: 3rem;
     &-seccionTitle {
         @include m.flex(row, nowrap, flex-start, center);
         font-size: 1.5rem;
@@ -46,12 +46,13 @@
     &-credential{
         background-color: transparent;
         padding: 0.5rem 0;
-        width: 70px;
-        height: 70px;
+        width: 100px;
+        height: 100px;
+        cursor: pointer;
         perspective: 1000px; // para efecto 3D
         @include m.tablet {
-            width: 100px;
-            height: 100px;
+            width: 120px;
+            height: 120px;
         }
         &:hover .About-card {
             transform: rotateY(180deg);
@@ -82,6 +83,10 @@
     &-cardFront {
         background-color: #f0f0f0;
         color: #333;
+        font-size: 0.9rem;
+        @include m.tablet {
+            font-size: 1rem;
+        }
     }
     &-cardBack {
         background-color: #333;
@@ -92,6 +97,8 @@
         max-width: 80%;
         max-height: 80%;
         object-fit: contain;
+        margin: auto;
+        border-radius: 8px;
     }
     &-description {
         margin: 2rem 0;

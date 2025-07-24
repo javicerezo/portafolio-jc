@@ -6,7 +6,7 @@ import { ButtonConfig } from "./components/ButtonConfig/ButtonConfig";
 import { Footer } from "./components/Footer";
 import { Contact } from "./components/Contact";
 import { Proyect } from "./components/Proyect";
-import { AboutMe } from "./components/About";
+import { AboutMe } from "./components/About/About";
 
 function App() {
   return (
