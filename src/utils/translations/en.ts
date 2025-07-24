@@ -15,6 +15,8 @@ const en = {
   spanish: "Spanish",
   english: "English",
   catalan: "Catalán",
+  proyect_code: "Code",
+  proyect_site: "Website",
   about_1: "If you've made it this far, it means you want to know more. Thank you!",
   about_2: "Industrial engineer specialized in chemistry from the University of Granada, currently retrained as a web & mobile developer, with technician degree in Multiplatform App Development (DAM).",
   about_3: "My usual web technologies include HTML, SCSS, React, Vite, JavaScript/TypeScript, Node.js, and MySQL/PostgreSQL.",

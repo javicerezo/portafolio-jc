@@ -15,6 +15,8 @@ const cat = {
   spanish: "Espanyol",
   english: "Anglès",
   catalan: "Catalá",
+  proyect_code: "Codi",
+  proyect_site: "Lloc web",
   about_1: "Si has arribat fins aquí és perquè vols saber més. ¡Gràcies!.",
   about_2: "Enginyer industrial especialitzat en química per la Universitat de Granada, actualment reconvertit en desenvolupador web i mòbil, tècnic superior en DAM.",
   about_3: "Les meves tecnologies habituals per al desenvolupament web són HTML, SCSS, React, Vite, JavaScript/TypeScript, Node.js i MySQL/PostgreSQL.",

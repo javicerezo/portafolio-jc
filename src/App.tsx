@@ -5,7 +5,7 @@ import { Hero } from "./components/Hero";
 import { ButtonConfig } from "./components/ButtonConfig/ButtonConfig";
 import { Footer } from "./components/Footer";
 import { Contact } from "./components/Contact";
-import { Proyect } from "./components/Proyect";
+import { Proyect } from "./components/Proyect/Proyect";
 import { AboutMe } from "./components/About/About";
 
 function App() {

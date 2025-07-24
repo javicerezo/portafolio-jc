@@ -5,8 +5,8 @@
 .Proyect {
     max-width: 112.5rem;
     background-color: red;
-    margin-top: 3rem;
     padding: 1rem;
+    padding-top: 3rem;
     &-tituloSeccion {
         @include m.flex(row, nowrap, flex-start, center);
         font-size: 1.5rem;
@@ -20,10 +20,13 @@
     }
     &-container {
         padding: 1rem 2rem;
+        // PENSAR SI A DISPOSITIVOS PEQUEÑOS HACER UN CARRUSEL PARA QUE NO TENGA MUCHO SCROLL ESTA SECCIÓN
+        @include m.telefono-l {
+            @include m.grid(2, 1rem);
+        }
         @include m.tablet {
-            @include m.flex(row, nowrap, space-between, center);
+            @include m.grid(4, 1rem);
             padding: 1rem 4rem;
-            // width: 50%;
         }
     }
 }
