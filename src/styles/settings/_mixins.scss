@@ -39,6 +39,18 @@
     grid-template-columns: repeat($num-columnas, 1fr);
     gap: $espaciado-gap;
 }
+// este mixin rellena todo el contenedor cuando tiene pocos elementos
+@mixin grid-auto-fit ($tamano-imagen: 17.5rem, $espaciado-gap) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax($tamano-imagen, 1fr));
+    gap: $espaciado-gap;
+}
+// este mixin NO rellena todo el contenedos cuando tiene pocos elementos
+@mixin grid-auto-fill ($tamano-imagen: 17.5rem, $espaciado-gap) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax($tamano-imagen, 1fr));
+    gap: $espaciado-gap;
+}
 
 // FLEX
 @mixin flex ($flex-direction, $flex-wrap, $justify-content:null, $align-items:null) {
