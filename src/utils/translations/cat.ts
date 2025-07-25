@@ -15,6 +15,7 @@ const cat = {
   spanish: "Espanyol",
   english: "Anglès",
   catalan: "Catalá",
+  proyect_clic: "[ Pressiona per saber mès ]",
   proyect_code: "Codi",
   proyect_site: "Lloc web",
   about_1: "Si has arribat fins aquí és perquè vols saber més. ¡Gràcies!.",

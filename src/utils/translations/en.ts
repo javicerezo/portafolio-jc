@@ -15,6 +15,7 @@ const en = {
   spanish: "Spanish",
   english: "English",
   catalan: "Catalán",
+  proyect_clic: "[ Press to know more ]",
   proyect_code: "Code",
   proyect_site: "Website",
   about_1: "If you've made it this far, it means you want to know more. Thank you!",
