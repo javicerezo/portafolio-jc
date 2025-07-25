@@ -4,7 +4,7 @@
 
 .ButtonConfig {
     &-button {
-        z-index: 20;
+        z-index: 15;
         @include m.position(fixed, null, 0, 0, null);
         background-color: var(--color-amarillo-fondo);
         border-radius: 25%;
@@ -18,7 +18,7 @@
         margin: 0 auto;
         @include m.position(fixed, 4.75rem, 0, 0, 0);
         background-color: transparent;
-        backdrop-filter: blur(3px);
+        backdrop-filter: blur(2px);
         pointer-events: none;
         visibility: hidden;
         opacity: 0;

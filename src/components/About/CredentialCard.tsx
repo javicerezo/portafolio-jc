@@ -9,7 +9,7 @@ interface Props {
 
 export const CredentialCard: React.FC<Props> = ({ title, image, alt, href }) => {
     return (
-        <li className="About-credential">
+        <li className="About-credentialCard">
             <div className="About-card">
                 <div className="About-cardFront">
                     <span>{title}</span>

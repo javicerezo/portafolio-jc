@@ -7,9 +7,7 @@ export const AboutMe = () => {
 
     return (
         <section className="About" id="About">
-            <div className="About-seccionTitle">
-                <h2>{t.about}:</h2>
-            </div>
+            <h2 className="About-title">{t.about}:</h2>
             <div className="About-container">
                 <div className="About-picture">
                     <img className="About-img" src="/imgs/foto-perfil.jpg" alt="image me" />
