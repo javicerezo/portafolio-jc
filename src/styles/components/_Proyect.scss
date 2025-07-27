@@ -29,7 +29,6 @@
         
         @include m.tablet {
             @include m.grid-auto-fill(17.5rem, 2rem);
-
         }
     }
     &-proyectCard {
@@ -125,11 +124,9 @@
             cursor: pointer;
         }
         &-img {
-            width: auto;
-            // object-fit: cover;
-            // margin: 0 auto;
-            // max-width: 20rem;
-            max-height: 16rem;
+            display: block;
+            width: 100%;
+            max-height: 18rem;
             border-radius: 0.5rem;
             overflow: hidden;
         }
@@ -142,16 +139,17 @@
             margin: 2rem 0;
 
         }
-        // &-techs {
-
-        // }
         &-buttons {
             margin-top: 2rem;
         }
         &-button {
             font-size: 1rem;
         }
-        
+    }
+
+    &-pError {
+        font-family: map.get(v.$fuentes, textos);
+        text-transform: uppercase;
     }
 
 
