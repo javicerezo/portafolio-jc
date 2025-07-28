@@ -25,7 +25,7 @@ export const Proyect = () => {
             <p className="Proyect-p">La mejor manera de describir lo que hago es mostrando lo que hago...</p>
             <ul className="Proyect-ul">
 
-                {loading ? <p className="Proyect-pError">Error. No se han podido cargar los proyectos</p> : "" }
+                {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
 
                 {repos.map( (repo) => (
                     <ProyectCard

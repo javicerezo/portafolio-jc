@@ -36,7 +36,10 @@ export const useConnectGithub = (userName: string) => {
             const data = await res.json();
 
             // Solo proyectos propios (no forks)
-            const result = data.filter((repo: Repo) => !repo.fork && repo.name.toLowerCase() != userName.toLowerCase());
+            const result = data.filter((repo: Repo) => 
+                !repo.fork && 
+                repo.name.toLowerCase() != userName.toLowerCase() &&
+                repo.name.toLowerCase() != 'portafolio-jc');
 
             // Hacemos peticiones paralelas para obtener lenguajes
             const enrichedResult = await Promise.all(
