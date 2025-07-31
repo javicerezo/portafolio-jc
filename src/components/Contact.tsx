@@ -6,7 +6,7 @@ export const Contact = () => {
     return (
         <section className="Contact" id="Contact">
             <div className="Contact-tituloSeccion">
-                <h2>{t.contact}:</h2>
+                <h2>{t.title_contact}:</h2>
             </div>
             <div className="Contact-container">
                 {/* <div className="About-picture">

@@ -59,23 +59,23 @@ export const ButtonConfig = () => {
                 <ul ref={ modalRef } 
                     className={`ButtonConfig-ul ${configON ? "ButtonConfig-ul--visible" : ""}`}>
                     <li className="ButtonConfig-li" >
-                        <p>{t.settings}</p><button onClick={ handleCloseConfig }>
+                        <p>{t.buttonConfig_settings}</p><button onClick={ handleCloseConfig }>
                             <TbLetterX  className="ButtonConfig-iconX"/>
                             </button>
                     </li>
                     <li className="ButtonConfig-li" >
-                        <p>{t.language}</p>
+                        <p>{t.buttonConfig_language}</p>
                         <select 
                             className="ButtonConfig-select"
                             value={currentLang}
                             onChange={handleChangeLanguage}>
-                                <option className="ButtonConfig-option" value="es">{t.spanish}</option>
-                                <option className="ButtonConfig-option" value="en">{t.english}</option>
-                                <option className="ButtonConfig-option" value="cat">{t.catalan}</option>
+                                <option className="ButtonConfig-option" value="es">{t.buttonConfig_spanish}</option>
+                                <option className="ButtonConfig-option" value="en">{t.buttonConfig_english}</option>
+                                <option className="ButtonConfig-option" value="cat">{t.buttonConfig_catalan}</option>
                         </select>
                     </li>
                     <li className="ButtonConfig-li" >
-                        <p>{t.darkMode}</p>
+                        <p>{t.buttonConfig_darkMode}</p>
                         <button 
                             className={`ButtonConfig-icon ${darkModeON ? "ButtonConfig-icon--on" : ""}`} 
                             onClick={handleDarkMode}>
@@ -83,7 +83,7 @@ export const ButtonConfig = () => {
                         </button>
                     </li>
                     <li className="ButtonConfig-li" >
-                        <p>{t.contrast}</p>
+                        <p>{t.buttonConfig_contrast}</p>
                         <button 
                             className={`ButtonConfig-icon ${contrastON ? "ButtonConfig-icon--on" : ""}`} 
                             onClick={ () => toogleContrastMode() }

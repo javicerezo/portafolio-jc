@@ -13,12 +13,12 @@ export const Hero = () => {
         <section className='Hero' id='Hero'>
             <div className="Hero-container">
                 <div className='Hero-up'>
-                    <h1 className='Hero-h1'>Javi Cerezo</h1>
+                    <h1 className='Hero-h1'>{t.hero_h1}</h1>
                     <div className="Hero-div">
-                        <h2 className='Hero-h2 Hero-h2--first'>{t.developer}:</h2> 
+                        <h2 className='Hero-h2 Hero-h2--first'>{t.hero_developer}:</h2> 
                         <div className='Hero-props'>
-                            <h2 className='Hero-h2 Hero-h2--second'>prop1: {t.prop1}</h2> 
-                            <h2 className='Hero-h2 Hero-h2--last'>prop2: {t.prop2}</h2>
+                            <h2 className='Hero-h2 Hero-h2--second'>prop1: {t.hero_prop1}</h2> 
+                            <h2 className='Hero-h2 Hero-h2--last'>prop2: {t.hero_prop2}</h2>
                         </div>
                     </div>
                     <ul className="Hero-ul">

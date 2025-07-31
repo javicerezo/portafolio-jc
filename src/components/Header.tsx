@@ -19,10 +19,10 @@ export const Header = () => {
         <header className="Header">
             <div className={`Header-divNav ${menu ? "Header-divNav--visible" : "" }`}>
                 <ul className="Header-ul">
-                    <li className="Header-li"><a className="Header-a" href="#Hero">{t.init}</a></li>
-                    <li className="Header-li"><a className="Header-a" href="#Proyect">{t.proyect}</a></li>
-                    <li className="Header-li"><a className="Header-a" href="#About">{t.about}</a></li>
-                    <li className="Header-li"><a className="Header-a" href="#Contact">{t.contact}</a></li>
+                    <li className="Header-li"><a className="Header-a" href="#Hero">{t.title_init}</a></li>
+                    <li className="Header-li"><a className="Header-a" href="#Proyect">{t.title_proyect}</a></li>
+                    <li className="Header-li"><a className="Header-a" href="#About">{t.title_about}</a></li>
+                    <li className="Header-li"><a className="Header-a" href="#Contact">{t.title_contact}</a></li>
                     <ul className="Header-socials">
                         <li className="Header-socialsIcon"><a href="https://github.com/javicerezo" target='_blank'><FaGithub color='#fff'/></a></li>
                         <li className="Header-socialsIcon"><a href="https://www.linkedin.com/in/javicerezo/" target='_blank'><RiLinkedinFill color='#fff'/></a></li>
