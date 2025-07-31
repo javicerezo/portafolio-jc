@@ -24,21 +24,40 @@
 
     }
     &-ul {
-        padding: 2rem;
-        // PENSAR SI A DISPOSITIVOS PEQUEÑOS HACER UN CARRUSEL PARA QUE NO TENGA MUCHO SCROLL ESTA SECCIÓN
-        
+        @include m.flex(row, nowrap, flex-start, center);
+        display: flex;
+        margin-top: 1rem;
+        overflow-x: auto;
+        height: auto;
+        scroll-snap-type: x mandatory;
         @include m.tablet {
+            padding: 2rem;
             @include m.grid-auto-fill(17.5rem, 2rem);
+        }
+        @include m.desktop {
+            @include m.grid-auto-fill(23rem, 2rem);
         }
     }
     &-proyectCard {
-        @include m.flex(column, nowrap, space-between, center);
-        overflow: hidden;
-        border-radius: 0.5rem;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        transition: transform 0.7s ease;
-        &:hover {
-            transform: translate(-5px);
+        max-width: 23rem;
+        flex: 0 0 80%;
+        scroll-snap-align: start;
+        margin-right: 1rem;
+        
+        @include m.tablet {
+            @include m.flex(column, nowrap, space-between, center);
+            max-width: 50rem;
+            margin-right: 0;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.7s ease;
+            &:hover {
+                transform: translate(-5px);
+            }
+        }
+        @include m.desktop {
+            height: 18rem;
         }
     }
     &-divImageDesc {
@@ -47,10 +66,12 @@
         width: 100%;
         height: 100%;
         border-radius: 0.5rem;
+        overflow: hidden;
         padding: 0.5rem;
     }
     &-image {
-        width: auto;
+        width: 100%;
+        height: 100%;
         max-height: 10rem;
         border-radius: 0.5rem;
         overflow: hidden;
@@ -65,6 +86,8 @@
         opacity: 0;
         cursor: pointer;
         transition: opacity 0.7s ease;
+        border-radius: 0.5rem;
+        overflow: hidden;
         &:hover {
             opacity: 1;
         }
@@ -87,6 +110,9 @@
     }
     &-buttons, &-modal-buttons {
         @include m.flex(row, nowrap, center, center);
+        @include m.desktop {
+            margin-bottom: 1rem;
+        }
     }
     &-button, &-modal-button {
         padding: 1rem;
@@ -124,6 +150,10 @@
             @include m.position(absolute, 1rem, 1rem, null, null);
             font-size: 1.5rem;
             cursor: pointer;
+            transition: filter 0.6s ease;
+            &:hover {
+                filter: drop-shadow(0 0 3px var(--color-blanco));
+            }
         }
         &-img {
             display: block;
@@ -131,15 +161,11 @@
             max-height: 18rem;
             border-radius: 0.5rem;
             overflow: hidden;
-            // img {
-            //     object-fit: contain;
-            // }
         }
         &-h2 {
             font-family: map.get(v.$fuentes, titulos);
             font-size: 1.8rem;
-            margin-top: 2rem;
-            // text-transform: capitalize;
+            margin-bottom: 2rem;
         }
         &-desc {
             margin: 1rem 2rem;
