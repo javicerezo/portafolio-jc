@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 
 type Repo = {
     id: number;
-    name: string;
-    html_url: string; // url del repositorio
-    description: string;
-    homepage: string; // url sitio web
-    language: string;
-    fork: boolean;
-    languagesList?: string[];
+    name: string;   // nombre del repo
+    description: string;    // descrición del repo
+    html_url: string; // url del repo
+    homepage: string; // url del sitio web
+    language: string; // lenguaje principal
+    fork: boolean;  // si es fork o no
+    languagesList: string[];    // lista de todos los lenguajes del repo
+    image: string;  // url de la imagen a mostrar
+    nameUI: string; // nombre a mostrar en la interfaz
 };
 
 const TOKEN = import.meta.env.VITE_GITHUB_TOKEN; 

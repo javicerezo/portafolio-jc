@@ -42,17 +42,18 @@
         }
     }
     &-divImageDesc {
+        @include m.flex(column, nowrap, center, center);
         position: relative;
-        // width: 100%;
-        height: auto;
-        overflow: hidden;
-        border-radius: 0.5rem;
-        // box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        margin: 0.5rem;
-    }
-    &-image {
         width: 100%;
         height: 100%;
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+    }
+    &-image {
+        width: auto;
+        max-height: 10rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
         transition: transform 0.7s ease;
     }
     &-description {
@@ -70,14 +71,14 @@
     }
     &-titleDescription {
         font-family: map.get(v.$fuentes, titulos);
-        font-size: 1.4rem;
+        font-size: 1.2rem;
     }
     &-techsDescription, &-clicDescription {
         font-family: map.get(v.$fuentes, textos);
         margin: 0.5rem 0;
     }
     &-techsDescription {
-        margin: 2rem 0;
+        margin: 1.5rem 0;
     }
     &-clicDescription {
         font-style: italic;
@@ -130,18 +131,22 @@
             max-height: 18rem;
             border-radius: 0.5rem;
             overflow: hidden;
+            // img {
+            //     object-fit: contain;
+            // }
         }
         &-h2 {
             font-family: map.get(v.$fuentes, titulos);
             font-size: 1.8rem;
             margin-top: 2rem;
+            // text-transform: capitalize;
         }
         &-desc {
-            margin: 2rem 0;
+            margin: 1rem 2rem;
 
         }
         &-buttons {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         &-button {
             font-size: 1rem;
