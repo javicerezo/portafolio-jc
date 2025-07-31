@@ -10,7 +10,7 @@ export const AboutMe = () => {
             <h2 className="About-title">{t.about}:</h2>
             <div className="About-container">
                 <div className="About-picture">
-                    <img className="About-img" src="public/assets/imgs/foto-perfil.jpg" alt="image me" />
+                    <img className="About-img" src="/assets/imgs/foto-perfil.jpg" alt="image me" />
                     <ul className="About-credentialsList">
                         {credentials.map((cred, i) => (
                             <CredentialCard 

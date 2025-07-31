@@ -39,7 +39,7 @@ export const Hero = () => {
                 </div>
                 <div className='Hero-down'>
                     <div className="Hero-avatar">
-                        <img className="Hero-img" src="public/assets/imgs/programer_transp.svg" alt="svg avatar" />
+                        <img className="Hero-img" src="/assets/imgs/programer_transp.svg" alt="svg avatar" />
                     </div>
                     <li className="Hero-li Hero-iconSocials Hero-iconSocials--first"><a href="https://github.com/javicerezo" target='_blank'><FaGithub color='#181717'/></a></li>
                     <li className="Hero-li Hero-iconSocials Hero-iconSocials--second"><a href="https://www.linkedin.com/in/javicerezo/" target='_blank'><RiLinkedinFill color='#0973a8'/></a></li>
