@@ -38,8 +38,8 @@ export const Proyect = () => {
 
     return (
         <section className="Proyect" id="Proyect">
-            <h2 className="Proyect-title">{t.proyect}:</h2>
-            <p className="Proyect-p">La mejor manera de describir lo que hago es mostrando lo que hago...</p>
+            <h2 className="Proyect-title">{t.title_proyect}:</h2>
+            <p className="Proyect-p">{t.proyect_paragraph}.</p>
             <ul className="Proyect-ul">
 
                 {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }

@@ -26,10 +26,10 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
         <div className="Proyect-modal" onClick={onClose}>
             <div className="Proyect-modal-container" onClick={ (e) => e.stopPropagation() }>
                 <button className="Proyect-modal-buttonX" onClick={onClose}>✕</button>
+                <h2 className="Proyect-modal-h2">{proyect.nameUI}</h2>
                 <div className="Proyect-modal-img">
                     <img src={proyect.image} alt="img proyect" loading="lazy"/>    
                 </div> 
-                <h2 className="Proyect-modal-h2">{proyect.nameUI}</h2>
                 <p className="Proyect-modal-desc">{proyect.description}</p>
                 <p className="Proyect-modal-techs">{proyect.languagesList?.join(', ') || proyect.language}</p>
                 <div className="Proyect-modal-buttons">
