@@ -10,7 +10,7 @@ export const Hero = () => {
     const { t } = useLanguage();
 
     return (
-        <section className='Hero' id='Hero'>
+        <section className='Hero' id='Top'>
             <div className="Hero-container">
                 <div className='Hero-up'>
                     <h1 className='Hero-h1'>{t.hero_h1}</h1>

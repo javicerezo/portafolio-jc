@@ -14,12 +14,11 @@ export const Header = () => {
         setMenu(!menu);
     }
     
-
     return (
         <header className="Header">
             <div className={`Header-divNav ${menu ? "Header-divNav--visible" : "" }`}>
                 <ul className="Header-ul">
-                    <li className="Header-li"><a className="Header-a" href="#Hero">{t.title_init}</a></li>
+                    <li className="Header-li"><a className="Header-a" href="#Top">{t.title_init}</a></li>
                     <li className="Header-li"><a className="Header-a" href="#Proyect">{t.title_proyect}</a></li>
                     <li className="Header-li"><a className="Header-a" href="#About">{t.title_about}</a></li>
                     <li className="Header-li"><a className="Header-a" href="#Contact">{t.title_contact}</a></li>

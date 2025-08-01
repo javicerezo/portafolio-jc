@@ -15,7 +15,7 @@ export const Footer = () => {
             <ul className="Footer-ul">
                 <li className="Footer-li"><a href="https://github.com/javicerezo" target='_blank'><FaGithub color='#fff'/></a></li>
                 <li className="Footer-li"><a href="https://www.linkedin.com/in/javicerezo/" target='_blank'><RiLinkedinFill color='#fff'/></a></li>
-                <li className="Footer-li"><a href="#Hero"><FaArrowTurnUp color='#fff'/></a></li>
+                <li className="Footer-li"><a href="#Top"><FaArrowTurnUp color='#fff'/></a></li>
             </ul>
         </footer>
     );
