@@ -31,5 +31,10 @@
     &-li {
         width: 1.5rem;
         margin: 0 1.5rem;
+        transition: all 0.8s ease;
+        &:hover {
+            cursor: pointer;
+            scale: 1.3;
+        }
     }
 }

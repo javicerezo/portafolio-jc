@@ -170,7 +170,7 @@
         height: 100%;
     }
     &-iconSocials {
-            transition: all 0.8s ease;
+            transition: scale 0.8s ease;
             display: none;
             @include m.desktop {
                 display: block;

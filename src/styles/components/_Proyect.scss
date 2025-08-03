@@ -4,10 +4,10 @@
 
 .Proyect {
     max-width: 112.5rem;
-    padding-top: 6rem;
     margin: 1rem;
+    padding-top: 5rem;
     @include m.tablet {
-        margin: 1rem 2rem;
+        margin: 5rem 2rem 1rem;
     }
     &-title {
         @include m.flex(row, nowrap, flex-start, center);
@@ -124,7 +124,7 @@
         border-radius: 0.5rem;
         transition: background-color 0.7s ease;
         &:hover {
-            background-color: #61dafb;
+            background-color: var(--color-azul-claro);
             color: black;
         }
     }

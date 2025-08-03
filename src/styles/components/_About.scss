@@ -4,10 +4,10 @@
 
 .About {
     max-width: 112.5rem;
-    padding-top: 6rem;
     margin: 1rem;
+    padding-top: 5rem;
     @include m.tablet {
-        margin: 1rem 2rem;
+        margin: 5rem 2rem 1rem;
     }
     &-title {
         @include m.flex(row, nowrap, flex-start, center);
@@ -100,6 +100,9 @@
     }
     &-description {
         margin: 2rem 0;
+        @include m.telefono-l {
+            margin: 2rem 1rem;
+        }
         @include m.desktop {
             margin: 1rem 2rem;
             width: 50%;
