@@ -5,7 +5,7 @@ export interface Credential {
     href: string;
 };
 
-export const credentials: Credential[] = [
+export const credentialsList: Credential[] = [
     {
     title: "Ingeniería Indrustrial",
     image: "/assets/imgs/UGR.png",
