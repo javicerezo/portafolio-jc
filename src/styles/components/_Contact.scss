@@ -4,26 +4,118 @@
 
 .Contact {
     max-width: 112.5rem;
-    background-color: red;
-    margin-top: 3rem;
-    padding: 1rem;
-    &-tituloSeccion {
+    margin: 1rem;
+    margin-top: 5rem;
+    @include m.tablet {
+        margin: 5rem 2rem 1rem;
+    }
+    &-title {
         @include m.flex(row, nowrap, flex-start, center);
         font-size: 1.5rem;
         font-family: map.get(v.$fuentes, titulos);
         font-weight: bold;
-        margin: 1rem;
         margin-bottom: 2rem;
         @include m.telefono-l {
             font-size: 1.7rem;
         }
     }
     &-container {
-        padding: 1rem 2rem;
-        @include m.tablet {
-            @include m.flex(row, nowrap, space-between, center);
+        @include m.flex(column, nowrap, space-between, center);
+        font-family: map.get(v.$fuentes, textos);
+        @include m.desktop {
+            @include m.flex(row, nowrap, space-evenly, center);
             padding: 1rem 4rem;
-            // width: 50%;
         }
+    }
+    &-form {
+        @include m.flex(column, nowrap, center, center);
+        width: 100%;
+        margin-bottom: 2rem;
+        @include m.telefono-l {
+            padding: 0 1rem;
+        }
+        @include m.desktop {
+            margin-bottom: 0;
+        }
+    }
+    &-input, &-textArea {
+        width: 100%;
+        max-width: 40rem;
+        padding: 0.75rem;
+        margin: 0.5rem 0;
+        background-color: transparent;
+        color: var(--color-blanco);
+        border: 2px solid var(--color-azul-claro);
+        border-radius: 0.5rem;
+        transition: all 0.8s ease;
+        @include m.desktop {
+
+        }
+    }
+    &-input:focus, &-textArea:focus {
+        border-bottom: 2px solid #3b82f6;
+    }
+    &-textArea {
+        min-height: 7.5rem;
+        resize: none;
+    }
+    &-button {
+        color: var(--color-blanco);
+        padding: 0.75rem 1.5rem;
+        margin-top: 1rem;
+        border: 2px solid var(--color-azul-claro);
+        border-radius: 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.8s ease, transform 0.2s ease;
+    }
+    &-button:hover:not(disabled) {
+        background: var(--color-azul-claro);
+        border: 2px solid var(--color-blanco);
+        transform: translateY(-2px);
+    }
+    &-button:hover:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+    &-altern {
+        @include m.flex(column, nowrap, center, flex-start);
+        max-width: 22rem;
+    }
+    &-p {
+        font-size: 1.2rem;
+    }
+    &-socials {
+        @include m.flex(row, nowrap, center, center);
+        margin: 2rem 1rem 0;
+    }
+    &-iconSocial {
+        width: 2rem;
+        margin: 0 2rem;
+        transition: all 0.8s ease;
+        &:hover {
+            cursor: pointer;
+            scale: 1.3;
+        }
+    }
+    &-divResponse {
+        @include m.flex (column, nowrap, space-around, center);
+        width: 100%;
+    }
+    &-spinner, &-success, &-error {
+        margin-top: 2rem;
+    }
+    &-success, &-error {
+        font-size: 1.1em;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: bold;
+        padding: 0.5rem;
+    }
+    &-success {
+        color: green;
+    }
+    &-error {
+        color: red;
     }
 }
