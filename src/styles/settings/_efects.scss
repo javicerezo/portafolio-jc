@@ -1,0 +1,16 @@
+
+// EFECTO DE APARICIÓN EN SECCIÓN COMPLETA CUANDO USER HACE SCROLL
+/* Estado inicial (oculto) */
+.sectionEffect {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+  will-change: opacity, transform;
+  
+  /* Estado visible (animación activada) */
+  &--show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
