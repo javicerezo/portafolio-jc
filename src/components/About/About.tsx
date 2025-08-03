@@ -1,18 +1,24 @@
-import { useLanguage } from "../../utils/context/useLanguage";
+import { useLanguage } from "../../utils/hooks/useLanguage";
 import { CredentialCard } from "./CredentialCard";
-import { credentials } from "./credentials";
+import { credentialsList } from "./credentialsList";
+import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
 export const AboutMe = () => {
     const { t } = useLanguage();
+    const { ref, visible } = useScrollAnimation();
 
     return (
-        <section className="About" id="About">
+        <section 
+            className={`About sectionEffect ${visible ? "sectionEffect--show" : ""}`} 
+            id="About"
+            ref={ref}
+            >
             <h2 className="About-title">{`${t.title_about}:`}</h2>
             <div className="About-container">
                 <div className="About-picture">
                     <img className="About-img" src="/assets/imgs/foto-perfil.jpg" alt="image me" />
                     <ul className="About-credentialsList">
-                        {credentials.map((cred, i) => (
+                        {credentialsList.map((cred, i) => (
                             <CredentialCard 
                                 key={i}
                                 title={cred.title}

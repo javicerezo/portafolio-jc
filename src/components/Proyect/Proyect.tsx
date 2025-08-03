@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useLanguage } from "../../utils/context/useLanguage";
+import { useLanguage } from "../../utils/hooks/useLanguage";
 import { ProyectCard } from "./ProyectCard";
 import { ProyectModal } from "./ProyectModal";
-import { useConnectGithub } from "./useConnectGithub";
+import { useConnectGithub } from "../../utils/hooks/useConnectGithub";
+import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
 type Repo = {
     id: number;
@@ -22,6 +23,7 @@ export const Proyect = () => {
     const [ selectedProyect, setSelectedProyect ] = useState<Repo | null>(null);
     const userName: string = "javicerezo";
     const { repos, loading } = useConnectGithub(userName);
+    const  { ref, visible } = useScrollAnimation(); 
 
     repos.forEach( repo => {
         // Primero agrego la ruta de la imagen con el nombre del repositorio original
@@ -37,7 +39,11 @@ export const Proyect = () => {
     })
 
     return (
-        <section className="Proyect" id="Proyect">
+        <section 
+            className={`Proyect sectionEffect ${visible ? "sectionEffect--show" : ""}`}
+            id="Proyect"
+            ref={ref}
+            >
             <h2 className="Proyect-title">{`${t.title_proyect}:`}</h2>
             <p className="Proyect-p">{`- ${t.proyect_paragraph}`}</p>
             <ul className="Proyect-ul">
