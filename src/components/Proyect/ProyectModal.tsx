@@ -1,4 +1,4 @@
-import { useLanguage } from "../../utils/context/useLanguage";
+import { useLanguage } from "../../utils/hooks/useLanguage";
 
 type ProyectModalProps = {
     proyect: {

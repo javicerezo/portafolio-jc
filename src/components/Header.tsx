@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLanguage } from "../utils/context/useLanguage";
+import { useLanguage } from "../utils/hooks/useLanguage";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TbLetterX } from "react-icons/tb";

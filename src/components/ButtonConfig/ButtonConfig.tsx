@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { useLanguage } from "../../utils/context/useLanguage";
+import { useLanguage } from "../../utils/hooks/useLanguage";
 import type { Lang } from "../../utils/context/LanguageContext";
 
 import { useDarkMode } from "./useDarkMode";

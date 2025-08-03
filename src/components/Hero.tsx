@@ -1,4 +1,4 @@
-import { useLanguage } from '../utils/context/useLanguage';
+import { useLanguage } from '../utils/hooks/useLanguage';
 
 import { SiHtml5, SiCss3, SiSass, SiJavascript, SiTypescript,
          SiReact, SiVite, SiNodedotjs, SiPostgresql, SiFirebase, SiAndroidstudio,
