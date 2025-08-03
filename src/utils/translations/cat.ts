@@ -26,6 +26,13 @@ const cat = {
   about_5: "El 'Javi Cerezo' enginyer em dona una manera de pensar matemàtica i optimitzada, ideal per a aquells projectes on cada línia de codi compta.",
   about_6: "Sóc fan del codi sostenible, la bona documentació i la formació contínua (vegeu les credencials).",
   about_7: "I finalment, però no menys important, sóc un apassionat de la muntanya en totes les seves formes - escalada, barranquisme, espeleologia, alpinisme, etc -. L'experiència a la muntanya m'ha ensenyat a no tenir por al canvi ni a allò desconegut, i a buscar sempre solucions als problemes.",
+  contact_name: "nom",
+  contact_email: "correu de contacte",
+  contact_message: "assumpte del missatge",
+  contact_succes: "¡Missage enviat corretament!",
+  contact_error: "Error. Intenta de nou si us plau.",
+  contact_button: "Enviar",
+  contact_p: "Segueix-me a",
   footer: "Desenvolupador web&mòbil | Enginyer industrial",
 };
 

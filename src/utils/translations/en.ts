@@ -26,6 +26,13 @@ const en = {
   about_5: "The engineer 'Javi Cerezo' brings an optimized mathematical mindset, ideal for projects where every line of code matters.",
   about_6: "I'm a fan of sustainable code, clear documentation, and continuous learning (see credentials).",
   about_7: "Last but not least, I'm passionate about the mountains in all their forms - climbing, canyoning, caving, mountaineering, and more -. My experience in the mountains has taught me not to fear change or the unknown, always seeking solutions to challenges.",
+  contact_name: "name",
+  contact_email: "contact email",
+  contact_message: "message subject",
+  contact_succes: "Message send successfully!",
+  contact_error: "Error. Please try again.",
+  contact_button: "Send",
+  contact_p: "Follow me on",
   footer: "Developer web&mobile | Industrial engineer",
 };
 

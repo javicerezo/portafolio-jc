@@ -26,6 +26,13 @@ const es = {
   about_5: "El 'Javi Cerezo' ingeniero hace que tenga ese pensamiento matemático optimizado, ideal para aquellos proyectos en los que cada línea es importante.",
   about_6: "Soy fan del código sostenible, la buena documentación y la formación contínua (ver en credenciales).",
   about_7: "Por último y no menos importante, soy un apasionado de la montaña en todas sus formas - escalada, barranquismo, espeleología, alpinismo, etc -. La experiencia en la montaña hace que no le tenga miedo al cambio ni a lo desconocido, buscando siempre soluciones a los problemas.",
+  contact_name: "nombre ",
+  contact_email: "correo de contacto",
+  contact_message: "asunto del mensaje",
+  contact_button: "Enviar",
+  contact_succes: "¡Mensaje enviado correctamente!",
+  contact_error: "Error. Intenta de nuevo por favor.",
+  contact_p: "Sígueme en",
   footer: "Desarrollador web&móvil | Ingeniero industrial",
 };
 
