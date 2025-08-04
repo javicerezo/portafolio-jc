@@ -1,4 +1,5 @@
 import { useLanguage } from "../../utils/hooks/useLanguage";
+import { createPortal } from "react-dom";   // Para el modal se monte encima del body (no solo encima del componente Proyect)
 
 type ProyectModalProps = {
     proyect: {
@@ -22,7 +23,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
     
     if (!isOpen || !proyect) return null;
     
-    return (
+    return createPortal (
         <div className="Proyect-modal" onClick={onClose}>
             <div className="Proyect-modal-container" onClick={ (e) => e.stopPropagation() }>
                 <button className="Proyect-modal-buttonX" onClick={onClose}>✕</button>
@@ -37,6 +38,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                     <a className="Proyect-modal-button" href={proyect.homepage} target="_blank">{t.proyect_site}</a>
                 </div>
             </div>
-        </div>
+        </div>,
+        document.body    // Para el modal se monte encima del body (no solo encima del componente Proyect)
     );
 };

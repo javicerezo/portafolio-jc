@@ -137,14 +137,17 @@
         &-container {
             position: relative;
             @include m.flex(column, nowrap, center, center);
-            width: 90%;
+            height: 95%;
             max-width: 43.75rem;
             background-color: var(--color-negro);
             color: var(--color-blanco);
-            padding: 2rem;
+            padding: 1rem;
             border-radius: 1rem;
             font-family: map.get(v.$fuentes, textos);
             animation: fadeIn 0.8s ease;
+            @include m.tablet {
+                padding: 2rem;
+            }
         }
         &-buttonX {
             @include m.position(absolute, 1rem, 1rem, null, null);
@@ -155,21 +158,23 @@
                 filter: drop-shadow(0 0 3px var(--color-blanco));
             }
         }
+        &-h2 {
+            font-family: map.get(v.$fuentes, titulos);
+            font-size: 1.8rem;
+            margin: 2rem 0;
+        }
         &-img {
             display: block;
-            width: 90%;
+            width: 100%;
             max-height: 18rem;
             border-radius: 0.5rem;
             overflow: hidden;
         }
-        &-h2 {
-            font-family: map.get(v.$fuentes, titulos);
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-        }
         &-desc {
-            margin: 1rem 2rem;
-
+            margin: 1.5rem auto;
+            @include m.tablet {
+                margin: 2rem 0;
+            }
         }
         &-buttons {
             margin-top: 1.5rem;

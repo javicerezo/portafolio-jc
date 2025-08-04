@@ -3,7 +3,7 @@ import { useLanguage } from "../utils/hooks/useLanguage";
 
 import { RxHamburgerMenu } from "react-icons/rx";
 import { TbLetterX } from "react-icons/tb";
-import { FaGithub, FaLink  } from "react-icons/fa";
+import { FaGithub  } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
 
 export const Header = () => {
@@ -25,16 +25,13 @@ export const Header = () => {
                     <ul className="Header-socials">
                         <li className="Header-socialsIcon"><a href="https://github.com/javicerezo" target='_blank'><FaGithub color='#fff'/></a></li>
                         <li className="Header-socialsIcon"><a href="https://www.linkedin.com/in/javicerezo/" target='_blank'><RiLinkedinFill color='#fff'/></a></li>
-                        <li className="Header-socialsIcon"><a href="https://javicerezo.netlify.app/" target='_blank'><FaLink color='#fff'/></a></li>
                     </ul>
                 </ul>
             </div>
-            <div>
-                <button className="Header-navBurger" onClick={ onclick }>
-                    <RxHamburgerMenu className={`Header-icon ${menu ? "Header-icon--hidden" : "Header-icon--visible"}`}/>  
-                    <TbLetterX className={`Header-icon ${menu ? "Header-icon--visible" : "Header-icon--hidden"}`}/>  
-                </button>
-            </div>
+            <button className="Header-navBurger" onClick={ onclick }>
+                <RxHamburgerMenu className={`Header-icon ${menu ? "Header-icon--hidden" : "Header-icon--visible"}`}/>  
+                <TbLetterX className={`Header-icon ${menu ? "Header-icon--visible" : "Header-icon--hidden"}`}/>  
+            </button>
         </header>
     );
 }

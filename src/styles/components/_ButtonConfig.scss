@@ -10,13 +10,13 @@
         border-radius: 25%;
         margin: 1rem;
         padding: 0.5rem 0.75rem;
-        width: 3rem;
+        width: 3.5rem;
     }
     &-container {
         max-width: 112.5rem;
         z-index: 15;
         margin: 0 auto;
-        @include m.position(fixed, 4.75rem, 0, 0, 0);
+        @include m.position(fixed, 0, 0, 0, 0);
         background-color: transparent;
         backdrop-filter: blur(2px);
         pointer-events: none;
@@ -24,9 +24,6 @@
         opacity: 0;
         overflow: hidden;
         transition: all 1.5s ease;
-        @include m.tablet {
-            top: 2.6888rem;
-        }
         &--visible {
             visibility: visible;
             pointer-events: initial;

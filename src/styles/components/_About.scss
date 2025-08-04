@@ -25,6 +25,14 @@
         }
     }
     &-picture {
+        display: block;
+        margin: 0 auto;
+        width: 15.625rem;
+        height: 15.625rem;
+        @include m.tablet {
+            width: auto;
+            height: auto;
+        }
         @include m.desktop {
             width: 50%;
         }
@@ -37,9 +45,9 @@
     }
     &-credentialsList {
         display: none;
-        @include m.telefono-l {
-            margin: 1rem 2rem;
+        @include m.tablet {
             @include m.flex(row, wrap, space-between, center);
+            margin: 1rem 2rem;
         }
     }
     &-credentialCard{

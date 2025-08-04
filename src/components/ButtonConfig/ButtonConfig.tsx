@@ -47,7 +47,7 @@ export const ButtonConfig = () => {
     }, []);
     
     return (
-        <div>
+        <div className="Button-config">
             <button 
                 ref={ buttonRef }
                 className="ButtonConfig-button"
