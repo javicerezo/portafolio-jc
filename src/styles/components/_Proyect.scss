@@ -144,7 +144,7 @@
             padding: 2rem;
             border-radius: 1rem;
             font-family: map.get(v.$fuentes, textos);
-            animation: fadeIn 0.7s ease;
+            animation: fadeIn 0.8s ease;
         }
         &-buttonX {
             @include m.position(absolute, 1rem, 1rem, null, null);
@@ -189,7 +189,7 @@
     @keyframes fadeIn {
         from {
             opacity: 0;
-            transform: scale(0.95);
+            transform: scale(0.75);
         }
         to {
             opacity: 1;
