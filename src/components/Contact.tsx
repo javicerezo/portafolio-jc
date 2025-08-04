@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useLanguage } from "../utils/hooks/useLanguage";
 import { useScrollAnimation } from "../utils/hooks/useScrollAnimation";
 
@@ -11,6 +11,10 @@ export const Contact = () => {
 
     const [ status, setStatus ] = useState<"idle" | "sending" | "success" | "error">("idle");
 
+    const sleep = (delay: number) => {
+        return new Promise<void>((resolve) => setTimeout(resolve, delay));
+    };
+
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
@@ -20,9 +24,12 @@ export const Contact = () => {
 
         // validación honey
         if(formData.get("company")) {
-        setStatus("success") // No enviamos nada pero ponemos succes para que el bot no haga de nuevo el formulario
+        setStatus("success") // No enviamos nada, success para que el bot no haga de nuevo el formulario
         return;
         }
+        
+        // Delay para mostrar spinner
+        await sleep(3000);
 
         const response = await fetch("/.netlify/functions/sendMail", {
         method: "POST",
@@ -37,6 +44,16 @@ export const Contact = () => {
         }  
     };
 
+    useEffect( () => {
+        if(status === "success" || status === "error") {
+            const timer = setTimeout( () => {
+                setStatus("idle");
+            }, 5000);
+            return () => clearTimeout(timer);
+        }
+
+    }, [status]);
+
     return (
         <section 
             className={`Contact sectionEffect ${visible ? "sectionEffect--show" : ""}`} 
@@ -50,7 +67,7 @@ export const Contact = () => {
                     <input className="Contact-input" type="email" name="email" placeholder={t.contact_email} required />
                     <textarea className="Contact-textArea" name="message" id="message" placeholder={t.contact_message} required />
 
-                    {/* HONEYPOT: Campo oculto para evitar bots */}
+                    {/* Campo oculto para evitar bots */}
                     <input 
                         type="text"
                         name="company"
