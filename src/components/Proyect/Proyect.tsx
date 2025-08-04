@@ -8,11 +8,12 @@ import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 import type { Repo } from "../../types/github";
 
 export const Proyect = () => {
-    const { t } = useLanguage();
     const [ selectedProyect, setSelectedProyect ] = useState<Repo | null>(null);
+    const { t } = useLanguage();
+    const  { ref, visible } = useScrollAnimation(); 
+    
     const userName: string = "javicerezo";
     const { repos, loading } = useConnectGithub(userName);
-    const  { ref, visible } = useScrollAnimation(); 
 
     repos.forEach( repo => {
         // Primero agrego la ruta de la imagen con el nombre del repositorio original
