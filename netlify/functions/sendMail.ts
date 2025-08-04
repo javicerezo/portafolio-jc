@@ -33,9 +33,9 @@ export const handler: Handler = async (event) => {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS,
             },
-            tls: {
-                rejectUnauthorized: false, // IMPORTANTE, IGNORA CERTIFICADOS (SSL, TSL...), ¡¡¡¡SOLO PARA PRUEBAS EN LOCAL!!!!
-            },
+            // tls: {
+            //     rejectUnauthorized: false, // IMPORTANTE, IGNORA CERTIFICADOS (SSL, TSL...), ¡¡¡¡SOLO PARA PRUEBAS EN LOCAL!!!!
+            // },
         } as SMTPTransport.Options);
 
         // Contenido del correo
