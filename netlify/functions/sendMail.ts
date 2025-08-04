@@ -10,7 +10,7 @@ interface ContactFormData {
     company?: string, 
 }
 
-export const handlerSendMail: Handler = async (event) => {
+export const handler: Handler = async (event) => {
     if(event.httpMethod !== "POST") {
         return { statusCode: 405, body: "Method Not Allowed" }
     }
@@ -31,17 +31,20 @@ export const handlerSendMail: Handler = async (event) => {
             service: "gmail",
             auth: {
                 user: process.env.EMAIL_USER,
-                password: process.env.EMAIL_PASS,
+                pass: process.env.EMAIL_PASS,
+            },
+            tls: {
+                rejectUnauthorized: false, // IMPORTANTE, IGNORA CERTIFICADOS (SSL, TSL...), ¡¡¡¡SOLO PARA PRUEBAS EN LOCAL!!!!
             },
         } as SMTPTransport.Options);
 
         // Contenido del correo
-        const mailOption = {
+        const mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
-            replayTo: data.email,
-            subject: `Correo desde tu Portafolio de ${data.name} || Correo desde tu Portafolio`,
-            text: `data.message || Sin mensaje`,
+            replyTo: data.email,
+            subject: `Correo desde tu Portafolio de ${data.name}`,
+            text: data.message || "Sin mensaje",
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 8px;">
                     <h2 style="color: #333; text-align: center;"> Nuevo mensaje de tu portafolio</h2>
@@ -58,7 +61,7 @@ export const handlerSendMail: Handler = async (event) => {
             `,
         };
 
-        await transporter.sendMail(mailOption);
+        await transporter.sendMail(mailOptions);
 
         return {
             statusCode: 200,
