@@ -17,6 +17,7 @@ export const Contact = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const form = e.currentTarget;
 
         setStatus("sending");
 
@@ -38,7 +39,7 @@ export const Contact = () => {
 
         if(response.ok) {
             setStatus("success");
-            e.currentTarget.reset();
+            form.reset();
         } else {
             setStatus("error");
         }  
