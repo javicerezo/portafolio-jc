@@ -9,6 +9,7 @@ type Repo = {
     language: string; // lenguaje principal
     fork: boolean;  // si es fork o no
     languagesList: string[];    // lista de todos los lenguajes del repo
+    pushed_at: string;  // última actualización del proyecto (push)
     image: string;  // url de la imagen a mostrar
     nameUI: string; // nombre a mostrar en la interfaz
 };
@@ -17,10 +18,18 @@ const TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 const USER = import.meta.env.VITE_USER;
 const GITHUB_API = import.meta.env.VITE_GITHUB_API;
 
+const featuredRepos = [
+        "App-escalada",
+        "blog-montana",
+        "tienda-online"
+    ];
+
 export const useConnectGithub = (userName: string) => {
     // repos es un array de objetos del tipo Repo que comienza como array vacío
     const [ repos, setRepos ] = useState<Repo[]>([]);
     const [ loading, setLoading ] = useState(true);
+
+    
     
     useEffect( () => {
         const fetchRepos = async () => {
@@ -41,11 +50,26 @@ export const useConnectGithub = (userName: string) => {
             const result = data.filter((repo: Repo) => 
                 !repo.fork && 
                 repo.name.toLowerCase() != userName.toLowerCase() &&
-                repo.name.toLowerCase() != 'portafolio-jc');
+                repo.name.toLowerCase() != 'portafolio-jc'
+            );
 
-            // Hacemos peticiones paralelas para obtener lenguajes
+            // Ordeno los proyectos
+            const sortedResult = result.sort( (a: Repo, b: Repo) => {
+                const indexA = featuredRepos.indexOf(a.name);
+                const indexB = featuredRepos.indexOf(b.name);
+
+                if(indexA !== -1 && indexB !== -1) return indexA - indexB;
+
+                if(indexA !== -1) return -1;
+
+                if(indexB !== -1) return 1;
+
+                return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
+            }) 
+
+            // Hacemos peticiones paralelas para obtener todos lenguajes empleados en esos proyectos
             const enrichedResult = await Promise.all(
-                result.map(async (repo: Repo) => {
+                sortedResult.map(async (repo: Repo) => {
                     const langRes = await fetch(`https://api.github.com/repos/${userName}/${repo.name}/languages`, {
                         headers: { Authorization: `token ${TOKEN}` },
                     });
