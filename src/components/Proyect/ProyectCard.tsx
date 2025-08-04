@@ -1,15 +1,8 @@
 import { useLanguage } from "../../utils/hooks/useLanguage";
 
-type ProyectCardProps = {
-    nameUI: string;
-    html_url: string;
-    homepage: string;
-    language: string;
-    image: string;
-    onClick: () => void;
-}
+import type { ProyectCardProps } from "../../types/github";
 
-export const ProyectCard = ({ onClick, nameUI, html_url, homepage, language, image}: ProyectCardProps) => {
+export const ProyectCard = ({ nameUI, html_url, homepage, language, image, onClick }: ProyectCardProps) => {
     const { t } = useLanguage();
 
     return (

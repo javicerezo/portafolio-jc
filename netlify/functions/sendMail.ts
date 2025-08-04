@@ -2,13 +2,15 @@ import nodemailer from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
 
 import type { Handler } from '@netlify/functions';
+// import type { ContactFormData } from '@types/form';
+import type { ContactFormData } from '../../src/types/form';
 
-interface ContactFormData {
-    name: string,
-    email: string,
-    message: string,
-    company?: string, 
-}
+// interface ContactFormData {
+//     name: string,
+//     email: string,
+//     message: string,
+//     company?: string, 
+// }
 
 export const handler: Handler = async (event) => {
     if(event.httpMethod !== "POST") {

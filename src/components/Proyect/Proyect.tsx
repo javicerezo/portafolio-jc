@@ -5,18 +5,7 @@ import { ProyectModal } from "./ProyectModal";
 import { useConnectGithub } from "../../utils/hooks/useConnectGithub";
 import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
-type Repo = {
-    id: number;
-    name: string;
-    description: string;
-    html_url: string;
-    homepage: string;
-    language: string;
-    fork: boolean;
-    languagesList: string[];
-    image: string;
-    nameUI: string;
-}
+import type { Repo } from "../../types/github";
 
 export const Proyect = () => {
     const { t } = useLanguage();
@@ -32,6 +21,7 @@ export const Proyect = () => {
             : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/preview.png`;     
         repo.image = image;
 
+        // Arreglo el nombre del repositorio para mostrarlo
         let nameUI =  repo.name.substring(0, 1).toUpperCase() + repo.name.substring(1);
         nameUI = nameUI.includes("-") ? nameUI.replace("-", " ") : nameUI;
 

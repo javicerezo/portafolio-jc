@@ -1,28 +1,16 @@
 import { useState, useEffect } from "react";
 
-type Repo = {
-    id: number;
-    name: string;   // nombre del repo
-    description: string;    // descrición del repo
-    html_url: string; // url del repo
-    homepage: string; // url del sitio web
-    language: string; // lenguaje principal
-    fork: boolean;  // si es fork o no
-    languagesList: string[];    // lista de todos los lenguajes del repo
-    pushed_at: string;  // última actualización del proyecto (push)
-    image: string;  // url de la imagen a mostrar
-    nameUI: string; // nombre a mostrar en la interfaz
-};
+import type { Repo } from "../../types/github";
 
 const TOKEN = import.meta.env.VITE_GITHUB_TOKEN; 
 const USER = import.meta.env.VITE_USER;
 const GITHUB_API = import.meta.env.VITE_GITHUB_API;
 
 const featuredRepos = [
-        "App-escalada",
-        "blog-montana",
-        "tienda-online"
-    ];
+    "App-escalada",
+    "blog-montana",
+    "tienda-online"
+];
 
 export const useConnectGithub = (userName: string) => {
     // repos es un array de objetos del tipo Repo que comienza como array vacío
