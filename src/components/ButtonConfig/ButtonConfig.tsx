@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "../../utils/hooks/useLanguage";
 import type { Lang } from "../../utils/context/LanguageContext";
 
-import { useDarkMode } from "./useDarkMode";
-import { useContrastMode } from "./useContrastMode";
+import { useDarkMode } from "../../utils/hooks/useDarkMode";
+import { useContrastMode } from "../../utils/hooks/useContrastMode";
 
 import { IoMdSettings } from "react-icons/io";
 import { TbLetterX } from "react-icons/tb";
