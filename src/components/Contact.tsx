@@ -102,6 +102,7 @@ export const Contact = () => {
                         <a className="Contact-iconSocial"  target="_blank"><FaGithub color='#181717'/></a>
                         <a className="Contact-iconSocial" href="https://www.linkedin.com/in/javicerezo/" target="_blank"><RiLinkedinFill color='#0973a8'/></a>
                     </div>
+                    <a className="Contact-descargarCV" href="/assets/cv_JC.pdf" download>📄 Descargar CV</a>
                 </div>
             </div>
         </section>
