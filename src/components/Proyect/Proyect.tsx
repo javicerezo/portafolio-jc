@@ -5,11 +5,11 @@ import { ProyectModal } from "./ProyectModal";
 import { useConnectGithub } from "../../utils/hooks/useConnectGithub";
 import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
-import type { Repo, ProyectRepo } from "../../types/github";
+import type { ProyectRepo } from "../../types/github";
 
 export const Proyect = () => {
-    const [ selectedProyect, setSelectedProyect ] = useState<Repo | null>(null);
     const { t } = useLanguage();
+    const [ selectedProyect, setSelectedProyect ] = useState<ProyectRepo | null>(null);
     const  { ref, visible } = useScrollAnimation(); 
     
     const userName: string = "javicerezo";
@@ -28,12 +28,10 @@ export const Proyect = () => {
         return { ...repo, image, nameUI};
     })
 
-    const porfolioRepo = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc' || null);
-
     const otherRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.name.toLowerCase() !== 'portafolio-jc');
+    
+    const porfolioRepo = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc') || null;
 
-
-    console.log(porfolioRepo?.image)
     return (
         <section 
             className={`Proyect sectionEffect ${visible ? "sectionEffect--show" : ""}`}

@@ -25,7 +25,7 @@ export interface ProyectRepo extends Repo {
  * Usado en componente proyectModal.tsx
  */
 export interface ProyectModalProps  {
-    proyect: Repo | null;
+    proyect: ProyectRepo | null;
     isOpen: boolean;
     onClose: () => void;
 }
