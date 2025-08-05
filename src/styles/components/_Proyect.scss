@@ -21,6 +21,7 @@
     }
     &-p {
         font-family: map.get(v.$fuentes, textos);
+        margin-top: 3rem;
     }
     &-ul {
         @include m.flex(row, nowrap, flex-start, center);
@@ -36,9 +37,6 @@
         @include m.desktop {
             @include m.grid-auto-fill(23rem, 2rem);
         }
-    }
-    &-div {
-        margin-top: 2rem;
     }
     &-proyectCard {
         max-width: 23rem;

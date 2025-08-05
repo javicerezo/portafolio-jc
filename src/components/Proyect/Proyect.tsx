@@ -63,9 +63,9 @@ export const Proyect = () => {
                     onClose={ ()=> setSelectedProyect(null)}
                 />
             </ul>
-            <div className="Proyect-div">
-                <p className="Proyect-p">{`- ${t.proyect_paragraph_2}`}</p>
-                {porfolioRepo && (<ProyectCard
+            <p className="Proyect-p">{`- ${t.proyect_paragraph_2}`}</p>
+            <div className="Proyect-ul">
+                {porfolioRepo && (<ProyectCard 
                     key={porfolioRepo.id}
                     nameUI={porfolioRepo.nameUI}
                     html_url={porfolioRepo.html_url}
