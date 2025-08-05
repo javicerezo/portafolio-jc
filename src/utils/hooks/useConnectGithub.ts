@@ -34,11 +34,10 @@ export const useConnectGithub = (userName: string) => {
 
             const data = await res.json();
 
-            // Solo proyectos propios (no forks)
+            // Filtro los datos
             const result = data.filter((repo: Repo) => 
-                !repo.fork && 
-                repo.name.toLowerCase() != userName.toLowerCase() &&
-                repo.name.toLowerCase() != 'portafolio-jc'
+                !repo.fork                                              // NO FORKS
+                && repo.name.toLowerCase() != userName.toLowerCase()    // NO README.md DE PRESENTACIÓN DE GITHUB
             );
 
             // Ordeno los proyectos

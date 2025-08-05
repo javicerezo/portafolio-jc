@@ -14,9 +14,12 @@ export interface Repo  {
     fork: boolean;  // si es fork o no
     languagesList: string[];    // lista de todos los lenguajes del repo
     pushed_at: string;  // última actualización del proyecto (push)
+};
+
+export interface ProyectRepo extends Repo {
     image: string;  // url de la imagen a mostrar
     nameUI: string; // nombre a mostrar en la interfaz
-};
+}
 
 /**
  * Usado en componente proyectModal.tsx

@@ -1,69 +1,34 @@
-# React + TypeScript + Vite
+# Portafolio desarrollador web
+![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/portafolio-jc/master/public/assets/imgs/preview.png)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Ejemplo en vivo
+- [Haz clic para ver el proyeto](https://javicerezo.netlify.app/) 🚀
 
-Currently, two official plugins are available:
+## Descripción 📑
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Tecnologías 🛠
+<!-- Iconos sacados de y https://github.com/alexandresanlim/Badges4-README.md-Profile -->
+[![HTML](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://es.wikipedia.org/wiki/HTML5)
+[![CSS](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://es.wikipedia.org/wiki/CSS)
+[![SASS](https://img.shields.io/badge/Sass-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://es.wikipedia.org/wiki/Sass)
+[![JS](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://es.wikipedia.org/wiki/JavaScript)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Vista previa del proyecto
+Si quieres hechar un vistazo al proyecto, te recomiendo:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/ejemplo-portafolio/master/public/assets/imgs/preview-2.png)
+![Captura del proyecto](https://raw.githubusercontent.com/javicerezo/ejemplo-portafolio/master/public/assets/imgs/preview-3.png)
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## Autor ✒️
+**JAVI CEREZO** 
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/javicerezo/)
+[![Correo](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](<mailto:jc.webmob@gmail.com>)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## Instalación 
+Este proyecto no necesita de instalación. Simplemente, haz doble click en el enlace del ejemplo en vivo o descargalo, y ejecuta el .html.
+  
+## Licencia 📄
+MIT Public License v3.0
+No puede usarse comencialmente.

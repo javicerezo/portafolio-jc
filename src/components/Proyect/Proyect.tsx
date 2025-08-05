@@ -5,7 +5,7 @@ import { ProyectModal } from "./ProyectModal";
 import { useConnectGithub } from "../../utils/hooks/useConnectGithub";
 import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
-import type { Repo } from "../../types/github";
+import type { Repo, ProyectRepo } from "../../types/github";
 
 export const Proyect = () => {
     const [ selectedProyect, setSelectedProyect ] = useState<Repo | null>(null);
@@ -15,20 +15,25 @@ export const Proyect = () => {
     const userName: string = "javicerezo";
     const { repos, loading } = useConnectGithub(userName);
 
-    repos.forEach( repo => {
-        // Primero agrego la ruta de la imagen con el nombre del repositorio original
+    const formatedRepos: ProyectRepo[] = repos.map( (repo) => {
+        // Agrego la ruta correcta de la imagen a mostrar
         const image = repo.name.toLowerCase().includes("app")  
             ? `https://raw.githubusercontent.com/${userName}/${repo.name}/refs/heads/master/app/src/main/res/drawable/preview.PNG` 
             : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/preview.png`;     
-        repo.image = image;
 
-        // Arreglo el nombre del repositorio para mostrarlo
+        // Agrego el nombre el a mostrar
         let nameUI =  repo.name.substring(0, 1).toUpperCase() + repo.name.substring(1);
         nameUI = nameUI.includes("-") ? nameUI.replace("-", " ") : nameUI;
 
-        repo.nameUI = nameUI;
+        return { ...repo, image, nameUI};
     })
 
+    const porfolioRepo = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc' || null);
+
+    const otherRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.name.toLowerCase() !== 'portafolio-jc');
+
+
+    console.log(porfolioRepo?.image)
     return (
         <section 
             className={`Proyect sectionEffect ${visible ? "sectionEffect--show" : ""}`}
@@ -36,20 +41,20 @@ export const Proyect = () => {
             ref={ref}
             >
             <h2 className="Proyect-title">{`${t.title_proyect}:`}</h2>
-            <p className="Proyect-p">{`- ${t.proyect_paragraph}`}</p>
+            <p className="Proyect-p">{`- ${t.proyect_paragraph_1}`}</p>
             <ul className="Proyect-ul">
 
                 {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
 
-                {repos.map( (repo) => (
+                {otherRepos.map( (repo) => (
                     <ProyectCard
-                    key={repo.id}
-                    nameUI={repo.nameUI}
-                    html_url={repo.html_url}
-                    homepage={repo.homepage}
-                    language={repo.languagesList?.join(', ') || repo.language}
-                    image={repo.image}
-                    onClick={ () => setSelectedProyect(repo) }
+                        key={repo.id}
+                        nameUI={repo.nameUI}
+                        html_url={repo.html_url}
+                        homepage={repo.homepage}
+                        language={repo.languagesList?.join(', ') || repo.language}
+                        image={repo.image}
+                        onClick={ () => setSelectedProyect(repo) }
                     />
                 ))}
                 <ProyectModal 
@@ -58,6 +63,19 @@ export const Proyect = () => {
                     onClose={ ()=> setSelectedProyect(null)}
                 />
             </ul>
+            <div className="Proyect-div">
+                <p className="Proyect-p">{`- ${t.proyect_paragraph_2}`}</p>
+                {porfolioRepo && (<ProyectCard
+                    key={porfolioRepo.id}
+                    nameUI={porfolioRepo.nameUI}
+                    html_url={porfolioRepo.html_url}
+                    homepage={porfolioRepo.homepage}
+                    language={porfolioRepo.languagesList?.join(', ') || porfolioRepo.language}
+                    image={porfolioRepo.image}
+                    onClick={ () => setSelectedProyect(porfolioRepo) }
+                />)}
+            </div>
+
         </section>
     );
 };
