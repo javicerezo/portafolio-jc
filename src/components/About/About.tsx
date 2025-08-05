@@ -1,5 +1,5 @@
 import { useLanguage } from "../../utils/hooks/useLanguage";
-import { CredentialCard } from "./CredentialCard";
+import { CredentialCard } from "./AboutCredentialCard";
 import { credentialsList } from "./credentialsList";
 import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
