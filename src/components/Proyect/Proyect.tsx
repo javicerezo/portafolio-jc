@@ -5,7 +5,7 @@ import { ProyectModal } from "./ProyectModal";
 import { useConnectGithub } from "../../utils/hooks/useConnectGithub";
 import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
-import type { ProyectRepo } from "../../types/github";
+import type { ProyectRepo } from "../../../shared/types/github";
 
 export const Proyect = () => {
     const { t } = useLanguage();

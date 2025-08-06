@@ -1,7 +1,7 @@
 import { useLanguage } from "../../utils/hooks/useLanguage";
 import { createPortal } from "react-dom";   // Para el modal se monte encima del body (no solo encima del componente Proyect)
 
-import type { ProyectModalProps } from "../../types/github";
+import type { ProyectModalProps } from "../../../shared/types/github";
 
 export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) => {
     const { t } = useLanguage();

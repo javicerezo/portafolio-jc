@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import type { Repo } from "../../types/github";
+import type { Repo } from "../../../shared/types/github";
 
 const TOKEN = import.meta.env.VITE_GITHUB_TOKEN; 
 const USER = import.meta.env.VITE_USER;
