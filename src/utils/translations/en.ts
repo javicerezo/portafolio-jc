@@ -32,12 +32,16 @@ const en = {
   contact_message: "message subject",
   contact_success: "Email sent successfully!",
   contact_invalidMethod: "Method Not Allowed.",
-  contact_tooMuchRequests: "Too many request, try again in 1 minute.",
+  contact_tooManyRequests: "Too many request, try again in 1 minute.",
   contact_noData: "No data received.",
+  contact_invalidName: "Name is required and must be at least 3 characters long.",
+  contact_invalidEmail: "Email is required and must have a valid format.",
+  contact_invalidMessage: "Message is required and must be at least 5 characters long.",
   contact_botDetected: "Bot detected.",
   contact_errorSending: "Error sending message. Please try again.",
   contact_button: "Send",
   contact_p: "Follow me on",
+  contact_download: "Download CV",
   footer: "Developer web&mobile | Industrial engineer",
 };
 

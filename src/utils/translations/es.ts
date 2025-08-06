@@ -33,11 +33,15 @@ const es = {
   contact_button: "Enviar",
   contact_success: "Correo enviado correctamente!",
   contact_invalidMethod: "Método no permitido.",
-  contact_tooMuchRequests: "Demasiadas peticiones, inténtalo en 1 minuto por favor.",
+  contact_tooManyRequests: "Demasiadas peticiones, inténtalo en 1 minuto por favor.",
   contact_noData: "No se han recibido datos.",
+  contact_invalidName: "El nombre es obligatorio y debe tener al menos 3 caracteres.",
+  contact_invalidEmail: "El email es obligatorio y debe tener un formato válido.",
+  contact_invalidMessage: "El mensaje es obligatorio y debe tener al menos 5 caracteres.",
   contact_botDetected: "Bot detectado.",
   contact_errorSending: "Error al enviar el mensaje. Por favor inténtalo de nuevo.",
   contact_p: "Sígueme en",
+  contact_download: "Descargar CV",
   footer: "Desarrollador web&móvil | Ingeniero industrial",
 };
 
