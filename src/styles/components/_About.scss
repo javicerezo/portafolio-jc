@@ -5,19 +5,16 @@
 .About {
     max-width: 112.5rem;
     margin: 1rem;
-    padding-top: 5rem;
+    padding-top: 2rem;
     @include m.tablet {
         margin: 5rem 2rem 1rem;
     }
     &-title {
         @include m.flex(row, nowrap, flex-start, center);
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         font-family: map.get(v.$fuentes, titulos);
         font-weight: bold;
         margin-bottom: 2rem;
-        @include m.telefono-l {
-            font-size: 1.7rem;
-        }
     }
     &-container {
         @include m.desktop {

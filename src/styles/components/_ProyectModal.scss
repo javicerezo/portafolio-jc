@@ -12,7 +12,8 @@
         &-container {
             position: relative;
             @include m.flex(column, nowrap, center, center);
-            height: 95%;
+            // height: 75%;
+            width: 95%;
             max-width: 43.75rem;
             background-color: var(--color-negro);
             color: var(--color-blanco);
@@ -20,6 +21,10 @@
             border-radius: 1rem;
             font-family: map.get(v.$fuentes, textos);
             animation: fadeIn 0.8s ease;
+            @include m.telefono-l {
+                height: auto;
+                width: auto;
+            }
             @include m.tablet {
                 padding: 2rem;
             }

@@ -9,7 +9,7 @@
         scroll-snap-align: start;
         margin-right: 1rem;
         
-        @include m.tablet {
+        @include m.desktop {
             @include m.flex(column, nowrap, space-between, center);
             max-width: 50rem;
             margin-right: 0;

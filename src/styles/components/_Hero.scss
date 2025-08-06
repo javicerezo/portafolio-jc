@@ -7,10 +7,26 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
+    // &-container {
+    //     margin-top: 3.5975rem;
+    //     @include m.flex(column, nowrap, center, center);
+    //     @include m.desktop {
+    //         height: 100vh;
+    //         @include m.flex(row, nowrap, space-evenly, center);
+    //     }
+    // }
     &-container {
         margin-top: 3.5975rem;
         @include m.flex(column, nowrap, center, center);
+        @include m.telefono-l {
+            margin-top: 5rem;
+            
+        }
+        @include m.tablet {
+            margin-top: 8rem;
+        }
         @include m.desktop {
+            margin-top: 3rem;
             height: 100vh;
             @include m.flex(row, nowrap, space-evenly, center);
         }
