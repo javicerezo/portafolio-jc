@@ -16,9 +16,10 @@ export const Proyect = () => {
     const { repos, loading } = useConnectGithub(userName);
 
     const formatedRepos: ProyectRepo[] = repos.map( (repo) => {
-        // Agrego la ruta correcta de la imagen a mostrar
+        // Agrego la ruta correcta de la imagen a mostrar en portada
+        // Para que funcione correcto, el nombre de los repositorios de aplicaciones deberán empezar por app, los demás no importan
         const image = repo.name.toLowerCase().includes("app")  
-            ? `https://raw.githubusercontent.com/${userName}/${repo.name}/refs/heads/master/app/src/main/res/drawable/preview.PNG` 
+            ? `https://raw.githubusercontent.com/${userName}/${repo.name}/master/app/src/main/res/drawable/preview.png` 
             : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/preview.png`;     
 
         // Agrego el nombre el a mostrar
