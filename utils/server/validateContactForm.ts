@@ -10,22 +10,22 @@ export const validateContactForm = (data: Partial<ContactFormData>) => {
 
     // Validar nombre
     if(!data.name || data.name.trim().length <= 3) {
-        errors.push("El nombre es obligatorio y debe tener al menos 3 caracteres.");
+        errors.push("INVALID_NAME");
     };
 
     // Validar email
     if(!data.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
-        errors.push("El email es obligatorio y debe tener un formato válido.");
+        errors.push("INVALID_EMAIL");
     };
 
     // Validar mensaje
     if(!data.message || data.message.trim().length < 5) {
-        errors.push("El mensaje es obligatorio y debe tener al menos 5 caracteres.");
+        errors.push("INVALID_MESSAGE");
     };
 
     // Validar campo para bots
     if(data.company || data.company?.trim() !== "") {
-        errors.push("bot detectado");
+        errors.push("BOT DETECTED");
     }
 
     // Sanear datos del formulario

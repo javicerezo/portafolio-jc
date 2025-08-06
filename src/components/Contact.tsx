@@ -10,9 +10,19 @@ export const Contact = () => {
     const { ref, visible } = useScrollAnimation();
 
     const [ status, setStatus ] = useState<"idle" | "sending" | "success" | "error">("idle");
-    const [ feedback, setFeedback ] = useState<string[]>([]);
     const messageRefs = useRef<(HTMLParagraphElement | null)[]>([]);
-
+    const [ feedback, setFeedback ] = useState<string[]>([]);
+    const feedbackMap: Record<string, string> = {
+        INVALID_METHOD: t.contact_invalidMethod,
+        TOO_MANY_REQUESTS: t.contact_tooManyRequests,
+        NO_DATA: t.contact_noData,
+        INVALID_NAME: t.contact_invalidName,
+        INVALID_EMAIL: t.contact_invalidEmail,
+        INVALID_MESSAGE: t.contact_invalidMessage,
+        BOT_DETECTED: t.contact_botDetected,
+        ERROR_SENDING: t.contact_errorSending,
+        SUCCESS: t.contact_success,
+    }
 
     const sleep = (delay: number) => {
         return new Promise<void>((resolve) => setTimeout(resolve, delay));
@@ -44,13 +54,16 @@ export const Contact = () => {
 
         if(result.status === "success") {
             setStatus("success");
-            setFeedback(result.message);
+            // setFeedback(result.message);
+            setFeedback([feedbackMap.SUCCESS]);
             form.reset();
         } else if ( result.status === "ignored") {  // Bot detectado
             setStatus("success");
         } else {
             setStatus("error");
-            setFeedback(result.message);
+            // setFeedback(result.message);
+            const errors: string[] = result.message;
+            setFeedback(errors.map( err => feedbackMap[err]))
         }
     };
 
@@ -65,7 +78,7 @@ export const Contact = () => {
                 setStatus("idle");
                 setFeedback([]);
                 messageRefs.current = [];
-            }, 8000);
+            }, 6800);
 
             return () => { 
                 clearTimeout(timer1); 
@@ -133,7 +146,7 @@ export const Contact = () => {
                         <a className="Contact-iconSocial"  target="_blank"><FaGithub color='#181717'/></a>
                         <a className="Contact-iconSocial" href="https://www.linkedin.com/in/javicerezo/" target="_blank"><RiLinkedinFill color='#0973a8'/></a>
                     </div>
-                    <a className="Contact-descargarCV" href="/assets/cv_JC.pdf" download>📄 Descargar CV</a>
+                    <a className="Contact-descargarCV" href="/assets/cv_JC.pdf" download>📄 {t.contact_download}</a>
                 </div>
             </div>
         </section>

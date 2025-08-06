@@ -14,7 +14,7 @@ export const handler: Handler = async (event) => {// Evitar petición diferente 
     if(event.httpMethod !== "POST") {
         return { 
             statusCode: 405, 
-            body: JSON.stringify({ status: "error", message: "Method Not Allowed" }), 
+            body: JSON.stringify({ status: "error", message: ["INVALID_METHOD"] }), 
         }
     }
 
@@ -24,7 +24,7 @@ export const handler: Handler = async (event) => {// Evitar petición diferente 
     if(!allowed) {
         return {
             statusCode: 429,
-            body: JSON.stringify({ status: "error", message: "Too many request, try again later" }),
+            body: JSON.stringify({ status: "error", message: ["TOO_MANY_REQUESTS"] }),
         };
     }
 
@@ -32,7 +32,7 @@ export const handler: Handler = async (event) => {// Evitar petición diferente 
     if(!event.body) {
         return { 
             statusCode: 400, 
-            body: JSON.stringify({ status: "error", message: "No data received"}),
+            body: JSON.stringify({ status: "error", message: ["NO_DATA"] }),
         };
     }
 
@@ -50,7 +50,7 @@ export const handler: Handler = async (event) => {// Evitar petición diferente 
     if(cleanData.company) {
         return { 
             statusCode: 400, 
-            body: JSON.stringify({ status: "ignored", message: "Bot detected"}), 
+            body: JSON.stringify({ status: "ignored", message: ["BOT_DETECTED"] }), 
         }
     }
     
@@ -62,9 +62,9 @@ export const handler: Handler = async (event) => {// Evitar petición diferente 
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS,
             },
-            // tls: {
-            //     rejectUnauthorized: false, // IMPORTANTE, IGNORA CERTIFICADOS (SSL, TSL...), ¡¡¡¡SOLO PARA PRUEBAS EN LOCAL!!!!
-            // },
+            tls: {
+                rejectUnauthorized: false, // IMPORTANTE, IGNORA CERTIFICADOS (SSL, TSL...), ¡¡¡¡SOLO PARA PRUEBAS EN LOCAL!!!!
+            },
         } as SMTPTransport.Options);
 
         // Contenido del correo
@@ -94,13 +94,13 @@ export const handler: Handler = async (event) => {// Evitar petición diferente 
 
         return {
             statusCode: 200,
-            body: JSON.stringify({  status: "success", message: "Email sent successfully" }),
+            body: JSON.stringify({  status: "success", message: ["SUCCESS"] }),
         };
     } catch (e) {
         console.error(e)
         return {
             statusCode: 500,
-            body: JSON.stringify({  status: "error", message: "Error sending message" }),
+            body: JSON.stringify({  status: "error", message: ["ERROR_SENDING"] }),
         };
     }
 }
