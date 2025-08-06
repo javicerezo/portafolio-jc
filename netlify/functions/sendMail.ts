@@ -1,33 +1,60 @@
 import nodemailer from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
+import { checkRateLimit } from "../../utils/server/rateLimit";
+
 
 import type { Handler } from '@netlify/functions';
-// import type { ContactFormData } from '@types/form';
 import type { ContactFormData } from '../../src/types/form';
+import { validateContactForm } from "../../utils/server/validateContactForm";
 
-// interface ContactFormData {
-//     name: string,
-//     email: string,
-//     message: string,
-//     company?: string, 
-// }
+const RATE_LIMIT_WINDOW = 60*1000; // 1 minuto
+const MAX_REQUEST = 3; // 1 envío
 
-export const handler: Handler = async (event) => {
+export const handler: Handler = async (event) => {// Evitar petición diferente a metodo POST
     if(event.httpMethod !== "POST") {
-        return { statusCode: 405, body: "Method Not Allowed" }
+        return { 
+            statusCode: 405, 
+            body: JSON.stringify({ status: "error", message: "Method Not Allowed" }), 
+        }
     }
 
+    // Evitar peticiones masivas de bots
+    const ip = event.headers["x-forwarded-for"] || "unknown"; //identificamos ip (headers es de netlify) || "unknown" por si trabajamos en local
+    const allowed = checkRateLimit(ip, {rateLimitWindows: RATE_LIMIT_WINDOW, maxRequest: MAX_REQUEST});
+    if(!allowed) {
+        return {
+            statusCode: 429,
+            body: JSON.stringify({ status: "error", message: "Too many request, try again later" }),
+        };
+    }
+
+    // Evitar datos vacíos
+    if(!event.body) {
+        return { 
+            statusCode: 400, 
+            body: JSON.stringify({ status: "error", message: "No data received"}),
+        };
+    }
+
+    const data: ContactFormData = JSON.parse(event.body);
+    
+    // Validar datos del formulario
+    const { valid, errors, cleanData } = validateContactForm(data);
+    if(!valid) {
+        return { 
+            statusCode: 400, 
+            body: JSON.stringify({ status: "error", message: errors })
+        };
+    }
+    
+    if(cleanData.company) {
+        return { 
+            statusCode: 400, 
+            body: JSON.stringify({ status: "ignored", message: "Bot detected"}), 
+        }
+    }
+    
     try {
-        if(!event.body) {
-            return { statusCode: 400, body: "No data received" };
-        }
-
-        const data: ContactFormData = JSON.parse(event.body);
-
-        if(data.company) {
-            return { statusCode: 200, body: "Bot detected" }
-        }
-
         // Creo el transporte con el correo gmail
         const transporter = nodemailer.createTransport({
             service: "gmail",
@@ -44,17 +71,17 @@ export const handler: Handler = async (event) => {
         const mailOptions = {
             from: process.env.EMAIL_USER,
             to: process.env.EMAIL_USER,
-            replyTo: data.email,
-            subject: `Correo desde tu Portafolio de ${data.name}`,
-            text: data.message || "Sin mensaje",
+            replyTo: cleanData.email,
+            subject: `Correo desde tu Portafolio de ${cleanData.name}`,
+            text: cleanData.message || "Sin mensaje",
             html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; border: 1px solid #eee; padding: 20px; border-radius: 8px;">
                     <h2 style="color: #333; text-align: center;"> Nuevo mensaje de tu portafolio</h2>
-                    <p><strong>Nombre:</strong> ${data.name || "(No proporcionado)"}</p>
-                    <p><strong>Email:</strong> ${data.email || "(No proporcionado)"}</p>
+                    <p><strong>Nombre:</strong> ${cleanData.name || "(No proporcionado)"}</p>
+                    <p><strong>Email:</strong> ${cleanData.email || "(No proporcionado)"}</p>
                     <p><strong>Mensaje:</strong></p>
                     <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; white-space: pre-line;">
-                        ${data.message || "(Sin mensaje)"}
+                        ${cleanData.message || "(Sin mensaje)"}
                     </div>
                     <p style="margin-top: 20px; font-size: 12px; color: #666; text-align: center;">
                         Este correo fue enviado desde el formulario de contacto de tu portafolio.
@@ -67,13 +94,13 @@ export const handler: Handler = async (event) => {
 
         return {
             statusCode: 200,
-            body: JSON.stringify({ message: "Email sent successfully" }),
+            body: JSON.stringify({  status: "success", message: "Email sent successfully" }),
         };
     } catch (e) {
         console.error(e)
         return {
             statusCode: 500,
-            body: JSON.stringify({ message: "Error sending message" }),
+            body: JSON.stringify({  status: "error", message: "Error sending message" }),
         };
     }
 }
