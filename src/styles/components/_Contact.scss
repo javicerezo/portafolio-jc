@@ -105,6 +105,9 @@
     &-spinner, &-success, &-error {
         margin-top: 2rem;
         animation: fadeIN 0.8s ease forwards;
+        &--outAnimation {
+            animation: fadeOUT 0.8s ease forwards;
+        }
     }
     &-success, &-error {
         font-size: 1.1em;
@@ -118,15 +121,6 @@
     }
     &-error {
         color: red;
-    }
-
-    @keyframes fadeIN {
-        from { opacity: 0; transform: translateY(15px); }
-        to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeOUT {
-        from { opacity: 1; transform: translateY(0); }
-        to { opacity: 0; transform: translateY(15px); }
     }
     &-descargarCV {
         display: inline-block;
@@ -148,4 +142,13 @@
             transform: translateY(0);
         }
     }
+}
+
+@keyframes fadeIN {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeOUT {
+    from { opacity: 1; transform: translateY(0); }
+    to { opacity: 0; transform: translateY(15px); }
 }
