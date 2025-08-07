@@ -27,7 +27,8 @@ export const Proyect = () => {
         let nameUI =  repo.name.substring(0, 1).toUpperCase() + repo.name.substring(1);
         nameUI = nameUI.includes("-") ? nameUI.replace("-", " ") : nameUI;
 
-        const isPortfolio = false; // por defecto ninguno (lo cambio directamene en las props del ProyectCard del portafolio)
+        // Busco el rpoyecto de este portafolio y hago isPortafolio true
+        const isPortfolio = repo.name === "portafolio-jc" ? true : false; 
 
         return { ...repo, image, nameUI, isPortfolio};
     });
@@ -35,6 +36,7 @@ export const Proyect = () => {
     const otherRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.name.toLowerCase() !== 'portafolio-jc');
     
     const porfolioRepo: ProyectRepo | null = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc') || null;
+    // porfolioRepo?.isPortfolio = true;
 
     return (
         <section 

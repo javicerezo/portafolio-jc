@@ -4,7 +4,7 @@ import { useLanguage } from "../../utils/hooks/useLanguage";
 
 import type { ProyectCardProps } from "../../types/github";
 
-export const ProyectCard = ({ nameUI, html_url, homepage, language, image, onClick }: ProyectCardProps) => {
+export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPortfolio, onClick }: ProyectCardProps) => {
     const { t } = useLanguage();
 
     return (
@@ -24,18 +24,8 @@ export const ProyectCard = ({ nameUI, html_url, homepage, language, image, onCli
                 html_url={html_url}
                 homepage={homepage}
                 isButtonModal={false}
+                isPortfolio={isPortfolio}
             />
-            {/* <div className="ProyectCard-buttons">
-                <a className="ProyectCard-button" href={html_url} target="_blank">{t.proyect_code}</a>
-                {isPortfolio ? (
-                    <button className="ProyectCard-button" 
-                    onClick={ e => e.preventDefault() }
-                    title="Estás viendo esta misma página"
-                >{t.proyect_site}</button>
-                ) : (
-                    <a className="ProyectCard-button" href={homepage} target="_blank">{t.proyect_site}</a>
-                )}
-            </div> */}
         </li>
     );
 };
