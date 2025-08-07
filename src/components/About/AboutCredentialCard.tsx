@@ -7,16 +7,16 @@ interface Props {
     href: string;
 }
 
-export const CredentialCard: React.FC<Props> = ({ title, image, alt, href }) => {
+export const AboutCredentialCard: React.FC<Props> = ({ title, image, alt, href }) => {
     return (
-        <li className="About-credentialCard">
-            <div className="About-card">
-                <div className="About-cardFront">
+        <li className="CredentialCard">
+            <div className="CredentialCard-card">
+                <div className="CredentialCard-cardFront">
                     <span>{title}</span>
                 </div>
-                <div className="About-cardBack">
+                <div className="CredentialCard-cardBack">
                     <a href={href} target="_blank" rel="noopener noreferrer">
-                        <img className="About-cardImg" src={image} alt={alt} />
+                        <img className="CredentialCard-cardImg" src={image} alt={alt} />
                     </a>
                 </div>
             </div>

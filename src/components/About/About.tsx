@@ -1,5 +1,5 @@
 import { useLanguage } from "../../utils/hooks/useLanguage";
-import { CredentialCard } from "./AboutCredentialCard";
+import { AboutCredentialCard } from "./AboutCredentialCard";
 import { credentialsList } from "./credentialsList";
 import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
@@ -19,7 +19,7 @@ export const AboutMe = () => {
                     <img className="About-img" src="/assets/imgs/foto-perfil.jpg" alt="image me" />
                     <ul className="About-credentialsList">
                         {credentialsList.map((cred, i) => (
-                            <CredentialCard 
+                            <AboutCredentialCard 
                                 key={i}
                                 title={cred.title}
                                 image={cred.image}
