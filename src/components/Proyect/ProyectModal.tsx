@@ -10,18 +10,18 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
     if (!isOpen || !proyect) return null;
     
     return createPortal (
-        <div className="Proyect-modal" onClick={onClose}>
-            <div className="Proyect-modal-container" onClick={ (e) => e.stopPropagation() }>
-                <button className="Proyect-modal-buttonX" onClick={onClose}>✕</button>
-                <h2 className="Proyect-modal-h2">{proyect.nameUI}</h2>
-                <div className="Proyect-modal-img">
+        <div className="ProyectModal" onClick={onClose}>
+            <div className="ProyectModal-container" onClick={ (e) => e.stopPropagation() }>
+                <button className="ProyectModal-buttonX" onClick={onClose}>✕</button>
+                <h2 className="ProyectModal-h2">{proyect.nameUI}</h2>
+                <div className="ProyectModal-img">
                     <img src={proyect.image} alt="img proyect" loading="lazy"/>    
                 </div> 
-                <p className="Proyect-modal-desc">{proyect.description}</p>
-                <p className="Proyect-modal-techs">{proyect.languagesList?.join(', ') || proyect.language}</p>
-                <div className="Proyect-modal-buttons">
-                    <a className="Proyect-modal-button" href={proyect.html_url} target="_blank">{t.proyect_code}</a>
-                    <a className="Proyect-modal-button" href={proyect.homepage} target="_blank">{t.proyect_site}</a>
+                <p className="ProyectModal-desc">{proyect.description}</p>
+                <p className="ProyectModal-techs">{proyect.languagesList?.join(', ') || proyect.language}</p>
+                <div className="ProyectModal-buttons">
+                    <a className="ProyectModal-button" href={proyect.html_url} target="_blank">{t.proyect_code}</a>
+                    <a className="ProyectModal-button" href={proyect.homepage} target="_blank">{t.proyect_site}</a>
                 </div>
             </div>
         </div>,

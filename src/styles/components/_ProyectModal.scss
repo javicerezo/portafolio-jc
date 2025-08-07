@@ -2,65 +2,94 @@
 @use '../settings/variables' as v;
 @use 'sass:map';
 
-.Proyect {
-    &-modal {
-        @include m.position(fixed, 0, 0, 0, 0);
-        @include m.flex(row, nowrap, center, center);
-        background-color: rgba(0, 0, 0, 0.6);
-        backdrop-filter: blur(3px);
-        z-index: 10;
-        &-container {
-            position: relative;
-            @include m.flex(column, nowrap, center, center);
-            // height: 75%;
-            width: 95%;
+.ProyectModal {
+    @include m.position(fixed, 0, 0, 0, 0);
+    @include m.flex(row, nowrap, center, center);
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 10;
+    &-container {
+        position: relative;
+        @include m.flex(column, nowrap, center, center);
+        width: 95%;
+        max-height: 80%;
+        max-width: 43.75rem;
+        background-color: var(--color-negro);
+        color: var(--color-blanco);
+        padding: 1rem;
+        border-radius: 1rem;
+        font-family: map.get(v.$fuentes, textos);
+        animation: fadeIn 0.8s ease;
+        @include m.telefono-l {
+            height: auto;
+            width: auto;
+        }
+        @include m.tablet {
+            max-height: 95%;
             max-width: 43.75rem;
-            background-color: var(--color-negro);
-            color: var(--color-blanco);
-            padding: 1rem;
-            border-radius: 1rem;
-            font-family: map.get(v.$fuentes, textos);
-            animation: fadeIn 0.8s ease;
-            @include m.telefono-l {
-                height: auto;
-                width: auto;
-            }
-            @include m.tablet {
-                padding: 2rem;
-            }
+            padding: 2rem;
         }
-        &-buttonX {
-            @include m.position(absolute, 1rem, 1rem, null, null);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: filter 0.6s ease;
-            &:hover {
-                filter: drop-shadow(0 0 3px var(--color-blanco));
-            }
-        }
-        &-h2 {
-            font-family: map.get(v.$fuentes, titulos);
-            font-size: 1.8rem;
-            margin: 2rem 0;
-        }
-        &-img {
-            display: block;
-            width: 100%;
-            max-height: 18rem;
-            border-radius: 0.5rem;
-            overflow: hidden;
-        }
-        &-desc {
-            margin: 1.5rem auto;
-            @include m.tablet {
-                margin: 2rem 0;
-            }
-        }
-        &-buttons {
-            margin-top: 1.5rem;
-        }
-        &-button {
-            font-size: 1rem;
+        @include m.desktop-l {
+            max-width: 70rem;
         }
     }
+    &-buttonX {
+        @include m.position(absolute, 1rem, 1rem, null, null);
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: filter 0.6s ease;
+        &:hover {
+            filter: drop-shadow(0 0 3px var(--color-blanco));
+        }
+    }
+    &-h2 {
+        font-family: map.get(v.$fuentes, titulos);
+        font-size: 1.8rem;
+        margin: 1rem 0;
+    }
+    &-img {
+        display: block;
+        width: 100%;
+        max-height: 18rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        @include m.tablet {
+            max-height: 45rem;
+        }
+    }
+    &-desc {
+        margin: 1.5rem auto;
+        @include m.tablet {
+            margin: 2rem 0;
+        }
+    }
+    
+
+    &-buttons {
+        @include m.flex(row, nowrap, center, center);
+        @include m.desktop {
+            margin-bottom: 1rem;
+        }
+    }
+    &-button {
+        padding: 1rem;
+        margin: 0.5rem 1rem; 
+        font-size: 0.8rem;
+        font-family: map.get(v.$fuentes, textos);
+        font-weight: bold;
+        border: 1px solid var(--color-blanco);
+        border-radius: 0.5rem;
+        transition: background-color 0.7s ease;
+        &:hover {
+            background-color: var(--color-azul-claro);
+            color: black;
+        }
+    }
+    &-buttons {
+        margin-top: 1.5rem;
+    }
+    &-button {
+        font-size: 1rem;
+    }
+
 }
