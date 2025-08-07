@@ -1,4 +1,7 @@
-import React from "react";
+import { Tooltip } from "../Tooltip";
+
+import { useState } from "react";
+import { useLanguage } from "../../utils/hooks/useLanguage";
 
 interface Props {
     title: string;
@@ -7,10 +10,18 @@ interface Props {
     href: string;
 }
 
-export const AboutCredentialCard: React.FC<Props> = ({ title, image, alt, href }) => {
+export const AboutCredentialCard = ({ title, image, alt, href }: Props) => {
+    const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
+    const { t } = useLanguage(); 
+
+    const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+        e.preventDefault();
+        setShowTooltip(true);
+    }
+
     return (
-        <li className="CredentialCard">
-            <div className="CredentialCard-card">
+        <li className="CredentialCard" >
+            <div className="CredentialCard-card" onClick={handleClick}>
                 <div className="CredentialCard-cardFront">
                     <span>{title}</span>
                 </div>
@@ -20,6 +31,11 @@ export const AboutCredentialCard: React.FC<Props> = ({ title, image, alt, href }
                     </a>
                 </div>
             </div>
+            {showTooltip && (
+                <Tooltip
+                    text={t.tooltip_credentialcard} 
+                    onClose={() => setShowTooltip(false)}/>
+            )}
         </li>
     );
 };

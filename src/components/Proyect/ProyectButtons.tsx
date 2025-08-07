@@ -43,7 +43,9 @@ export const ProyectButtons = ({html_url, homepage, isButtonModal, isPortfolio}:
             </a>
 
             {showTooltip && (
-                <Tooltip onClose={() => setShowTooltip(false)}/>
+                <Tooltip 
+                    text={t.tooltip_portafolio_jc}
+                    onClose={() => setShowTooltip(false)}/>
             )}
         </div>
     );

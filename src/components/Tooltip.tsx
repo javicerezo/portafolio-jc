@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { useLanguage } from "../utils/hooks/useLanguage";
 
 interface TooltipProp {
     duration?: number;
+    text: string;
     onClose?: () => void;
 }
 
@@ -10,10 +10,9 @@ interface TooltipProp {
  * Un pequeño tooltip cuando se hace clic sobre su elemento padre, él mismo controla la animación de salida y su desctrucción
  * Desde el padre solo tendremos que darle la propiedad onClose( () => setShowComponent(false)) para dejar de mostrar el componente.
  * @param param0 
- * @returns retorna un componente, 
+ * @returns retorna el componente Tooltip
  */
-export const Tooltip = ({ duration = 4000, onClose }: TooltipProp) => {
-    const { t } = useLanguage();
+export const Tooltip = ({ duration = 4000, text, onClose }: TooltipProp) => {
     const [ animationExit, setAnimationExit ] = useState(false);
 
     useEffect( () => {
@@ -29,7 +28,7 @@ export const Tooltip = ({ duration = 4000, onClose }: TooltipProp) => {
     return (
         <div
             className={`Tooltip ${animationExit ? "Tooltip--outAnimation" : ""}`}>
-            <p className="Tooltip-p">{t.tooltip_portafolio_jc}</p>
+            <p className="Tooltip-p">{text}</p>
         </div>
     );
 };
