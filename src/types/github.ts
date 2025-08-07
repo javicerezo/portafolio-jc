@@ -6,19 +6,20 @@
  */
 export interface Repo  {
     id: number;
-    name: string;   // nombre del repo
-    description: string;    // descrición del repo
-    html_url: string; // url del repo
-    homepage: string; // url del sitio web
-    language: string; // lenguaje principal
-    fork: boolean;  // si es fork o no
+    name: string;               // nombre del repo
+    description: string;        // descrición del repo
+    html_url: string;           // url del repo
+    homepage: string;           // url del sitio web
+    language: string;           // lenguaje principal
+    fork: boolean;              // si es fork o no
     languagesList: string[];    // lista de todos los lenguajes del repo
-    pushed_at: string;  // última actualización del proyecto (push)
+    pushed_at: string;          // última actualización del proyecto (push)
 };
 
 export interface ProyectRepo extends Repo {
-    image: string;  // url de la imagen a mostrar
-    nameUI: string; // nombre a mostrar en la interfaz
+    image: string;              // url de la imagen a mostrar
+    nameUI: string;             // nombre a mostrar en la interfaz
+    isPortfolio: boolean;       // true si es el propio portafolio, false si es cualquier otro proyecto. 
 }
 
 /**
@@ -34,10 +35,11 @@ export interface ProyectModalProps  {
  * Usado en componente proyectCard.tsx
  */
 export interface ProyectCardProps {
-    nameUI: string;
-    html_url: string;
-    homepage: string;
-    language: string;
-    image: string;
+    nameUI: string;             // Nombre a mostrar en UI
+    html_url: string;           // url de github para ver el código
+    homepage: string;           // url del despliegue para ver el proyecto
+    language: string;           // lenguaje/s usados del proyecto
+    image: string;              // url de la imagen a mostrar en el ProyectCard
+    isPortfolio: boolean;
     onClick: () => void;
 }

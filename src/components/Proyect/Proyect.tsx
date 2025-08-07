@@ -18,7 +18,7 @@ export const Proyect = () => {
 
     const formatedRepos: ProyectRepo[] = repos.map( (repo) => {
         // Agrego la ruta correcta de la imagen a mostrar en portada
-        // Para que funcione correcto, el nombre de los repositorios de aplicaciones deberán empezar por app, los demás no importan
+        // NOTA: Para que funcione correcto, el nombre de los repositorios de aplicaciones deberán empezar por app, los demás no importan
         const image = repo.name.toLowerCase().includes("app")  
             ? `https://raw.githubusercontent.com/${userName}/${repo.name}/master/app/src/main/res/drawable/preview.png` 
             : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/preview.png`;     
@@ -27,12 +27,14 @@ export const Proyect = () => {
         let nameUI =  repo.name.substring(0, 1).toUpperCase() + repo.name.substring(1);
         nameUI = nameUI.includes("-") ? nameUI.replace("-", " ") : nameUI;
 
-        return { ...repo, image, nameUI};
-    })
+        const isPortfolio = false; // por defecto ninguno (lo cambio directamene en las props del ProyectCard del portafolio)
+
+        return { ...repo, image, nameUI, isPortfolio};
+    });
 
     const otherRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.name.toLowerCase() !== 'portafolio-jc');
     
-    const porfolioRepo = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc') || null;
+    const porfolioRepo: ProyectRepo | null = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc') || null;
 
     return (
         <section 
@@ -54,6 +56,7 @@ export const Proyect = () => {
                         homepage={repo.homepage}
                         language={repo.languagesList?.join(', ') || repo.language}
                         image={repo.image}
+                        isPortfolio={repo.isPortfolio}
                         onClick={ () => setSelectedProyect(repo) }
                     />
                 ))}
@@ -72,6 +75,7 @@ export const Proyect = () => {
                     homepage={porfolioRepo.homepage}
                     language={porfolioRepo.languagesList?.join(', ') || porfolioRepo.language}
                     image={porfolioRepo.image}
+                    isPortfolio={true}
                     onClick={ () => setSelectedProyect(porfolioRepo) }
                 />)}
             </div>

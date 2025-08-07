@@ -2,7 +2,7 @@ import { useLanguage } from "../../utils/hooks/useLanguage";
 
 import type { ProyectCardProps } from "../../types/github";
 
-export const ProyectCard = ({ nameUI, html_url, homepage, language, image, onClick }: ProyectCardProps) => {
+export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPortfolio,onClick }: ProyectCardProps) => {
     const { t } = useLanguage();
 
     return (
@@ -19,7 +19,14 @@ export const ProyectCard = ({ nameUI, html_url, homepage, language, image, onCli
             </div>
             <div className="Proyect-buttons">
                 <a className="Proyect-button" href={html_url} target="_blank">{t.proyect_code}</a>
-                <a className="Proyect-button" href={homepage} target="_blank">{t.proyect_site}</a>
+                {isPortfolio ? (
+                    <button className="Proyect-button" 
+                    onClick={ e => e.preventDefault() }
+                    title="Estás viendo esta misma página"
+                >{t.proyect_site}</button>
+                ) : (
+                    <a className="Proyect-button" href={homepage} target="_blank">{t.proyect_site}</a>
+                )}
             </div>
         </li>
     );
