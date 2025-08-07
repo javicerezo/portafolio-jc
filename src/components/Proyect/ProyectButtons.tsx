@@ -1,3 +1,6 @@
+import { Tooltip } from "../Tooltip";
+
+import { useState } from "react";
 import { useLanguage } from "../../utils/hooks/useLanguage";
 
 interface ProyectButtonProps {
@@ -7,8 +10,17 @@ interface ProyectButtonProps {
     isPortfolio: boolean;
 }
 
-export const ProyectButtons = ({html_url, homepage, isButtonModal, isPortfolio}: ProyectButtonProps)=> {
+export const ProyectButtons = ({html_url, homepage, isButtonModal, isPortfolio}: ProyectButtonProps) => {
+    const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
     const { t } = useLanguage();
+
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+        if(isPortfolio) {
+            e.preventDefault();
+            setShowTooltip(true);
+        }
+    }
 
     return (
         <div className={isButtonModal ? "ProyectButtons ProyectButtons--mod" : "ProyectButtons"}>
@@ -25,10 +37,14 @@ export const ProyectButtons = ({html_url, homepage, isButtonModal, isPortfolio}:
                 href={isPortfolio ? undefined : homepage} 
                 target={isPortfolio ? undefined : "_blank"} 
                 rel={isPortfolio ? undefined : "noopener noreferrer"} 
-                onClick={ e => e.preventDefault() }     // EVITO NAVEGACIÓN POR DEFECTO
+                onClick={handleClick}   
             >
                 {t.proyect_site}
             </a>
+
+            {showTooltip && (
+                <Tooltip onClose={() => setShowTooltip(false)}/>
+            )}
         </div>
     );
 }

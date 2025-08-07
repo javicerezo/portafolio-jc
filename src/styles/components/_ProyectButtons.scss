@@ -3,6 +3,7 @@
 @use 'sass:map';
 
 .ProyectButtons {
+    position: relative;     // para mostrar tooltip correctamente
     @include m.flex(row, nowrap, center, center);
     @include m.desktop {
         margin-bottom: 0.5rem;
