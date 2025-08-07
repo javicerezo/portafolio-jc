@@ -42,6 +42,8 @@ const es = {
   contact_errorSending: "Error al enviar el mensaje. Por favor inténtalo de nuevo.",
   contact_p: "Sígueme en",
   contact_download: "Descargar CV",
+  tooltip_portafolio_jc: "Estás en la web del portafolio de Javi Cerezo.",
+  tooltip_Credentialcard: "Pulsa de nuevo para ver el certificado",
   footer: "Desarrollador web&móvil | Ingeniero industrial",
 };
 

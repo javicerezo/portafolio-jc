@@ -42,6 +42,8 @@ const en = {
   contact_button: "Send",
   contact_p: "Follow me on",
   contact_download: "Download CV",
+  tooltip_portafolio_jc: "You are on the portfolio website of Javi Cerezo.",
+  tooltip_Credentialcard: "Click again to view the certificate.",
   footer: "Developer web&mobile | Industrial engineer",
 };
 

@@ -40,8 +40,10 @@ const cat = {
   contact_botDetected: "Detectat un bot.",
   contact_errorSending: "Error en enviar el missatge. Intenta de nou si us plau.",
   contact_button: "Enviar",
-  contact_download: "Descarregar CV",
   contact_p: "Segueix-me a",
+  contact_download: "Descarregar CV",
+  tooltip_portafolio_jc: "Ets al web del portafoli de Javi Cerezo.",
+  tooltip_Credentialcard: "Prem una altra vegada per veure el certificat.",
   footer: "Desenvolupador web&mòbil | Enginyer industrial",
 };
 
