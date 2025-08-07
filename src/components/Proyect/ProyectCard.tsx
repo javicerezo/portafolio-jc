@@ -1,8 +1,10 @@
+import { ProyectButtons } from "./ProyectButtons";
+
 import { useLanguage } from "../../utils/hooks/useLanguage";
 
 import type { ProyectCardProps } from "../../types/github";
 
-export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPortfolio,onClick }: ProyectCardProps) => {
+export const ProyectCard = ({ nameUI, html_url, homepage, language, image, onClick }: ProyectCardProps) => {
     const { t } = useLanguage();
 
     return (
@@ -17,7 +19,13 @@ export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPor
                     <p className="ProyectCard-clicDescription">{t.proyect_clic}</p>
                 </div>
             </div>
-            <div className="ProyectCard-buttons">
+
+            <ProyectButtons
+                html_url={html_url}
+                homepage={homepage}
+                isButtonModal={false}
+            />
+            {/* <div className="ProyectCard-buttons">
                 <a className="ProyectCard-button" href={html_url} target="_blank">{t.proyect_code}</a>
                 {isPortfolio ? (
                     <button className="ProyectCard-button" 
@@ -27,7 +35,7 @@ export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPor
                 ) : (
                     <a className="ProyectCard-button" href={homepage} target="_blank">{t.proyect_site}</a>
                 )}
-            </div>
+            </div> */}
         </li>
     );
 };
