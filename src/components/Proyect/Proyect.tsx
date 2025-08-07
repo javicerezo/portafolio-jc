@@ -36,7 +36,6 @@ export const Proyect = () => {
     const otherRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.name.toLowerCase() !== 'portafolio-jc');
     
     const porfolioRepo: ProyectRepo | null = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc') || null;
-    // porfolioRepo?.isPortfolio = true;
 
     return (
         <section 
