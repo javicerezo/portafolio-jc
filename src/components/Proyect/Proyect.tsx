@@ -1,11 +1,12 @@
-import { useState } from "react";
-import { useLanguage } from "../../utils/hooks/useLanguage";
 import { ProyectCard } from "./ProyectCard";
 import { ProyectModal } from "./ProyectModal";
+
+import { useState } from "react";
+import { useLanguage } from "../../utils/hooks/useLanguage";
 import { useConnectGithub } from "../../utils/hooks/useConnectGithub";
 import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
-import type { ProyectRepo } from "../../../shared/types/github";
+import type { ProyectRepo } from "../../types/github";
 
 export const Proyect = () => {
     const { t } = useLanguage();

@@ -1,4 +1,4 @@
-import type { ContactFormData } from "../../types/form";
+import type { ContactFormData } from "../../../src/types/form";
 
 /**
  * Valida y limpia los datos de un formulario de contacto

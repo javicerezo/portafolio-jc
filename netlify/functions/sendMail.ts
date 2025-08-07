@@ -1,17 +1,17 @@
 import nodemailer from "nodemailer";
 import SMTPTransport from "nodemailer/lib/smtp-transport";
-import { checkRateLimit } from "../../utils/server/rateLimit";
-
+import { checkRateLimit } from "./server/rateLimit";
+import { validateContactForm } from "./server/validateContactForm";
 
 import type { Handler } from '@netlify/functions';
 import type { ContactFormData } from '../../src/types/form';
-import { validateContactForm } from "../../utils/server/validateContactForm";
 
 const RATE_LIMIT_WINDOW = 60*1000; // 1 minuto
 const MAX_REQUEST = 3; // 1 envío
 
-export const handler: Handler = async (event) => {// Evitar petición diferente a metodo POST
-    if(event.httpMethod !== "POST") {
+export const handler: Handler = async (event) => {
+    // Evitar petición diferente a metodo POST
+    if(event.httpMethod !== "POST") {   
         return { 
             statusCode: 405, 
             body: JSON.stringify({ status: "error", message: ["INVALID_METHOD"] }), 
