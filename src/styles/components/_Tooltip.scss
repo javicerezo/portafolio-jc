@@ -14,10 +14,16 @@
     &--outAnimation {
         animation: fadeOUT 0.8s ease forwards;
     }
+    @include m.telefono-l {
+        width: 8.8rem;
+    }
     &-p {
         font-size: 0.65rem;
         font-family: map.get(v.$fuentes, textos);
         color: var(--color-blanco);
+        @include m.telefono-l {
+            font-size: 0.8rem;
+        }
     }
 }
 
