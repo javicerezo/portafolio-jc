@@ -43,7 +43,7 @@ const cat = {
   contact_p: "Segueix-me a",
   contact_download: "Descarregar CV",
   tooltip_portafolio_jc: "Ets al web del portafoli de Javi Cerezo.",
-  tooltip_Credentialcard: "Prem una altra vegada per veure el certificat.",
+  tooltip_credentialcard: "Fes clic a sobre de la imatge per veure el certificat.",
   footer: "Desenvolupador web&mòbil | Enginyer industrial",
 };
 
