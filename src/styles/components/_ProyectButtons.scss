@@ -1,0 +1,30 @@
+@use '../settings/mixins' as m;
+@use '../settings/variables' as v;
+@use 'sass:map';
+
+.ProyectButtons {
+    @include m.flex(row, nowrap, center, center);
+    @include m.desktop {
+        margin-bottom: 0.5rem;
+    }
+    &--mod {
+        margin-top: 1.5rem;
+    }
+    &-button {
+        padding: 1rem;
+        margin: 0.5rem 1rem; 
+        font-size: 0.8rem;
+        font-family: map.get(v.$fuentes, textos);
+        font-weight: bold;
+        border: 1px solid var(--color-blanco);
+        border-radius: 0.5rem;
+        transition: background-color 0.7s ease;
+        &:hover {
+            background-color: var(--color-azul-claro);
+            color: black;
+        }
+        &--mod {
+            font-size: 1rem;
+        }
+    }
+}
