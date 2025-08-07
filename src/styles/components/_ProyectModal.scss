@@ -45,7 +45,7 @@
     &-h2 {
         font-family: map.get(v.$fuentes, titulos);
         font-size: 1.8rem;
-        margin: 1rem 0;
+        margin: 1rem 0 2rem 0;
     }
     &-img {
         display: block;
@@ -63,33 +63,4 @@
             margin: 2rem 0;
         }
     }
-    
-
-    &-buttons {
-        @include m.flex(row, nowrap, center, center);
-        @include m.desktop {
-            margin-bottom: 1rem;
-        }
-    }
-    &-button {
-        padding: 1rem;
-        margin: 0.5rem 1rem; 
-        font-size: 0.8rem;
-        font-family: map.get(v.$fuentes, textos);
-        font-weight: bold;
-        border: 1px solid var(--color-blanco);
-        border-radius: 0.5rem;
-        transition: background-color 0.7s ease;
-        &:hover {
-            background-color: var(--color-azul-claro);
-            color: black;
-        }
-    }
-    &-buttons {
-        margin-top: 1.5rem;
-    }
-    &-button {
-        font-size: 1rem;
-    }
-
 }
