@@ -2,29 +2,28 @@
 @use '../settings/variables' as v;
 @use 'sass:map';
 
-.Proyect {
-    &-proyectCard {
-        max-width: 23rem;
-        flex: 0 0 80%;
-        scroll-snap-align: start;
-        margin-right: 1rem;
-        
-        @include m.desktop {
-            @include m.flex(column, nowrap, space-between, center);
-            max-width: 50rem;
-            margin-right: 0;
-            border-radius: 0.5rem;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            transition: transform 0.7s ease;
-            &:hover {
-                transform: translate(-5px);
-            }
-        }
-        @include m.desktop {
-            height: 18rem;
+.ProyectCard {
+    max-width: 23rem;
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+    margin-right: 1rem;
+    
+    @include m.desktop {
+        @include m.flex(column, nowrap, space-between, center);
+        max-width: 50rem;
+        margin-right: 0;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.7s ease;
+        &:hover {
+            transform: translate(-5px);
         }
     }
+    @include m.desktop {
+        height: 18rem;
+    }
+    
     &-divImageDesc {
         @include m.flex(column, nowrap, center, center);
         position: relative;

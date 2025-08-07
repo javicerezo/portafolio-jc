@@ -6,26 +6,26 @@ export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPor
     const { t } = useLanguage();
 
     return (
-        <li className="Proyect-proyectCard">
-            <div className="Proyect-divImageDesc" onClick={onClick}>
-                <div className="Proyect-image">
+        <li className="ProyectCard">
+            <div className="ProyectCard-divImageDesc" onClick={onClick}>
+                <div className="ProyectCard-image">
                     <img src={image} alt="img proyect" loading="lazy"/>
                 </div>
-                <div className="Proyect-description">
-                    <h3 className="Proyect-titleDescription">{nameUI}</h3>
-                    <p className="Proyect-techsDescription">{language}</p>
-                    <p className="Proyect-clicDescription">{t.proyect_clic}</p>
+                <div className="ProyectCard-description">
+                    <h3 className="ProyectCard-titleDescription">{nameUI}</h3>
+                    <p className="ProyectCard-techsDescription">{language}</p>
+                    <p className="ProyectCard-clicDescription">{t.proyect_clic}</p>
                 </div>
             </div>
-            <div className="Proyect-buttons">
-                <a className="Proyect-button" href={html_url} target="_blank">{t.proyect_code}</a>
+            <div className="ProyectCard-buttons">
+                <a className="ProyectCard-button" href={html_url} target="_blank">{t.proyect_code}</a>
                 {isPortfolio ? (
-                    <button className="Proyect-button" 
+                    <button className="ProyectCard-button" 
                     onClick={ e => e.preventDefault() }
                     title="Estás viendo esta misma página"
                 >{t.proyect_site}</button>
                 ) : (
-                    <a className="Proyect-button" href={homepage} target="_blank">{t.proyect_site}</a>
+                    <a className="ProyectCard-button" href={homepage} target="_blank">{t.proyect_site}</a>
                 )}
             </div>
         </li>
