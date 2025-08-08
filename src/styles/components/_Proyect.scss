@@ -16,12 +16,6 @@
         font-weight: bold;
         margin-bottom: 2rem;
     }
-    &-paragraph {
-        font-family: map.get(v.$fuentes, textos);
-        width: 100%;
-        padding: 0.5rem 0;
-        line-height: 1.6;
-    }
     &-ul {
         @include m.flex(row, nowrap, flex-start, center);
         display: flex;
@@ -31,7 +25,6 @@
         scroll-snap-type: x mandatory;
         @include m.tablet {
             padding: 2rem;
-            // @include m.grid-auto-fill(17.5rem, 2rem);
         }
         @include m.desktop {
             @include m.grid-auto-fill(23rem, 2rem);

@@ -7,6 +7,7 @@ import { useConnectGithub } from "../../../utils/hooks/useConnectGithub";
 import { useScrollAnimation } from "../../../utils/hooks/useScrollAnimation";
 
 import type { ProyectRepo } from "../../../types/github";
+import { Paragraph } from "../../ui/Paragraph";
 
 export const Proyect = () => {
     const { t } = useLanguage();
@@ -44,8 +45,8 @@ export const Proyect = () => {
             ref={ref}
             >
             <h2 className="Proyect-title">{`${t.title_proyect}:`}</h2>
-            <p className="Proyect-paragraph">{`- ${t.proyect_paragraph_1}`}</p>
-            <p className="Proyect-paragraph">{`- ${t.proyect_paragraph_2}`}</p>
+            <Paragraph text={t.proyect_paragraph_1}/>
+            <Paragraph text={t.proyect_paragraph_2}/>
             <ul className="Proyect-ul">
 
                 {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
@@ -69,7 +70,7 @@ export const Proyect = () => {
                 />
             </ul>
 
-            <li className="Proyect-paragraph">{`- ${t.proyect_paragraph_3}`}</li>
+            <Paragraph text={t.proyect_paragraph_3}/>
             <div className="Proyect-ul">
                 {porfolioRepo && (<ProyectCard 
                     key={porfolioRepo.id}
