@@ -10,22 +10,3 @@
     transition: none !important;
   }
 }
-
-// Preferencias para el modo claro
-// Por defecto está configurado en modo oscuro, si el usuario quiere o tiene la
-// preferencia activada, se cambiará a modo claro.
-@media (prefers-color-scheme: light) {
-    :root{
-        --color-blanco: #393939;
-        --color-negro: #f5f5f5;
-    }
-}
-
-// (Opcional) Respetamos preferencia usuario por tema configurado contraste alto
-@media (prefers-contrast: more) {
-  :root{
-        --color-blanco: #fff;
-        --color-negro: #000;
-        --color-amarillo-fondo: #b8860b;
-    }
-}
