@@ -1,4 +1,4 @@
-import { useLanguage } from "../utils/hooks/useLanguage";
+import { useLanguage } from "../../utils/hooks/useLanguage";
 
 import { FaGithub  } from "react-icons/fa";
 import { FaArrowTurnUp } from "react-icons/fa6";

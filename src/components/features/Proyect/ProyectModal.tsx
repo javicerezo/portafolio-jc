@@ -1,7 +1,7 @@
 import { createPortal } from "react-dom";   // Para el modal se monte encima del body (no solo encima del componente Proyect)
 import { ProyectButtons } from "./ProyectButtons";
 
-import type { ProyectModalProps } from "../../types/github";
+import type { ProyectModalProps } from "../../../types/github";
 
 export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) => {
     if (!isOpen || !proyect) return null;

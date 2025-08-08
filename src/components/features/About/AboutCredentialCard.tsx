@@ -1,7 +1,7 @@
-import { Tooltip } from "../Tooltip";
+import { Tooltip } from "../../ui/Tooltip";
 
 import { useState } from "react";
-import { useLanguage } from "../../utils/hooks/useLanguage";
+import { useLanguage } from "../../../utils/hooks/useLanguage";
 
 interface Props {
     title: string;

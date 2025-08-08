@@ -1,12 +1,12 @@
 import { LanguageProvider } from "./utils/context/LanguageProvider";
 
-import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import { ButtonConfig } from "./components/ButtonConfig";
-import { Footer } from "./components/Footer";
-import { Contact } from "./components/Contact";
-import { Proyect } from "./components/Proyect/Proyect";
-import { AboutMe } from "./components/About/About";
+import { Header } from "./components/features/Header";
+import { Hero } from "./components/features/Hero";
+import { ButtonConfig } from "./components/ui/ButtonConfig";
+import { Footer } from "./components/features/Footer";
+import { Contact } from "./components/features/Contact";
+import { Proyect } from "./components/features/Proyect/Proyect";
+import { AboutMe } from "./components/features/About/About";
 
 function App() {
   return (

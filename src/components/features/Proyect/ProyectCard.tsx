@@ -1,8 +1,8 @@
 import { ProyectButtons } from "./ProyectButtons";
 
-import { useLanguage } from "../../utils/hooks/useLanguage";
+import { useLanguage } from "../../../utils/hooks/useLanguage";
 
-import type { ProyectCardProps } from "../../types/github";
+import type { ProyectCardProps } from "../../../types/github";
 
 export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPortfolio, onClick }: ProyectCardProps) => {
     const { t } = useLanguage();

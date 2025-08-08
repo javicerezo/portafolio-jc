@@ -1,7 +1,7 @@
-import { useLanguage } from "../../utils/hooks/useLanguage";
+import { useLanguage } from "../../../utils/hooks/useLanguage";
 import { AboutCredentialCard } from "./AboutCredentialCard";
 import { credentialsList } from "./credentialsList";
-import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
+import { useScrollAnimation } from "../../../utils/hooks/useScrollAnimation";
 
 export const AboutMe = () => {
     const { t } = useLanguage();

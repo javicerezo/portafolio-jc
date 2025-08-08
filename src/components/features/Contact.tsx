@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { useLanguage } from "../utils/hooks/useLanguage";
-import { useScrollAnimation } from "../utils/hooks/useScrollAnimation";
+import { useLanguage } from "../../utils/hooks/useLanguage";
+import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
 
 import { FaGithub } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
