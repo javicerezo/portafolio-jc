@@ -29,6 +29,9 @@ $fuentes: (
 // y no tengo que ir clase por clase modificando colores cuando se activó darkMode, 
 /* colores */
 :root {
+    --container-max: 112.5rem;          // límite global ancho
+    --gutter: 1rem;                     // separación mínima al borde
+    --edge: max(var(--gutter), calc((100vw - var(--container-max)) / 2));   // distancia desde el borde viewport al borde del contenedor centrado
     --color-negro: #393939;
     --color-negro-contraste: #000;
     --color-negro-transp: #00000099;
