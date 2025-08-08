@@ -57,9 +57,4 @@
             width: 50%;
         }
     }
-    &-paragraph {
-        font-family: map.get(v.$fuentes, textos);
-        width: 100%;
-        padding: 0.5rem 0;
-    }
 }

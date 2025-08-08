@@ -1,6 +1,8 @@
-import { useLanguage } from "../../../utils/hooks/useLanguage";
 import { AboutCredentialCard } from "./AboutCredentialCard";
 import { credentialsList } from "./credentialsList";
+import { Paragraph } from "../../ui/Paragraph";
+
+import { useLanguage } from "../../../utils/hooks/useLanguage";
 import { useScrollAnimation } from "../../../utils/hooks/useScrollAnimation";
 
 export const AboutMe = () => {
@@ -30,13 +32,13 @@ export const AboutMe = () => {
                     </ul>
                 </div>
                 <ul className="About-description">
-                    <li className="About-paragraph">{t.about_1}</li>
-                    <li className="About-paragraph">{t.about_2}</li>
-                    <li className="About-paragraph">{t.about_3}</li>
-                    <li className="About-paragraph">{t.about_4}</li>
-                    <li className="About-paragraph">{t.about_5}</li>
-                    <li className="About-paragraph">{t.about_6}</li>
-                    <li className="About-paragraph">{t.about_7}</li>
+                    <Paragraph text={t.about_1}/>
+                    <Paragraph text={t.about_2}/>
+                    <Paragraph text={t.about_3}/>
+                    <Paragraph text={t.about_4}/>
+                    <Paragraph text={t.about_5}/>
+                    <Paragraph text={t.about_6}/>
+                    <Paragraph text={t.about_7}/>
                 </ul>
             </div>
         </section>
