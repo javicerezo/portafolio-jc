@@ -45,43 +45,49 @@ export const Proyect = () => {
             ref={ref}
             >
             <h2 className="Proyect-title">{`${t.title_proyect}:`}</h2>
-            <Paragraph text={t.proyect_paragraph_1}/>
-            <Paragraph text={t.proyect_paragraph_2}/>
-            <ul className="Proyect-ul">
 
-                {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
+            <div className="Proyect-div">
+                <Paragraph text={t.proyect_paragraph_1}/>
+                <Paragraph text={t.proyect_paragraph_2}/>
+                <Paragraph text={t.proyect_paragraph_3}/>
+                <ul className="Proyect-ul">
 
-                {otherRepos.map( (repo) => (
-                    <ProyectCard
-                        key={repo.id}
-                        nameUI={repo.nameUI}
-                        html_url={repo.html_url}
-                        homepage={repo.homepage}
-                        language={repo.languagesList?.join(', ') || repo.language}
-                        image={repo.image}
-                        isPortfolio={repo.isPortfolio}
-                        onClick={ () => setSelectedProyect(repo) }
+                    {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
+
+                    {otherRepos.map( (repo) => (
+                        <ProyectCard
+                            key={repo.id}
+                            nameUI={repo.nameUI}
+                            html_url={repo.html_url}
+                            homepage={repo.homepage}
+                            language={repo.languagesList?.join(', ') || repo.language}
+                            image={repo.image}
+                            isPortfolio={repo.isPortfolio}
+                            onClick={ () => setSelectedProyect(repo) }
+                        />
+                    ))}
+                    <ProyectModal 
+                        proyect={selectedProyect}
+                        isOpen={!!selectedProyect} 
+                        onClose={ ()=> setSelectedProyect(null)}
                     />
-                ))}
-                <ProyectModal 
-                    proyect={selectedProyect}
-                    isOpen={!!selectedProyect} 
-                    onClose={ ()=> setSelectedProyect(null)}
-                />
-            </ul>
+                </ul>
+            </div>
 
-            <Paragraph text={t.proyect_paragraph_3}/>
-            <div className="Proyect-ul">
-                {porfolioRepo && (<ProyectCard 
-                    key={porfolioRepo.id}
-                    nameUI={porfolioRepo.nameUI}
-                    html_url={porfolioRepo.html_url}
-                    homepage={porfolioRepo.homepage}
-                    language={porfolioRepo.languagesList?.join(', ') || porfolioRepo.language}
-                    image={porfolioRepo.image}
-                    isPortfolio={true}
-                    onClick={ () => setSelectedProyect(porfolioRepo) }
-                />)}
+            <div className="Proyect-div">
+                <Paragraph text={t.proyect_paragraph_4}/>
+                <ul className="Proyect-ul">
+                    {porfolioRepo && (<ProyectCard 
+                        key={porfolioRepo.id}
+                        nameUI={porfolioRepo.nameUI}
+                        html_url={porfolioRepo.html_url}
+                        homepage={porfolioRepo.homepage}
+                        language={porfolioRepo.languagesList?.join(', ') || porfolioRepo.language}
+                        image={porfolioRepo.image}
+                        isPortfolio={true}
+                        onClick={ () => setSelectedProyect(porfolioRepo) }
+                    />)}
+                </ul>
             </div>
 
         </section>
