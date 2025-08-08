@@ -1,0 +1,10 @@
+@use '../settings/mixins' as m;
+@use '../settings/variables' as v;
+@use 'sass:map';
+
+.Paragraph {
+    font-family: map.get(v.$fuentes, textos);
+    width: 100%;
+    padding: 0.5rem 0;
+    line-height: 1.6;
+}
