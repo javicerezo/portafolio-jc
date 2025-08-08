@@ -4,7 +4,7 @@
 
 .Proyect {
     max-width: 112.5rem;
-    margin: 1rem;
+    margin: 2rem;
     padding-top: 2rem;
     @include m.tablet {
         margin: 2rem;
@@ -14,7 +14,12 @@
         font-size: 1.7rem;
         font-family: map.get(v.$fuentes, titulos);
         font-weight: bold;
-        margin-bottom: 2rem;
+    }
+    &-div {
+        margin-top: 2rem;
+        @include m.tablet {
+            padding: 0 2rem;
+        }
     }
     &-ul {
         @include m.flex(row, nowrap, flex-start, center);
@@ -23,9 +28,6 @@
         overflow-x: auto;
         height: auto;
         scroll-snap-type: x mandatory;
-        @include m.tablet {
-            padding: 2rem;
-        }
         @include m.desktop {
             @include m.grid-auto-fill(23rem, 2rem);
         }

@@ -4,7 +4,7 @@
 
 .Contact {
     max-width: 112.5rem;
-    margin: 1rem;
+    margin: 2rem;
     padding-top: 2rem;
     @include m.tablet {
         margin: 2rem;
@@ -14,11 +14,11 @@
         font-size: 1.7rem;
         font-family: map.get(v.$fuentes, titulos);
         font-weight: bold;
-        margin-bottom: 2rem;
     }
     &-container {
         @include m.flex(column, nowrap, space-between, center);
         font-family: map.get(v.$fuentes, textos);
+        margin-top: 2rem;
         @include m.desktop {
             @include m.flex(row, nowrap, space-evenly, center);
             padding: 1rem 4rem;
