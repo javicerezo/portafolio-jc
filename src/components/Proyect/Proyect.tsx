@@ -18,7 +18,7 @@ export const Proyect = () => {
 
     const formatedRepos: ProyectRepo[] = repos.map( (repo) => {
         // Agrego la ruta correcta de la imagen a mostrar en portada
-        // NOTA: Para que funcione correcto, el nombre de los repositorios de aplicaciones deberán empezar por app, los demás no importan
+        // NOTA: Para que funcione correcto, el nombre de los repositorios de aplicaciones móviles deben empezar por app, los demás no importan.
         const image = repo.name.toLowerCase().includes("app")  
             ? `https://raw.githubusercontent.com/${userName}/${repo.name}/master/app/src/main/res/drawable/preview.png` 
             : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/preview.png`;     
@@ -44,7 +44,8 @@ export const Proyect = () => {
             ref={ref}
             >
             <h2 className="Proyect-title">{`${t.title_proyect}:`}</h2>
-            <p className="Proyect-p">{`- ${t.proyect_paragraph_1}`}</p>
+            <p className="Proyect-paragraph">{`- ${t.proyect_paragraph_1}`}</p>
+            <p className="Proyect-paragraph">{`- ${t.proyect_paragraph_2}`}</p>
             <ul className="Proyect-ul">
 
                 {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
@@ -67,7 +68,8 @@ export const Proyect = () => {
                     onClose={ ()=> setSelectedProyect(null)}
                 />
             </ul>
-            <p className="Proyect-p">{`- ${t.proyect_paragraph_2}`}</p>
+
+            <li className="Proyect-paragraph">{`- ${t.proyect_paragraph_3}`}</li>
             <div className="Proyect-ul">
                 {porfolioRepo && (<ProyectCard 
                     key={porfolioRepo.id}

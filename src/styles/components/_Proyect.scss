@@ -16,9 +16,11 @@
         font-weight: bold;
         margin-bottom: 2rem;
     }
-    &-p {
+    &-paragraph {
         font-family: map.get(v.$fuentes, textos);
-        margin-top: 3rem;
+        width: 100%;
+        padding: 0.5rem 0;
+        line-height: 1.6;
     }
     &-ul {
         @include m.flex(row, nowrap, flex-start, center);
