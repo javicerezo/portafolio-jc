@@ -16,9 +16,13 @@
         font-weight: bold;
     }
     &-div {
-        margin-top: 2rem;
+        margin-top: 1rem;
+        padding: 2rem 0;
         @include m.tablet {
             padding: 0 2rem;
+        }
+        &:last-child {
+            margin-top: 3rem;
         }
     }
     &-ul {
