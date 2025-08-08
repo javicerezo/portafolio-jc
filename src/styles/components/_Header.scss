@@ -62,7 +62,8 @@
         &:hover {
             cursor: pointer;
             scale: 1.2;
-            color: var(--color-negro-contraste);
+            // color: var(--color-negro-contraste);
+            color: var(--color-azul);
         }
         @include m.tablet {
             padding: 0.15em 3rem;
