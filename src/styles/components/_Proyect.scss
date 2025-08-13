@@ -17,18 +17,21 @@
     }
     &-div {
         margin-top: 1rem;
-        padding: 2rem 0;
+        padding: 1rem 0;
         @include m.tablet {
             padding: 0 2rem;
         }
         &:last-child {
-            margin-top: 3rem;
+            @include m.desktop {
+                margin-top: 3rem;
+            }
         }
     }
     &-ul {
         @include m.flex(row, nowrap, flex-start, center);
         display: flex;
         margin-top: 1rem;
+        padding-bottom: 1rem;
         overflow-x: auto;
         height: auto;
         scroll-snap-type: x mandatory;
