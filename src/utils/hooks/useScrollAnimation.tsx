@@ -14,7 +14,7 @@ export const useScrollAnimation = () => {
                 observer.unobserve(element); // Solo se ejecuta una vez por elemento
                 }
             },
-            { threshold: 0.2 } // se activa cuando el 20% del elemento es visible
+            { threshold: 0.1 } // se activa cuando el 10% del elemento es visible
         );
         observer.observe(element);
 
