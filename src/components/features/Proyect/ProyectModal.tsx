@@ -26,6 +26,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
 
                 <Paragraph text={proyect.description}/>
 
+                <p>Lenguajes empleados:</p>
                 <ul className="ProyectModal-techs">
                     {proyect.languagesList
                         ? proyect.languagesList.map((lang: string) => (

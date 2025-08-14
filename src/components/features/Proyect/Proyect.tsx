@@ -24,7 +24,7 @@ export const Proyect = () => {
             ? `https://raw.githubusercontent.com/${userName}/${repo.name}/master/app/src/main/res/drawable/preview.png` 
             : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/preview.png`;     
 
-        // Agrego el nombre el a mostrar
+        // Agrego el nombre del proyecto a mostrar
         let nameUI =  repo.name.substring(0, 1).toUpperCase() + repo.name.substring(1);
         nameUI = nameUI.includes("-") ? nameUI.replace("-", " ") : nameUI;
 
