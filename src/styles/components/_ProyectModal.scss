@@ -12,7 +12,7 @@
         position: relative;
         @include m.flex(column, nowrap, center, center);
         width: 95%;
-        max-height: 80%;
+        max-height: 90%;
         max-width: 43.75rem;
         background-color: var(--color-negro);
         color: var(--color-blanco);
@@ -22,9 +22,9 @@
         animation: fadeIn 0.8s ease;
         @include m.telefono-l {
             height: auto;
-            width: auto;
         }
         @include m.tablet {
+            width: auto;
             max-height: 95%;
             max-width: 43.75rem;
             padding: 2rem;
@@ -62,5 +62,10 @@
         @include m.tablet {
             margin: 2rem 0;
         }
+    }
+    &-techs {
+        // padding: 1rem;
+        @include m.flex(row, nowrap, center, center);
+        margin: 1rem 0;
     }
 }

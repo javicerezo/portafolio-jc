@@ -1,10 +1,19 @@
 import { createPortal } from "react-dom";   // Para el modal se monte encima del body (no solo encima del componente Proyect)
 import { ProyectButtons } from "./ProyectButtons";
+import { Paragraph } from "../../ui/Paragraph";
+import { Icon } from "../../ui/Icon";
+
+// import { useLanguage } from "../../../utils/hooks/useLanguage";
+
+
 
 import type { ProyectModalProps } from "../../../types/github";
 
 export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) => {
+    // const { t } = useLanguage();
     if (!isOpen || !proyect) return null;
+
+    
     
     return createPortal (
         <div className="ProyectModal" onClick={onClose}>
@@ -13,9 +22,19 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                 <h2 className="ProyectModal-h2">{proyect.nameUI}</h2>
                 <div className="ProyectModal-img">
                     <img src={proyect.image} alt="img proyect" loading="lazy"/>    
-                </div> 
-                <p className="ProyectModal-desc">{proyect.description}</p>
-                <p className="ProyectModal-techs">{proyect.languagesList?.join(', ') || proyect.language}</p> 
+                </div>
+
+                <Paragraph text={proyect.description}/>
+
+                <ul className="ProyectModal-techs">
+                    {proyect.languagesList
+                        ? proyect.languagesList.map((lang: string) => (
+                            <Icon key={lang} language={lang} />
+                            ))
+                        : <Icon language={proyect.language ?? "unknown"} />
+                    }
+                </ul>
+
                 <ProyectButtons
                     html_url={proyect.html_url}
                     homepage={proyect.homepage}
