@@ -1,8 +1,8 @@
 import type { IconKey } from "./iconsMap";
 
 export interface IconList {
-    languageName: string;   // Ej: react
-    textTooltip: string;    // Ej: ReactJs
+    languageName: string;   // Ej: react (el nombre del lenguaje que trae desde la API)
+    textTooltip: string;    // Ej: ReactJs (el texto que muestra al hacer clic en el icono)
     icon: IconKey;          // Ej: SiReact
     color: string;
 };
@@ -21,7 +21,7 @@ export const IconsList: IconList[] = [
         color: "#7F52FF"
     },
     {
-        languageName: "android studio",
+        languageName: "android-studio",
         textTooltip: "Android Studio",
         icon: "SiAndroidstudio",
         color: "#3DDC84"
@@ -76,9 +76,9 @@ export const IconsList: IconList[] = [
     },
     {
         languageName: "pug",
-        textTooltip: "NodeJs",
-        icon: "SiNodedotjs",
-        color: "#5FA04E"
+        textTooltip: "Pug",
+        icon: "SiPug",
+        color: "#A86454"
     },
     {
         languageName: "nodejs",
@@ -97,5 +97,11 @@ export const IconsList: IconList[] = [
         textTooltip: "Firebase",
         icon: "SiFirebase",
         color: "#DD2C00"
+    },
+    {
+        languageName: "netlify",
+        textTooltip: "Netlify",
+        icon: "SiNetlify",
+        color: "#00C7B7"
     },
 ];
