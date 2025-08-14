@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 
 import type { Repo } from "../../types/github";
 
+type TopicsResponse = { names: string[] };
+
 const TOKEN = import.meta.env.VITE_GITHUB_TOKEN; 
 const USER = import.meta.env.VITE_USER;
 const GITHUB_API = import.meta.env.VITE_GITHUB_API;
@@ -54,15 +56,33 @@ export const useConnectGithub = (userName: string) => {
                 return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
             }) 
 
-            // Hacemos peticiones paralelas para obtener todos lenguajes empleados en esos proyectos
+            // Hacemos peticiones paralelas para obtener todos lenguajes empleados en esos proyectos y en topics (lo escritos a mano dentrod el about de cada proyecto)
             const enrichedResult = await Promise.all(
                 sortedResult.map(async (repo: Repo) => {
-                    const langRes = await fetch(`https://api.github.com/repos/${userName}/${repo.name}/languages`, {
-                        headers: { Authorization: `token ${TOKEN}` },
-                    });
+                    const [langRes, topicsRes] = await Promise.all([
+                        fetch(`https://api.github.com/repos/${userName}/${repo.name}/languages`, {
+                            headers: { Authorization: `token ${TOKEN}` },
+                        }),
+                        fetch(`${GITHUB_API}/repos/${userName}/${repo.name}/topics`, {
+                            headers: {
+                                Authorization: `token ${TOKEN}`,
+                                Accept: "application/vnd.github+json",      // obligatorio para pedir los topics
+                            },
+                        }),
+                    ]);
+
                     const langData = langRes.ok ? await langRes.json() : {};
-                    const languagesList = Object.keys(langData).sort(); 
-                    // uso Object.key() porque langData es un obj { "JavaScript": 7231, "SCSS": 567, "HTML": 200}, para quedarme solo con las llaves que es lo que me interesa.
+                    
+                    const topicsData: TopicsResponse = topicsRes.ok ? await topicsRes.json() : { names: [] };
+                    const topics = topicsData.names.map( t => t.substring(0, 1).toUpperCase() + t.substring(1));
+
+                    
+                    const languagesList = Array.from(
+                        new Set<string>([
+                            ...Object.keys(langData),   // uso Object.key() porque langData es un obj { "JavaScript": 7231, "SCSS": 567, "HTML": 200}, para quedarme solo con las llaves que es lo que me interesa.
+                            ...topics
+                        ])
+                    ).sort();
 
                     return { ...repo, languagesList }; //al objeto repo le añado el campo languagesList
                 })
