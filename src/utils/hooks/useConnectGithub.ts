@@ -6,11 +6,11 @@ const TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
 const USER = import.meta.env.VITE_USER;
 const GITHUB_API = import.meta.env.VITE_GITHUB_API;
 
-const featuredRepos = [
-    "App-escalada",
-    "blog-montana",
-    "tienda-online"
-];
+// const featuredRepos = [
+//     "App-escalada",
+//     "blog-montana",
+//     "tienda-online"
+// ];
 
 export const useConnectGithub = (userName: string) => {
     // repos es un array de objetos del tipo Repo que comienza como array vacío
@@ -42,16 +42,16 @@ export const useConnectGithub = (userName: string) => {
 
             // Ordeno los proyectos
             const sortedResult = result.sort( (a: Repo, b: Repo) => {
-                const indexA = featuredRepos.indexOf(a.name);
-                const indexB = featuredRepos.indexOf(b.name);
+                // const indexA = featuredRepos.indexOf(a.name);
+                // const indexB = featuredRepos.indexOf(b.name);
 
-                if(indexA !== -1 && indexB !== -1) return indexA - indexB;
+                // if(indexA !== -1 && indexB !== -1) return indexA - indexB;
 
-                if(indexA !== -1) return -1;
+                // if(indexA !== -1) return -1;
 
-                if(indexB !== -1) return 1;
+                // if(indexB !== -1) return 1;
 
-                return new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime();
+                return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
             }) 
 
             // Hacemos peticiones paralelas para obtener todos lenguajes empleados en esos proyectos

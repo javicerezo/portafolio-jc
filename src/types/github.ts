@@ -13,7 +13,7 @@ export interface Repo  {
     language: string;           // lenguaje principal
     fork: boolean;              // si es fork o no
     languagesList: string[];    // lista de todos los lenguajes del repo
-    pushed_at: string;          // última actualización del proyecto (push)
+    created_at: string;         // fecha de creación del proyecto
 };
 
 export interface ProyectRepo extends Repo {
