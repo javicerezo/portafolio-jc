@@ -20,7 +20,7 @@ export const Icon: React.FC<IconProps> = ( {language} ) => {
     const iconObj = IconsList.find( obj => obj.languageName.toLocaleLowerCase() ===  language.toLocaleLowerCase())
     const IconComponent: IconType = iconObj ? ICONS_MAP[iconObj.icon] : FaQuestionCircle;
     const color = iconObj?.color ?? "#666";
-    const textTooltip = iconObj?.textTooltip ?? "unknown";
+    const textTooltip = iconObj?.textTooltip ?? language;
 
     return (
         <li className='Icon'>
