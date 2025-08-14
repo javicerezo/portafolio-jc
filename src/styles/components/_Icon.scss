@@ -1,0 +1,13 @@
+@use '../../styles/settings/mixins' as m;
+@use '../../styles/settings/variables' as v;
+@use 'sass:map';
+
+.Icon {
+    position: relative;     // para mostrar el toolTip correctamente
+    width: 2.5rem;
+    margin: 0 1rem;
+    cursor: pointer;
+    @include m.desktop-l {
+        width: 3rem;
+    }
+}
