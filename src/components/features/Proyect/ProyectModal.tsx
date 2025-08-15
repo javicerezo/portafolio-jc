@@ -20,8 +20,13 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                 <h2 className="ProyectModal-h2">{proyect.nameUI}</h2>
                 <div className="ProyectModal-img">
                     <img src={proyect.image} alt="img proyect" loading="lazy"/>
-                    <span className="ProyectModal-handRight" role="img">👉</span>
-                    <img className="ProyectModal-imgHidden" src="" alt="mobile image" />
+                    <div className="ProyectModal-containerPhone">
+                        <span className="ProyectModal-handRight" role="img">👉</span>
+                        <div className="ProyectModal-phone">
+                            <img className="ProyectModal-imgPhone" src="/assets/imgs/foto-perfil.jpg" alt="img mobile proyect" loading="lazy"/>
+                            <img className="ProyectModal-frame" src="/assets/imgs/phone-frame.png" alt="frame mobile" loading="lazy"/>
+                        </div>
+                    </div>
                 </div>
 
                 <Paragraph text={proyect.description}/>
