@@ -3,14 +3,12 @@ import { ProyectButtons } from "./ProyectButtons";
 import { Paragraph } from "../../ui/Paragraph";
 import { Icon } from "../../ui/Icon";
 
-// import { useLanguage } from "../../../utils/hooks/useLanguage";
-
-
+import { useLanguage } from "../../../utils/hooks/useLanguage";
 
 import type { ProyectModalProps } from "../../../types/github";
 
 export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) => {
-    // const { t } = useLanguage();
+    const { t } = useLanguage();
     if (!isOpen || !proyect) return null;
 
     
@@ -21,12 +19,14 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                 <button className="ProyectModal-buttonX" onClick={onClose}>✕</button>
                 <h2 className="ProyectModal-h2">{proyect.nameUI}</h2>
                 <div className="ProyectModal-img">
-                    <img src={proyect.image} alt="img proyect" loading="lazy"/>    
+                    <img src={proyect.image} alt="img proyect" loading="lazy"/>
+                    <span className="ProyectModal-handRight" role="img">👉</span>
+                    <img className="ProyectModal-imgHidden" src="" alt="mobile image" />
                 </div>
 
                 <Paragraph text={proyect.description}/>
 
-                <p>Lenguajes empleados:</p>
+                <p className="ProyectModal-p">{t.modal_languages}</p>
                 <ul className="ProyectModal-techs">
                     {proyect.languagesList
                         ? proyect.languagesList.map((lang: string) => (
