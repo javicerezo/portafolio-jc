@@ -21,6 +21,18 @@ export const IconsList: IconList[] = [
         color: "#7F52FF"
     },
     {
+        languageName: "flutter",
+        textTooltip: "Flutter",
+        icon: "SiFlutter",
+        color: "#02569B"
+    },
+    {
+        languageName: "react-native",
+        textTooltip: "React Native",
+        icon: "SiReact",
+        color: "#61DAFB"
+    },
+    {
         languageName: "android-studio",
         textTooltip: "Android Studio",
         icon: "SiAndroidstudio",
@@ -49,6 +61,18 @@ export const IconsList: IconList[] = [
         textTooltip: "SCSS",
         icon: "SiSass",
         color: "#CC6699"
+    },
+    {
+        languageName: "tailwind",
+        textTooltip: "Tailwind",
+        icon: "SiTailwindcss",
+        color: "#06B6D4"
+    },
+    {
+        languageName: "astro",
+        textTooltip: "Astro",
+        icon: "SiAstro",
+        color: "#FF5D01"
     },
     {
         languageName: "javaScript",
