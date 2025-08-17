@@ -57,14 +57,18 @@
         }
     }
     &-containerPhone {
-        @include m.position(absolute, 0, 0, 0, null);
-        &:hover {
-            .ProyectModal-handRight {
-                @include m.position(relative, 40%, 7rem, null, null);
-            }
-            .ProyectModal-phone {
-                @include m.position (relative, null, 1rem, 4rem, null); 
-                rotate: 0deg;
+        display: none;
+        @include m.tablet {
+            display: block;
+            @include m.position(absolute, 0, 0, 0, null);
+            &:hover {
+                .ProyectModal-handRight {
+                    @include m.position(relative, 40%, 7rem, null, null);
+                }
+                .ProyectModal-phone {
+                    @include m.position (relative, null, 1rem, 4rem, null); 
+                    rotate: 0deg;
+                }
             }
         }
     }
