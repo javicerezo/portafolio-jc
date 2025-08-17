@@ -51,12 +51,6 @@ export const IconsList: IconList[] = [
         color: "#264DE4"
     },
     {
-        languageName: "sass",
-        textTooltip: "SCSS",
-        icon: "SiSass",
-        color: "#CC6699"
-    },
-    {
         languageName: "scss",
         textTooltip: "SCSS",
         icon: "SiSass",
@@ -139,5 +133,17 @@ export const IconsList: IconList[] = [
         textTooltip: "Netlify",
         icon: "SiNetlify",
         color: "#00C7B7"
+    },
+    {
+        languageName: "api-rest",
+        textTooltip: "Api Rest",
+        icon: "TbApi",
+        color: "#4B5563"
+    },
+    {
+        languageName: "railway",
+        textTooltip: "Railway",
+        icon: "SiRailway",
+        color: "#0B0D0E"
     },
 ];
