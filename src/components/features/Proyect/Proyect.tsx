@@ -20,18 +20,23 @@ export const Proyect = () => {
     const formatedRepos: ProyectRepo[] = repos.map( (repo) => {
         // Agrego la ruta correcta de la imagen a mostrar en portada
         // NOTA: Para que funcione correcto, el nombre de los repositorios de aplicaciones móviles deben empezar por app, los demás no importan.
-        const image = repo.name.toLowerCase().includes("app")  
+        const image: string = repo.name.toLowerCase().includes("app")  
             ? `https://raw.githubusercontent.com/${userName}/${repo.name}/master/app/src/main/res/drawable/preview.png` 
-            : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/preview.png`;     
+            : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/preview.png`;
+
+        // Agrego la ruta correcta de la imagen para resolución móvil a mostrar en el modal
+        const imagePhone: string = repo.name.toLowerCase().includes("app")  
+            ? `https://raw.githubusercontent.com/${userName}/${repo.name}/master/app/src/main/res/drawable/previewPhone.png` 
+            : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/previewPhone.png`;
 
         // Agrego el nombre del proyecto a mostrar
-        let nameUI =  repo.name.substring(0, 1).toUpperCase() + repo.name.substring(1);
+        let nameUI: string =  repo.name.substring(0, 1).toUpperCase() + repo.name.substring(1);
         nameUI = nameUI.includes("-") ? nameUI.replace("-", " ") : nameUI;
 
         // Busco el rpoyecto de este portafolio y hago isPortafolio true
-        const isPortfolio = repo.name === "portafolio-jc" ? true : false; 
+        const isPortfolio: boolean = repo.name === "portafolio-jc" ? true : false; 
 
-        return { ...repo, image, nameUI, isPortfolio};
+        return { ...repo, image, imagePhone, nameUI, isPortfolio};
     });
 
     const otherRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.name.toLowerCase() !== 'portafolio-jc');

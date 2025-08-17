@@ -26,7 +26,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                     <div className="ProyectModal-containerPhone">
                         <span className="ProyectModal-handRight" role="img" onClick={ () => (setShowTooltip(true)) }>👉</span>
                         <div className="ProyectModal-phone" onClick={ () => (setShowTooltip(true)) }>
-                            <img className="ProyectModal-imgPhone" src="/assets/imgs/foto-perfil.jpg" alt="img mobile proyect" loading="lazy"/>
+                            <img className="ProyectModal-imgPhone" src={proyect.imagePhone} alt="img mobile proyect" loading="lazy"/>
                             <img className="ProyectModal-frame" src="/assets/imgs/phone-frame.png" alt="frame mobile" loading="lazy"/>
                         {showTooltip && (
                             <Tooltip 

@@ -18,6 +18,7 @@ export interface Repo  {
 
 export interface ProyectRepo extends Repo {
     image: string;              // url de la imagen a mostrar
+    imagePhone: string;              // url de la imagen resolución móvil a mostrar
     nameUI: string;             // nombre a mostrar en la interfaz
     isPortfolio: boolean;       // true si es el propio portafolio, false si es cualquier otro proyecto. 
 }
