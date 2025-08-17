@@ -7,20 +7,11 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 1rem;
-    // &-container {
-    //     margin-top: 3.5975rem;
-    //     @include m.flex(column, nowrap, center, center);
-    //     @include m.desktop {
-    //         height: 100vh;
-    //         @include m.flex(row, nowrap, space-evenly, center);
-    //     }
-    // }
     &-container {
         margin-top: 3.5975rem;
         @include m.flex(column, nowrap, center, center);
         @include m.telefono-l {
             margin-top: 5rem;
-            
         }
         @include m.tablet {
             margin-top: 8rem;
@@ -29,6 +20,11 @@
             margin-top: 3rem;
             height: 100vh;
             @include m.flex(row, nowrap, space-evenly, center);
+        }
+    }
+    &-up {
+        @include m.desktop{
+            max-width: 60%;
         }
     }
     &-h1, &-h3 {
@@ -71,8 +67,6 @@
                 font-size: 4rem;
             }
         }
-
-
     }
     &-h1 {
         font-size: 2em;
@@ -154,9 +148,9 @@
     }
     &-ul{
         margin-bottom: 1.5rem;
-        @include m.grid(5, 0.5rem);
+        @include m.grid(4, 0.5rem);
         @include m.telefono-l {
-            @include m.grid(7, 0.5rem);
+            @include m.grid(5, 0.5rem);
         }
         @include m.desktop {
             @include m.flex(row, wrap, space-between, center);
