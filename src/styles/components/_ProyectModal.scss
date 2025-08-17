@@ -144,7 +144,7 @@
         width: 100%;
     }
     &-techs {
-        @include m.flex(row, nowrap, center, center);
+        @include m.flex(row, wrap, center, center);
         margin: 1rem 0;
     }
 }
