@@ -127,6 +127,9 @@
         width: 95%;
         left: 0.2rem;
         top: 1.2rem;
+        @include m.desktop-l {
+            top: 2.1rem;
+        }
     }
 
     &-desc {
