@@ -31,12 +31,12 @@
             @include m.flex(row, nowrap, space-evenly, center);
         }
     }
-    &-h1, &-h2, &-h3 {
+    &-h1, &-h3 {
         font-family: map.get(v.$fuentes, titulos);
     }
-    // &-h2 {
-    //     font-family: map.get(v.$fuentes, textos);
-    // }
+    &-h2 {
+        font-family: map.get(v.$fuentes, textos);
+    }
     &-h3 {
         font-size: 1.8rem;
         margin-top: 1rem;
