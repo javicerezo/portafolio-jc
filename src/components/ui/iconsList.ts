@@ -75,6 +75,12 @@ export const IconsList: IconList[] = [
         color: "#FF5D01"
     },
     {
+        languageName: "gulp",
+        textTooltip: "Gulp",
+        icon: "SiGulp",
+        color: "#CF4647"
+    },
+    {
         languageName: "javaScript",
         textTooltip: "JavaScript",
         icon: "SiJavascript",
@@ -99,16 +105,22 @@ export const IconsList: IconList[] = [
         color: "#646CFF"
     },
     {
-        languageName: "pug",
-        textTooltip: "Pug",
-        icon: "SiPug",
-        color: "#A86454"
-    },
-    {
         languageName: "nodejs",
         textTooltip: "NodeJs",
         icon: "SiNodedotjs",
         color: "#5FA04E"
+    },
+    {
+        languageName: "express",
+        textTooltip: "ExpressJs",
+        icon: "SiExpress",
+        color: "#E5E7EB"
+    },
+    {
+        languageName: "pug",
+        textTooltip: "Pug",
+        icon: "SiPug",
+        color: "#A86454"
     },
     {
         languageName: "postgresql",
