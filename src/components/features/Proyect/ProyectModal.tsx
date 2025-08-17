@@ -1,17 +1,20 @@
+import { useState } from "react";
 import { createPortal } from "react-dom";   // Para el modal se monte encima del body (no solo encima del componente Proyect)
+
+
 import { ProyectButtons } from "./ProyectButtons";
 import { Paragraph } from "../../ui/Paragraph";
 import { Icon } from "../../ui/Icon";
+import { Tooltip } from "../../ui/Tooltip";
 
 import { useLanguage } from "../../../utils/hooks/useLanguage";
 
 import type { ProyectModalProps } from "../../../types/github";
 
 export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) => {
+    const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
     const { t } = useLanguage();
     if (!isOpen || !proyect) return null;
-
-    
     
     return createPortal (
         <div className="ProyectModal" onClick={onClose}>
@@ -21,10 +24,15 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                 <div className="ProyectModal-img">
                     <img src={proyect.image} alt="img proyect" loading="lazy"/>
                     <div className="ProyectModal-containerPhone">
-                        <span className="ProyectModal-handRight" role="img">👉</span>
-                        <div className="ProyectModal-phone">
+                        <span className="ProyectModal-handRight" role="img" onClick={ () => (setShowTooltip(true)) }>👉</span>
+                        <div className="ProyectModal-phone" onClick={ () => (setShowTooltip(true)) }>
                             <img className="ProyectModal-imgPhone" src="/assets/imgs/foto-perfil.jpg" alt="img mobile proyect" loading="lazy"/>
                             <img className="ProyectModal-frame" src="/assets/imgs/phone-frame.png" alt="frame mobile" loading="lazy"/>
+                        {showTooltip && (
+                            <Tooltip 
+                                text={t.modal_phone}
+                                onClose={() => setShowTooltip(false)}/>
+                        )}
                         </div>
                     </div>
                 </div>

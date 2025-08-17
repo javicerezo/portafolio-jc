@@ -23,6 +23,7 @@ const es = {
   proyect_code: "Código",
   proyect_site: "Sitio web",
   modal_languages: "Lenguajes empleados:",
+  modal_phone: "Previsualización versión móvil.",
   about_1: "Si has llegado hasta aquí, es que quieres saber más. ¡Gracias!.",
   about_2: "Ingeniero industrial con especialidad en química por la Universidad de Granada, actualmente reconvertido en desarrollador web & móvil, técnico superior DAM.",
   about_3: "Mis tecnologías de trabajo habituales para la web son HTML, SCSS, React, Vite, JavaScript/TypeScritp, Node.js y MySQL/PostgreSQL.",
