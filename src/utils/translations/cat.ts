@@ -7,7 +7,7 @@ const cat = {
   hero_h1: "Javi Cerezo",
   hero_h2_1: "Desenvolupador d'aplicacions",
   hero_h2_2: "multiplataforma i",
-  hero_h_3: "Enginyer industrial.",
+  hero_h2_3: "Enginyer industrial.",
   buttonConfig_settings: "Configuració",
   buttonConfig_darkMode: "Mode clar/fosc",
   buttonConfig_contrast: "Mode alt contrast",
