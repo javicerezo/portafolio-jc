@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Tooltip } from "./Tooltip";
+import { Tooltip } from "../Tooltip";
 
 import { ICONS_MAP } from "./iconsMap";
 import { IconsList } from "./iconsList";
@@ -14,6 +14,11 @@ interface IconProps {
     color?: string;
 }
 
+/**
+ * 
+ * @param language: string, es el nombre del lenguaje para mostrar el icono
+ * @returns retorna elun componente que es un icono de las tecnologías que se usan en programación
+ */
 export const Icon: React.FC<IconProps> = ( {language} ) => {
     const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
 
