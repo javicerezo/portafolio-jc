@@ -30,7 +30,7 @@ export const IconsList: IconList[] = [
         languageName: "react-native",
         textTooltip: "React Native",
         icon: "SiReact",
-        color: "#61DAFB"
+        color: "#2E97B4"
     },
     {
         languageName: "android-studio",

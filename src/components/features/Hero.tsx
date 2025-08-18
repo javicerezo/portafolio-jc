@@ -27,6 +27,7 @@ export const Hero = () => {
                         <Icon language="astro" />
                         <Icon language="javascript" />
                         <Icon language="typescript" />
+                        <Icon language="react" />
                         <Icon language="nodejs" />
                         <Icon language="firebase" />
                         <Icon language="mysql" />
