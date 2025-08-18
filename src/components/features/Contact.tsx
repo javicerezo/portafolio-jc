@@ -2,14 +2,14 @@ import { ButtonCV } from "../ui/ButtonCV";
 
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../../utils/hooks/useLanguage";
-import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
+import { useIntersectionObserver } from "../../utils/hooks/useIntersectionObserver";
 
 import { FaGithub } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
 
 export const Contact = () => {
     const { t } = useLanguage();
-    const { ref, visible } = useScrollAnimation();
+    const { ref, visible } = useIntersectionObserver();
 
     const [ status, setStatus ] = useState<"idle" | "sending" | "success" | "error">("idle");
     const messageRefs = useRef<(HTMLParagraphElement | null)[]>([]);
@@ -92,7 +92,7 @@ export const Contact = () => {
 
     return (
         <section
-            className={`Contact sectionEffect ${visible ? "sectionEffect--show" : ""}`}
+            className={`Contact effectAppear ${visible ? "effectAppear--show" : ""}`}
             id="Contact"
             ref={ref}
             >

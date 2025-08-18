@@ -6,14 +6,14 @@ import { ButtonCV } from "../../ui/ButtonCV";
 import { useState } from "react";
 import { useLanguage } from "../../../utils/hooks/useLanguage";
 import { useConnectGithub } from "../../../utils/hooks/useConnectGithub";
-import { useScrollAnimation } from "../../../utils/hooks/useScrollAnimation";
+import { useIntersectionObserver } from "../../../utils/hooks/useIntersectionObserver";
 
 import type { ProyectRepo } from "../../../types/github";
 
 export const Proyect = () => {
     const { t } = useLanguage();
     const [ selectedProyect, setSelectedProyect ] = useState<ProyectRepo | null>(null);
-    const  { ref, visible } = useScrollAnimation(); 
+    const  { ref, visible } = useIntersectionObserver(); 
     
     const userName: string = "javicerezo";
     const { repos, loading } = useConnectGithub(userName);
@@ -46,7 +46,7 @@ export const Proyect = () => {
 
     return (
         <section 
-            className={`Proyect sectionEffect ${visible ? "sectionEffect--show" : ""}`}
+            className={`Proyect effectAppear ${visible ? "effectAppear--show" : ""}`}
             id="Proyect"
             ref={ref}
             >

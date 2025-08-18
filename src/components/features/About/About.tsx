@@ -3,15 +3,15 @@ import { credentialsList } from "./credentialsList";
 import { Paragraph } from "../../ui/Paragraph";
 
 import { useLanguage } from "../../../utils/hooks/useLanguage";
-import { useScrollAnimation } from "../../../utils/hooks/useScrollAnimation";
+import { useIntersectionObserver } from "../../../utils/hooks/useIntersectionObserver";
 
 export const AboutMe = () => {
     const { t } = useLanguage();
-    const { ref, visible } = useScrollAnimation();
+    const { ref, visible } = useIntersectionObserver();
 
     return (
         <section 
-            className={`About sectionEffect ${visible ? "sectionEffect--show" : ""}`} 
+            className={`About effectAppear ${visible ? "effectAppear--show" : ""}`} 
             id="About"
             ref={ref}
             >
