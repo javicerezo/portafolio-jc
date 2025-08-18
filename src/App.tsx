@@ -3,10 +3,11 @@ import { LanguageProvider } from "./utils/context/LanguageProvider";
 import { Header } from "./components/features/Header";
 import { Hero } from "./components/features/Hero";
 import { ButtonConfig } from "./components/ui/ButtonConfig";
-import { Footer } from "./components/features/Footer";
-import { Contact } from "./components/features/Contact";
+import { LinesSVG } from "./components/ui/LinesSVG";
 import { Proyect } from "./components/features/Proyect/Proyect";
 import { AboutMe } from "./components/features/About/About";
+import { Contact } from "./components/features/Contact";
+import { Footer } from "./components/features/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Header />
       <Hero />
       <ButtonConfig />
+      <LinesSVG />
       <Proyect />
       <AboutMe />
       <Contact />
