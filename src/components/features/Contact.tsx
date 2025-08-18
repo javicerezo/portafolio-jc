@@ -1,3 +1,5 @@
+import { ButtonCV } from "../ui/ButtonCV";
+
 import { useEffect, useRef, useState } from "react";
 import { useLanguage } from "../../utils/hooks/useLanguage";
 import { useScrollAnimation } from "../../utils/hooks/useScrollAnimation";
@@ -146,7 +148,7 @@ export const Contact = () => {
                         <a className="Contact-iconSocial"  target="_blank"><FaGithub color='#181717'/></a>
                         <a className="Contact-iconSocial" href="https://www.linkedin.com/in/javicerezo/" target="_blank"><RiLinkedinFill color='#0973a8'/></a>
                     </div>
-                    <a className="Contact-descargarCV" href="/assets/cv_JC.pdf" download>📄 {t.contact_download}</a>
+                    <ButtonCV text={t.buttonCV_text} />
                 </div>
             </div>
         </section>

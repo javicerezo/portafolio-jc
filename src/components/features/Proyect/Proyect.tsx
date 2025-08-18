@@ -1,5 +1,7 @@
 import { ProyectCard } from "./ProyectCard";
 import { ProyectModal } from "./ProyectModal";
+import { Paragraph } from "../../ui/Paragraph";
+import { ButtonCV } from "../../ui/ButtonCV";
 
 import { useState } from "react";
 import { useLanguage } from "../../../utils/hooks/useLanguage";
@@ -7,7 +9,6 @@ import { useConnectGithub } from "../../../utils/hooks/useConnectGithub";
 import { useScrollAnimation } from "../../../utils/hooks/useScrollAnimation";
 
 import type { ProyectRepo } from "../../../types/github";
-import { Paragraph } from "../../ui/Paragraph";
 
 export const Proyect = () => {
     const { t } = useLanguage();
@@ -93,6 +94,11 @@ export const Proyect = () => {
                         onClick={ () => setSelectedProyect(porfolioRepo) }
                     />)}
                 </ul>
+            </div>
+
+            <div className="Proyect-div">
+                <Paragraph text={t.proyect_cv} />
+                <ButtonCV text={t.buttonCV_text} />
             </div>
 
         </section>
