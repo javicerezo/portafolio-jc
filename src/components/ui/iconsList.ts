@@ -117,6 +117,12 @@ export const IconsList: IconList[] = [
         color: "#A86454"
     },
     {
+        languageName: "mysql",
+        textTooltip: "MySQL",
+        icon: "SiMysql",
+        color: "#4479A1"
+    },
+    {
         languageName: "postgresql",
         textTooltip: "PostgreSQL",
         icon: "SiPostgresql",

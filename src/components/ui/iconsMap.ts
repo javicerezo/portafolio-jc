@@ -1,8 +1,8 @@
 import type { IconType } from "react-icons";
 import { SiHtml5, SiCss3, SiSass, SiJavascript, SiTypescript,
-  SiReact, SiVite, SiNodedotjs, SiPostgresql, SiFirebase, SiAndroidstudio, 
-  SiKotlin, SiPug, SiNetlify, SiAstro, SiTailwindcss, SiFlutter, SiGulp, 
-  SiExpress, SiRailway  
+  SiReact, SiVite, SiNodedotjs, SiMysql , SiPostgresql, SiFirebase, 
+  SiAndroidstudio, SiKotlin, SiPug, SiNetlify, SiAstro, SiTailwindcss, 
+  SiFlutter, SiGulp, SiExpress, SiRailway,  
 } from "react-icons/si";
 import { FaJava, FaGithub, FaQuestionCircle } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
@@ -23,6 +23,7 @@ export const ICONS_MAP = {
   SiNodedotjs,
   SiPostgresql,
   SiFirebase,
+  SiMysql,
   SiAndroidstudio,
   SiKotlin,
   SiPug,
