@@ -4,7 +4,7 @@ import { createPortal } from "react-dom";   // Para el modal se monte encima del
 
 import { ProyectButtons } from "./ProyectButtons";
 import { Paragraph } from "../../ui/Paragraph";
-import { Icon } from "../../ui/Icon";
+import { Icon } from "../../ui/Icon/Icon";
 import { Tooltip } from "../../ui/Tooltip";
 
 import { useLanguage } from "../../../utils/hooks/useLanguage";

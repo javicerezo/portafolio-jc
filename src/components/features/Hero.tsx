@@ -1,6 +1,6 @@
 import { useLanguage } from '../../utils/hooks/useLanguage';
 
-import { Icon } from '../ui/Icon';
+import { Icon } from '../ui/Icon/Icon';
 
 import { FaGithub  } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
