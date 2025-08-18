@@ -30,13 +30,10 @@
     &-h1, &-h3 {
         font-family: map.get(v.$fuentes, titulos);
     }
-    &-h2 {
-        font-family: map.get(v.$fuentes, textos);
-    }
     &-h3 {
         font-size: 1.8rem;
         margin-top: 1rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 1rem;
         font-style: italic;
         
         transform-origin: bottom center;
@@ -88,16 +85,13 @@
             margin-bottom: 4rem;
         }
     }
-    &-div {
+    &-divH2 {
         margin-bottom: 1.5rem;
         @include m.flex(column, nowrap, center, center);
         }
-    &-props {
-        @include m.flex(column, nowrap, center, flex-start);
-        margin-left: 2.5rem;
-    }
     &-h2 {
         @include m.flex(row, nowrap, center, center);
+        font-family: map.get(v.$fuentes, textos);
         margin-bottom: 0.5rem;
         @include m.telefono-m {
             font-size: 1.4rem;
@@ -113,38 +107,6 @@
             font-size: 2.5rem;
             margin-bottom: 2rem;
         }
-        &--first {
-            margin-left: -4.5rem;
-            @include m.tablet{
-                margin-left: -5rem;
-            }
-            @include m.desktop{
-                margin-left: -7rem;
-
-            }
-            @include m.desktop-l{
-                margin-left: -11rem;
-            }
-            &::before {
-                content: '< ';
-                display: block;
-                margin-right: 0.5rem;
-                @include m.telefono-m {
-                    font-size: 1.5rem;
-                }
-            }
-        }
-        &--last {
-            &::after {
-                content: ' />';
-                display: block;
-                margin-left: 0.5rem;
-            }
-        }
-        &-icon{
-            margin: 0.5rem 0;
-            width: 40px;
-        }
     }
     &-ul{
         margin-bottom: 1.5rem;
@@ -153,7 +115,7 @@
             @include m.grid(5, 0.5rem);
         }
         @include m.desktop {
-            @include m.flex(row, wrap, space-between, center);
+            @include m.grid(6, 0.5rem);
         }
     }
     &-li{

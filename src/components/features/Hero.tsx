@@ -14,12 +14,10 @@ export const Hero = () => {
                 <div className='Hero-up'>
                     <h3 className='Hero-h3'>{t.hero_hello}</h3>
                     <h1 className='Hero-h1'>{t.hero_h1}</h1>
-                    <div className="Hero-div">
-                        <h2 className='Hero-h2 Hero-h2--first'>{t.hero_developer}:</h2> 
-                        <div className='Hero-props'>
-                            <h2 className='Hero-h2 Hero-h2--second'>prop_1: {t.hero_prop1}</h2> 
-                            <h2 className='Hero-h2 Hero-h2--last'>prop_2: {t.hero_prop2}</h2>
-                        </div>
+                    <div className="Hero-divH2">
+                        <h2 className='Hero-h2'>{t.hero_h2_1}</h2> 
+                        <h2 className='Hero-h2'>{t.hero_h2_2}</h2> 
+                        <h2 className='Hero-h2'>{t.hero_h2_3}</h2>
                     </div>
                     <ul className="Hero-ul">
                         <Icon language="java" />
@@ -31,6 +29,7 @@ export const Hero = () => {
                         <Icon language="typescript" />
                         <Icon language="nodejs" />
                         <Icon language="firebase" />
+                        <Icon language="mysql" />
                         <Icon language="postgresql" />
                     </ul>
                 </div>
