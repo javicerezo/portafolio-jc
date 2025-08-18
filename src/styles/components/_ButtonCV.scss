@@ -1,0 +1,50 @@
+@use '../settings/mixins' as m;
+@use '../settings/variables' as v;
+@use 'sass:map';
+
+.ButtonCV {
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    color: var(--color-blanco);
+    background: linear-gradient(90deg, var(--color-azul), var(--color-azul-claro));
+    border-radius: 50px;
+    animation: pulseCycle 6s ease-in-out infinite;
+    transition: background 1s ease, box-shadow 1s ease, filter 1.25s ease;
+    &:hover { 
+        animation: none;
+        background: linear-gradient(90deg, var(--color-azul-claro), var(--color-azul));
+        filter: brightness(1.5);    // Brillo para mejor contraste
+        box-shadow:
+            0 0 0 2px rgba(255, 255, 255, 0.10) inset,
+            0 10px 20px rgba(0, 0, 0, 0.25),
+            0 2px 6px rgba(0, 0, 0, 0.15);
+    }
+    &:active {
+        animation: none;    /* cortar animación para que se note */
+        filter: brightness(1.5);    // Mismo brillo que arriba
+        box-shadow:
+        inset 6px 6px 12px rgba(0, 0, 0, 0.25),
+        inset -6px -6px 12px rgba(255, 255, 255, 0.18);
+    }
+}
+
+@keyframes pulseCycle {
+  0%   { transform: translateY(0) scale(1);    box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+  6%   { transform: translateY(0) scale(1.03); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+  12%  { transform: translateY(0) scale(1);    box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+  18%  { transform: translateY(0) scale(1.03); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+  24%  { transform: translateY(0) scale(1);    box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+  30%  { transform: translateY(0) scale(1.03); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+  36%  { transform: translateY(0) scale(1);    box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+  42%  { transform: translateY(0) scale(1.03); box-shadow: 0 6px 15px rgba(0,0,0,0.3); }
+  48%  { transform: translateY(0) scale(1);    box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+
+  /* Descanso largo */
+  100% { transform: translateY(0) scale(1);    box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
+}
