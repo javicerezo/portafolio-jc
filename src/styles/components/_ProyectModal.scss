@@ -42,9 +42,21 @@
         }
     }
     &-h2 {
+        @include m.flex(row, wrap, center, flex-end);
         font-family: map.get(v.$fuentes, titulos);
         font-size: 1.7rem;
         margin-bottom: 1rem;
+    }
+    &-year {
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: .625rem;
+        font-size: 0.75rem;
+        user-select: none;
+        background: var(--color-blanco);
+        color: var(--color-negro);
+        border: 1px solid rgba(0,0,0,.06);
     }
     &-img {
         position: relative;
@@ -131,21 +143,54 @@
             top: 2.1rem;
         }
     }
-
-    &-desc {
-        margin: 1.5rem auto;
-        @include m.tablet {
-            margin: 2rem 0;
+    &-div {
+        margin-top: 0.5rem;
+        width: 100%;
+        @include m.flex(column, nowrap, center, flex-start);
+        @include m.desktop {
+            @include m.grid(2, 3rem);
         }
     }
-    &-p {
-        margin-top: 0.5rem;
-        font-weight: bold;
+    &-techTitle, &-learnedTitle {
         width: 100%;
+        font-weight: bold;
     }
-    &-techs {
+    &-learnedTitle {
+        @include m.flex(row, nowrap, flex-start, center);
+        cursor: pointer;
+        &-icon {
+            display: inline-block;
+            width: 1.25rem;
+            margin-left: 2rem;
+            transform: rotate(0deg);
+            transition: rotate 1s ease;
+            &--show {
+                transform: rotate(90deg);
+            }
+        }
+    }
+    &-techList, &-learnedList {
+        margin: 0.6rem 0 1rem 0;
+    }
+    &-techList {
         @include m.flex(row, wrap, center, center);
-        margin: 1rem 0;
+    }
+    &-learnedList {
+        @include m.flex(column, nowrap, center, flex-start);
+        border: 1px solid var(--color-blanco);
+        border-radius: .75rem;
+        padding: .5rem .75rem;
+        overflow: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 1s ease, opacity 1s ease;
+        &--show {
+            max-height: 30rem;
+            opacity: 1;
+        }
+        li {
+            margin-left: 0.5rem;
+        }
     }
 }
 

@@ -11,22 +11,42 @@ import { proyectDescriptionList } from "./proyectDescriptionList";
 
 import type { ProyectModalProps } from "../../../types/github";
 
+import { BsCaretRightFill } from "react-icons/bs";
+
 export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) => {
     const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
+    const [ showLearned, setShowLearned ] = useState<boolean>(false);
+
     const { t } = useLanguage();
     if (!isOpen || !proyect) return null;
+
+    // El año de creación
+    const yearUI = `${proyect.created_at.slice(5,7)} / ${proyect.created_at.slice(0,4)}`;
 
     // Muestro el idioma de la descripción del proyecto a mostrar (descripciones almacenadas en proyectDescriptionList.ts)
     // se cambia en el Modal y no en Proyect por si el usuario hace elcambio de idioma en el propio Modal
     const objDescription = proyectDescriptionList.find( element => element.key.toLowerCase() === proyect.name.toLowerCase());
     const lang = (t.__lang ?? "es") as 'es' | 'en'| 'cat';
     const descriptionUI: string | undefined= objDescription?.[lang];
+
+    const resetUI = () => {
+        setShowTooltip(false);
+        setShowLearned(false);
+    }
+    const handleClose = () => {
+        onClose();      // Función para cerrar un modal por defecto en react
+        resetUI();      // Reseteo los estados para que al abrir otro modal no haya conflictos
+    }
     
     return createPortal (
-        <div className="ProyectModal" onClick={onClose}>
+        <div className="ProyectModal" onClick={handleClose}>
             <div className="ProyectModal-container" onClick={ (e) => e.stopPropagation() }>
-                <button className="ProyectModal-buttonX" onClick={onClose}>✕</button>
-                <h2 className="ProyectModal-h2">{proyect.nameUI}</h2>
+                <button className="ProyectModal-buttonX" onClick={handleClose}>✕</button>
+
+                <h2 className="ProyectModal-h2">{proyect.nameUI}
+                    <span aria-label={t.modal_year || 'Year'} className="ProyectModal-year">{yearUI}</span>
+                </h2>
+
                 <div className="ProyectModal-img">
                     <img src={proyect.image} alt="img proyect" loading="lazy"/>
                     <div className="ProyectModal-containerPhone">
@@ -45,15 +65,31 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
 
                 <Paragraph text={descriptionUI}/>
 
-                <p className="ProyectModal-p">{t.modal_languages}</p>
-                <ul className="ProyectModal-techs">
-                    {proyect.languagesList
-                        ? proyect.languagesList.map((lang: string) => (
-                            <Icon key={lang} language={lang} />
-                            ))
-                        : <Icon language={proyect.language ?? "unknown"} />
-                    }
-                </ul>
+                <div className="ProyectModal-div">
+                    <div>
+                        <p className="ProyectModal-techTitle">{t.modal_languages}</p>
+                        <ul className="ProyectModal-techList">
+                            {proyect.languagesList
+                                ? proyect.languagesList.map((lang: string) => (
+                                    <Icon key={lang} language={lang} />
+                                    ))
+                                    : <Icon language={proyect.language ?? "unknown"} />
+                                }
+                        </ul>
+                    </div>
+                    <div>
+                        <div className="ProyectModal-learnedTitle" onClick={ () => (setShowLearned(!showLearned))}>
+                            <p>{t.modal_learned}</p>
+                            <BsCaretRightFill className={`ProyectModal-learnedTitle-icon ${showLearned ? "ProyectModal-learnedTitle-icon--show" : ""}`}/>
+                        </div>
+                        <ul className={`ProyectModal-learnedList ${showLearned ? "ProyectModal-learnedList--show" : ""}`}>
+                            <li>Aprendizaje 1</li>
+                            <li>Aprendizaje 1</li>
+                            <li>Aprendizaje 1</li>
+                            <li>Aprendizaje 1</li>
+                        </ul>
+                    </div>
+                </div>
 
                 <ProyectButtons
                     html_url={proyect.html_url}
