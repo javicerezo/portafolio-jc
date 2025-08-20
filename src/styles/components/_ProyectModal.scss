@@ -177,9 +177,6 @@
     }
     &-learnedList {
         @include m.flex(column, nowrap, center, flex-start);
-        border: 1px solid var(--color-blanco);
-        border-radius: .75rem;
-        padding: .5rem .75rem;
         overflow: hidden;
         max-height: 0;
         opacity: 0;
@@ -188,8 +185,11 @@
             max-height: 30rem;
             opacity: 1;
         }
-        li {
-            margin-left: 0.5rem;
+    }
+    &-li {
+        font-size: 0.8rem;
+        @include m.telefono-l {
+            font-size: 1rem;
         }
     }
 }

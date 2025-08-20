@@ -25,9 +25,11 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
 
     // Muestro el idioma de la descripción del proyecto a mostrar (descripciones almacenadas en proyectDescriptionList.ts)
     // se cambia en el Modal y no en Proyect por si el usuario hace elcambio de idioma en el propio Modal
-    const objDescription = proyectDescriptionList.find( element => element.key.toLowerCase() === proyect.name.toLowerCase());
+    const proyectInfo= proyectDescriptionList.find( element => element.key.toLowerCase() === proyect.name.toLowerCase());
     const lang = (t.__lang ?? "es") as 'es' | 'en'| 'cat';
-    const descriptionUI: string | undefined= objDescription?.[lang];
+    
+    // info es el objeto que tiene todas las traducciones necesarias para el Modal en ese idioma
+    const info = proyectInfo?.[lang];
 
     const resetUI = () => {
         setShowTooltip(false);
@@ -63,7 +65,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                     </div>
                 </div>
 
-                <Paragraph text={descriptionUI}/>
+                <Paragraph text={info?.description}/>
 
                 <div className="ProyectModal-div">
                     <div>
@@ -83,10 +85,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                             <BsCaretRightFill className={`ProyectModal-learnedTitle-icon ${showLearned ? "ProyectModal-learnedTitle-icon--show" : ""}`}/>
                         </div>
                         <ul className={`ProyectModal-learnedList ${showLearned ? "ProyectModal-learnedList--show" : ""}`}>
-                            <li>Aprendizaje 1</li>
-                            <li>Aprendizaje 1</li>
-                            <li>Aprendizaje 1</li>
-                            <li>Aprendizaje 1</li>
+                            {info?.learnedList.map( (element, key) => <li key={key} className="ProyectModal-li">- {element}</li> )}
                         </ul>
                     </div>
                 </div>
