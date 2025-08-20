@@ -1,4 +1,5 @@
 const es = {
+  __lang: "es",       // es el tipo de idioma
   title_init: "Inicio",
   title_proyect: "Proyectos",
   title_about: "Sobre mí",

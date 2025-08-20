@@ -1,4 +1,5 @@
 const en = {
+  __lang: "en",
   title_init: "Init",
   title_proyect: "Proyects",
   title_about: "About me",

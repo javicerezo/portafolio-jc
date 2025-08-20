@@ -1,4 +1,5 @@
 const cat = {
+  __lang: "cat",
   title_init: "Inici",
   title_proyect: "Projectes",
   title_about: "Sobre mi",
