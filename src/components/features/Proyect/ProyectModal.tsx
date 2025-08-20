@@ -7,7 +7,7 @@ import { Tooltip } from "../../ui/Tooltip";
 
 import { useState } from "react";
 import { useLanguage } from "../../../utils/hooks/useLanguage";
-import { proyectDescriptionList } from "./proyectDescriptionList";
+import { proyectInfoList } from "./proyectInfoList";
 
 import type { ProyectModalProps } from "../../../types/github";
 
@@ -25,7 +25,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
 
     // Muestro el idioma de la descripción del proyecto a mostrar (descripciones almacenadas en proyectDescriptionList.ts)
     // se cambia en el Modal y no en Proyect por si el usuario hace elcambio de idioma en el propio Modal
-    const proyectInfo= proyectDescriptionList.find( element => element.key.toLowerCase() === proyect.name.toLowerCase());
+    const proyectInfo= proyectInfoList.find( element => element.key.toLowerCase() === proyect.name.toLowerCase());
     const lang = (t.__lang ?? "es") as 'es' | 'en'| 'cat';
     
     // info es el objeto que tiene todas las traducciones necesarias para el Modal en ese idioma
