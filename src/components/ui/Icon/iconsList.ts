@@ -105,6 +105,12 @@ export const IconsList: IconList[] = [
         color: "#5FA04E"
     },
     {
+        languageName: "nextjs",
+        textTooltip: "NextJS",
+        icon: "SiNextdotjs",
+        color: "#000"
+    },
+    {
         languageName: "express",
         textTooltip: "ExpressJs",
         icon: "SiExpress",
@@ -151,5 +157,17 @@ export const IconsList: IconList[] = [
         textTooltip: "Railway",
         icon: "SiRailway",
         color: "#0B0D0E"
+    },
+    {
+        languageName: "cypress",
+        textTooltip: "Cypress",
+        icon: "SiCypress",
+        color: "#04C38E"
+    },
+    {
+        languageName: "react-testing-library",
+        textTooltip: "React Testing Library",
+        icon: "SiTestinglibrary",
+        color: "#E33332"
     },
 ];

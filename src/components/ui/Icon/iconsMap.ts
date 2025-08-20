@@ -2,7 +2,7 @@ import type { IconType } from "react-icons";
 import { SiHtml5, SiCss3, SiSass, SiJavascript, SiTypescript,
   SiReact, SiVite, SiNodedotjs, SiMysql , SiPostgresql, SiFirebase, 
   SiAndroidstudio, SiKotlin, SiPug, SiNetlify, SiAstro, SiTailwindcss, 
-  SiFlutter, SiGulp, SiExpress, SiRailway,  
+  SiFlutter, SiGulp, SiExpress, SiNextdotjs, SiRailway, SiCypress, SiTestinglibrary 
 } from "react-icons/si";
 import { FaJava, FaGithub, FaQuestionCircle } from "react-icons/fa";
 import { RiLinkedinFill } from "react-icons/ri";
@@ -33,8 +33,11 @@ export const ICONS_MAP = {
   SiFlutter,
   SiGulp,
   SiExpress,
+  SiNextdotjs,
   TbApi,
   SiRailway,
+  SiCypress,
+  SiTestinglibrary,
   // fallback opcional accesible por nombre:
   FaQuestionCircle,
 } satisfies Record<string, IconType>;
