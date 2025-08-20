@@ -1,6 +1,15 @@
-export interface ProyectDescription {
+export interface ProyectInformation {
     key: string;
-    es: string;
-    en: string;
-    cat: string;
+    es: {
+        description: string;
+        learnedList: string[];
+    },
+    en: {
+        description: string;
+        learnedList: string[];
+    },
+    cat: {
+        description: string;
+        learnedList: string[];
+    },
 }
