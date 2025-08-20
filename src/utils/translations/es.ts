@@ -25,7 +25,7 @@ const es = {
   proyect_site: "Sitio web",
   proyect_cv: "Si quieres, también puedes echarle un vistazo a mi cv.",
   modal_languages: "Lenguajes empleados:",
-  modal_phone: "Previsualización versión móvil.",
+  modal_phone: "Previsualización móvil.",
   buttonCV_text: "Descargar CV",
   about_1: "Si has llegado hasta aquí, es que quieres saber más. ¡Gracias!.",
   about_2: "Ingeniero industrial con especialidad en química industrial por la Universidad de Granada, actualmente reconvertido en desarrollador web & móvil, técnico superior DAM.",

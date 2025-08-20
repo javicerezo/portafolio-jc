@@ -25,7 +25,7 @@ const cat = {
   proyect_site: "Lloc web",
   proyect_cv: "Si vols, també pots fer un cop d'ull al meu cv.",
   modal_languages: "Llenguatges utilitzats:",
-  modal_phone: "Previsualització versió mòbil.",
+  modal_phone: "Previsualització mòbil.",
   buttonCV_text: "Descarregar CV",
   about_1: "Si has arribat fins aquí és perquè vols saber més. ¡Gràcies!.",
   about_2: "Enginyer industrial especialitzat en química industrial per la Universitat de Granada, actualment reconvertit en desenvolupador web i mòbil, tècnic superior en DAM.",

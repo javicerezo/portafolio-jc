@@ -20,6 +20,7 @@ export const Proyect = () => {
 
     // Aprovecho este bucle para cambiar TODOS los datos que quiero mostrar en los demás componentes (y así en los componentes solo es mostrar datos).
     const formatedRepos: ProyectRepo[] = repos.map( (repo) => {
+        console.log(repo)
         // Agrego la ruta correcta de la imagen a mostrar en portada
         // NOTA: Para que funcione correcto, el nombre de los repositorios de aplicaciones móviles deben empezar por app, los demás no importan.
         const image: string = repo.name.toLowerCase().includes("app")  
@@ -41,8 +42,8 @@ export const Proyect = () => {
         return { ...repo, image, imagePhone, nameUI, isPortfolio};
     });
 
+    // Separo los repositorios del repositorio de este portafolio para mostrarlo a parte
     const otherRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.name.toLowerCase() !== 'portafolio-jc');
-    
     const porfolioRepo: ProyectRepo | null = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc') || null;
 
     return (
