@@ -24,6 +24,7 @@ const en = {
   proyect_code: "Code",
   proyect_site: "Website",
   modal_languages: "Languages used:",
+  modal_learned: "What have I learned?",
   modal_phone: "Mobile preview.",
   buttonCV_text: "Download CV",
   proyect_cv: "If you want, you can also take a look at my cv.",

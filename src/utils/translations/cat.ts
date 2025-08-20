@@ -25,6 +25,7 @@ const cat = {
   proyect_site: "Lloc web",
   proyect_cv: "Si vols, també pots fer un cop d'ull al meu cv.",
   modal_languages: "Llenguatges utilitzats:",
+  modal_learned: "Què he après?",
   modal_phone: "Previsualització mòbil.",
   buttonCV_text: "Descarregar CV",
   about_1: "Si has arribat fins aquí és perquè vols saber més. ¡Gràcies!.",
