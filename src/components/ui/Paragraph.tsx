@@ -1,5 +1,5 @@
 interface ParagraphProps  {
-    text: string;
+    text: string | undefined;
 }
 
 export const Paragraph = ({ text }: ParagraphProps) => {

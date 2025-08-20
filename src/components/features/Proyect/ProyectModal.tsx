@@ -1,13 +1,13 @@
-import { useState } from "react";
 import { createPortal } from "react-dom";   // Para el modal se monte encima del body (no solo encima del componente Proyect)
-
 
 import { ProyectButtons } from "./ProyectButtons";
 import { Paragraph } from "../../ui/Paragraph";
 import { Icon } from "../../ui/Icon/Icon";
 import { Tooltip } from "../../ui/Tooltip";
 
+import { useState } from "react";
 import { useLanguage } from "../../../utils/hooks/useLanguage";
+import { proyectDescriptionList } from "./proyectDescriptionList";
 
 import type { ProyectModalProps } from "../../../types/github";
 
@@ -15,6 +15,12 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
     const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
     const { t } = useLanguage();
     if (!isOpen || !proyect) return null;
+
+    // Muestro el idioma de la descripción del proyecto a mostrar (descripciones almacenadas en proyectDescriptionList.ts)
+    // se cambia en el Modal y no en Proyect por si el usuario hace elcambio de idioma en el propio Modal
+    const objDescription = proyectDescriptionList.find( element => element.key.toLowerCase() === proyect.name.toLowerCase());
+    const lang = (t.__lang ?? "es") as 'es' | 'en'| 'cat';
+    const descriptionUI: string | undefined= objDescription?.[lang];
     
     return createPortal (
         <div className="ProyectModal" onClick={onClose}>
@@ -37,7 +43,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                     </div>
                 </div>
 
-                <Paragraph text={proyect.description}/>
+                <Paragraph text={descriptionUI}/>
 
                 <p className="ProyectModal-p">{t.modal_languages}</p>
                 <ul className="ProyectModal-techs">
