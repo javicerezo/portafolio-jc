@@ -145,7 +145,7 @@ export const Contact = () => {
                 <div className="Contact-altern">
                     <p className="Contact-p">{`- ${t.contact_p}:`}</p>
                     <div className="Contact-socials">
-                        <a className="Contact-iconSocial"  target="_blank"><FaGithub color='#181717'/></a>
+                        <a className="Contact-iconSocial" href="https://github.com/javicerezo/" target="_blank"><FaGithub style={{color:"var(--color-blanco)"}}/></a>
                         <a className="Contact-iconSocial" href="https://www.linkedin.com/in/javicerezo/" target="_blank"><RiLinkedinFill color='#0973a8'/></a>
                     </div>
                     <ButtonCV text={t.buttonCV_text} />
