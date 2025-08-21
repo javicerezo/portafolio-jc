@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import type { Repo } from "../types/github";
+import type { Repo } from "../types/proyect";
 
 type TopicsResponse = { names: string[] };
 
