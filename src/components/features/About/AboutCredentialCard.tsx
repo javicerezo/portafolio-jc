@@ -3,14 +3,9 @@ import { Tooltip } from "../../ui/Tooltip";
 import { useState } from "react";
 import { useLanguage } from "../../../utils/hooks/useLanguage";
 
-interface Props {
-    title: string;
-    image: string;
-    alt: string;
-    href: string;
-}
+import type { Credential } from "../../../utils/types/about";
 
-export const AboutCredentialCard = ({ title, image, alt, href }: Props) => {
+export const AboutCredentialCard = ({ title, image, alt, href }: Credential) => {
     const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
     const { t } = useLanguage(); 
 

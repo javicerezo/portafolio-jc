@@ -1,9 +1,4 @@
-export interface Credential {
-    title: string;
-    image: string;
-    alt: string;
-    href: string;
-};
+import type { Credential } from "../../../utils/types/about";
 
 export const credentialsList: Credential[] = [
     {
