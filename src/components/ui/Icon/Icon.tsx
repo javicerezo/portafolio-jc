@@ -7,12 +7,7 @@ import { FaQuestionCircle } from "react-icons/fa";
 
 import type { IconType } from "react-icons";
 
-interface IconProps {
-    language: string;
-    textTooltip?: string; 
-    icon?: IconType;
-    color?: string;
-}
+import type { IconProps } from "../../../utils/types/icon";
 
 /**
  * 

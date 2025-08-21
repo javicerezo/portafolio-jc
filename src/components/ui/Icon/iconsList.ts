@@ -1,11 +1,4 @@
-import type { IconKey } from "./iconsMap";
-
-export interface IconList {
-    languageName: string;   // Ej: react (el nombre del lenguaje que trae desde la API)
-    textTooltip: string;    // Ej: ReactJs (el texto que muestra al hacer clic en el icono)
-    icon: IconKey;          // Ej: SiReact
-    color: string;
-};
+import type { IconList } from "../../../utils/types/icon";
 
 export const IconsList: IconList[] = [
     {
