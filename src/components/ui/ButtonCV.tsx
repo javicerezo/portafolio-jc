@@ -1,6 +1,4 @@
-interface ButtonCVProps {
-    text: string;
-}
+import type { ButtonCVProps } from "../../utils/types/buttonCV";
 
 export const ButtonCV = ({text}: ButtonCVProps) => {
     return (
