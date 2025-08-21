@@ -3,12 +3,7 @@ import { Tooltip } from "../../ui/Tooltip";
 import { useState } from "react";
 import { useLanguage } from "../../../utils/hooks/useLanguage";
 
-interface ProyectButtonProps {
-    html_url: string;
-    homepage: string;
-    isButtonModal: boolean;
-    isPortfolio: boolean;
-}
+import type { ProyectButtonProps } from "../../../utils/types/proyect";
 
 export const ProyectButtons = ({html_url, homepage, isButtonModal, isPortfolio}: ProyectButtonProps) => {
     const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
