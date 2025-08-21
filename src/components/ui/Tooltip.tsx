@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 
-interface TooltipProp {
-    duration?: number;
-    text: string;
-    onClose?: () => void;
-}
+import type { TooltipProp } from "../../utils/types/tooltips";
 
 /**
  * Un pequeño tooltip cuando se hace clic sobre su elemento padre, él mismo controla la animación de salida y su desctrucción
