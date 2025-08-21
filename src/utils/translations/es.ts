@@ -24,7 +24,6 @@ const es = {
   proyect_code: "Código",
   proyect_site: "Sitio web",
   proyect_cv: "Si quieres, también puedes echarle un vistazo a mi cv.",
-  modal_year: "Fecha de creación:",
   modal_languages: "Lenguajes empleados:",
   modal_learned: "¿Qué he aprendido?",
   modal_phone: "Previsualización móvil.",

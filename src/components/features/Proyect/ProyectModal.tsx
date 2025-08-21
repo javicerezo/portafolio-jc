@@ -46,7 +46,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                 <button className="ProyectModal-buttonX" onClick={handleClose}>✕</button>
 
                 <h2 className="ProyectModal-h2">{proyect.nameUI}
-                    <span aria-label={t.modal_year || 'Year'} className="ProyectModal-year">{yearUI}</span>
+                    <span className="ProyectModal-year">{yearUI}</span>
                 </h2>
 
                 <div className="ProyectModal-img">
