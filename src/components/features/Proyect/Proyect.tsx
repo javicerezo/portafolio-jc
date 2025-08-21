@@ -8,7 +8,7 @@ import { useLanguage } from "../../../utils/hooks/useLanguage";
 import { useConnectGithub } from "../../../utils/hooks/useConnectGithub";
 import { useIntersectionObserver } from "../../../utils/hooks/useIntersectionObserver";
 
-import type { ProyectRepo } from "../../../types/github";
+import type { ProyectRepo } from "../../../utils/types/github";
 
 export const Proyect = () => {
     const { t } = useLanguage();

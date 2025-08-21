@@ -1,4 +1,4 @@
-import type { ProyectInformation } from "../../../types/proyect"
+import type { ProyectInformation } from "../../../utils/types/proyect"
 
 //NOTA IMPORTANTE, MÁXIMO 3-4 ELEMENTOS dentro de learnedList (porque no caben en el modal y la imagen se hace demasiado pequeña aunque se acomoda ella misma al plegar/desplegar el listado)
 export const proyectInfoList: ProyectInformation[] = [

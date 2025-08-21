@@ -9,7 +9,7 @@ import { useState } from "react";
 import { useLanguage } from "../../../utils/hooks/useLanguage";
 import { proyectInfoList } from "./proyectInfoList";
 
-import type { ProyectModalProps } from "../../../types/github";
+import type { ProyectModalProps } from "../../../utils/types/github";
 
 import { BsCaretRightFill } from "react-icons/bs";
 
