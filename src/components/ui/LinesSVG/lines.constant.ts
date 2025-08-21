@@ -1,7 +1,4 @@
-type Wave = {
-    class: string;
-    line: string;
-};
+import type { Wave } from "../../../utils/types/linesSVG";
 
 // Son las líneas "originales" sin modificar
 export const ORIGINAL_WAVES: Wave[] = [
