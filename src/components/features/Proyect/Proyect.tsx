@@ -8,11 +8,16 @@ import { useLanguage } from "../../../utils/hooks/useLanguage";
 import { useConnectGithub } from "../../../utils/hooks/useConnectGithub";
 import { useIntersectionObserver } from "../../../utils/hooks/useIntersectionObserver";
 
+import { BsCaretRightFill } from "react-icons/bs";
+
 import type { ProyectRepo } from "../../../utils/types/proyect";
 
 export const Proyect = () => {
     const { t } = useLanguage();
     const [ selectedProyect, setSelectedProyect ] = useState<ProyectRepo | null>(null);
+    const [ showNoModernProyect, setShowNoModernProyect ] = useState<boolean>(false);
+    const [ showModernProyect, setShowModernProyect ] = useState<boolean>(true);
+    const [ showPortfolioProyect, setShowPortfolioProyect ] = useState<boolean>(true);
     const  { ref, visible } = useIntersectionObserver(); 
     
     const userName: string = "javicerezo";
@@ -41,8 +46,9 @@ export const Proyect = () => {
         return { ...repo, image, imagePhone, nameUI, isPortfolio};
     });
 
-    // Separo los repositorios del repositorio de este portafolio para mostrarlo a parte
-    const otherRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.name.toLowerCase() !== 'portafolio-jc');
+    // Separo los repositorios en diferentes listas (proyectos con stack moderno, proyectos con stack no modernos y este mismo proyecto de portafolio)
+    const modernRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.archived === false && repo.name.toLowerCase() !== 'portafolio-jc');
+    const noModernRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.archived === true && repo.name.toLowerCase() !== 'portafolio-jc');
     const porfolioRepo: ProyectRepo | null = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc') || null;
 
     return (
@@ -53,15 +59,21 @@ export const Proyect = () => {
             >
             <h2 className="Proyect-title">{`${t.title_proyect}:`}</h2>
 
+            {/* LISTA DE PROYECTOS QUE USAN STACK TECNOLÓGICO MODERNO */}
             <div className="Proyect-div">
-                <Paragraph text={t.proyect_paragraph_1}/>
-                <Paragraph text={t.proyect_paragraph_2}/>
-                <Paragraph text={t.proyect_paragraph_3}/>
-                <ul className="Proyect-ul">
+                <Paragraph text={t.proyect_paragraph_1_1}/>
+                <Paragraph text={t.proyect_paragraph_1_2}/>
+                <Paragraph text={t.proyect_paragraph_1_3}/>
 
+                <div className="Proyect-divTitle" onClick={ () => (setShowModernProyect(!showModernProyect))}>
+                    <Paragraph text={t.proyect_paragraph_1_4}/>
+                    <BsCaretRightFill className={`Proyect-divTitle-icon ${showModernProyect ? "Proyect-divTitle-icon--show" : ""}`}/>
+                </div>
+
+                <ul className={`Proyect-ul ${showModernProyect ? "Proyect-ul--show" : ""}`}>
                     {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
 
-                    {otherRepos.map( (repo) => (
+                    {modernRepos.map( (repo) => (
                         <ProyectCard
                             key={repo.id}
                             nameUI={repo.nameUI}
@@ -73,17 +85,42 @@ export const Proyect = () => {
                             onClick={ () => setSelectedProyect(repo) }
                         />
                     ))}
-                    <ProyectModal 
-                        proyect={selectedProyect}
-                        isOpen={!!selectedProyect} 
-                        onClose={ ()=> setSelectedProyect(null)}
-                    />
                 </ul>
             </div>
 
+            {/* LISTA DE PROYECTOS CON STACK TECNOLÓGICO ANTIGUO */}
             <div className="Proyect-div">
-                <Paragraph text={t.proyect_paragraph_4}/>
-                <ul className="Proyect-ul">
+                <Paragraph text={t.proyect_paragraph_2_2} />
+                <div className="Proyect-divTitle" onClick={ () => (setShowNoModernProyect(!showNoModernProyect))}>
+                    <Paragraph text={t.proyect_paragraph_2_1} />
+                    <BsCaretRightFill className={`Proyect-divTitle-icon ${showNoModernProyect ? "Proyect-divTitle-icon--show" : ""}`}/>
+                </div>
+                <ul className={`Proyect-ul ${showNoModernProyect ? "Proyect-ul--show" : ""}`}>
+                    {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
+
+                    {noModernRepos.map( (repo) => (
+                        <ProyectCard
+                            key={repo.id}
+                            nameUI={repo.nameUI}
+                            html_url={repo.html_url}
+                            homepage={repo.homepage}
+                            language={repo.languagesList?.join(', ') || repo.language}
+                            image={repo.image}
+                            isPortfolio={repo.isPortfolio}
+                            onClick={ () => setSelectedProyect(repo) }
+                        />
+                    ))}
+                </ul>
+            </div>
+            
+            {/* TARJETA PARA EL REPOSITORIO DE ESTE PORTAFOLIO */}
+            <div className="Proyect-div">
+                <Paragraph text={t.proyect_paragraph_3_1}/>
+                <div className="Proyect-divTitle" onClick={ () => (setShowPortfolioProyect(!showPortfolioProyect))}>
+                    <Paragraph text={t.proyect_paragraph_3_2}/>
+                    <BsCaretRightFill className={`Proyect-divTitle-icon ${showPortfolioProyect ? "Proyect-divTitle-icon--show" : ""}`}/>
+                </div>
+                <ul className={`Proyect-ul ${showPortfolioProyect ? "Proyect-ul--show" : ""}`}>
                     {porfolioRepo && (<ProyectCard 
                         key={porfolioRepo.id}
                         nameUI={porfolioRepo.nameUI}
@@ -101,7 +138,13 @@ export const Proyect = () => {
                 <Paragraph text={t.proyect_cv} />
                 <ButtonCV text={t.buttonCV_text} />
             </div>
-
+            
+            {/* COMPONENTE MODAL, SE ACTIVA AL HACER CLIC EN UNA TARJETA */}
+            <ProyectModal 
+                proyect={selectedProyect}
+                isOpen={!!selectedProyect} 
+                onClose={ ()=> setSelectedProyect(null)}
+            />
         </section>
     );
 };

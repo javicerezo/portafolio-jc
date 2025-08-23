@@ -27,14 +27,48 @@
             }
         }
     }
+    &-divTitle {
+        @include m.flex(row, nowrap, flex-start, center);
+        font-style: italic;
+        font-weight: bold;
+        &:hover {
+            cursor: pointer;
+        }
+        @include m.desktop {
+        }
+        p {
+            width: auto;
+        }
+        &-icon {
+            display: inline-block;
+            cursor: pointer;
+            width: 1.25rem;
+            margin-left: 2rem;
+            transform: rotate(0deg);
+            transition: all 0.7s ease;        // le doy all, con rotate no funciona la transición
+            &--show {
+                transform: rotate(90deg);
+            }
+        }
+    }
     &-ul {
         @include m.flex(row, nowrap, flex-start, center);
         display: flex;
         margin-top: 1rem;
         padding-bottom: 1rem;
         overflow-x: auto;
-        height: auto;
+        // height: auto;
         scroll-snap-type: x mandatory;
+
+        overflow-y: hidden;
+        max-height: 0;
+        opacity: 0;
+        transition: max-height 1s ease, all 1s ease;
+        &--show {
+            max-height: 50rem;      // le doy de sobra, cada tarjeta max-width 246px (3 filas completas)
+            opacity: 1;
+            overflow-y: auto;
+        }
         @include m.desktop {
             @include m.grid-auto-fill(23rem, 2rem);
         }

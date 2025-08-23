@@ -12,7 +12,8 @@ export interface Repo  {
     homepage: string;           // url del sitio web
     language: string;           // lenguaje principal
     fork: boolean;              // si es fork o no
-    languagesList: string[];    // lista de todos los lenguajes del repo
+    languagesList: string[];    // lista de todos los lenguajes del repo (almacenados en topics de GitHub)
+    archived: boolean;          // Indica si el proyecto está archivado o no (lo uso para separar proyectos con stack antiguos de proyectos con staks modernos).
     created_at: string;         // fecha de creación del proyecto
 };
 
