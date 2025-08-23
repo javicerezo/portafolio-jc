@@ -250,7 +250,7 @@ export const proyectInfoList: ProyectInformation[] = [
                 "Consolidación en el uso de ReactJs (hooks personalizados para separar lógica de UI).",
                 "Uso de typeScritp en componentes y hooks (tipado de props y de modelos).",
                 "Separación de funciones del backend y frontend.",
-                "Validación automatizada del formulario (Vitest + React Testing Library) y pruebas de flujo completo E2E (Cypress).",
+                // "Validación automatizada del formulario (Vitest + React Testing Library) y pruebas de flujo completo E2E (Cypress).",
                 "Despliegue en Netlify.",
             ],
         },
@@ -260,7 +260,7 @@ export const proyectInfoList: ProyectInformation[] = [
                 "Consolidation in using React (custom hooks to separate UI from logic).",
                 "Use of TypeScript in components and hooks (typed props and models).",
                 "Separation of backend and frontend functions (cleaner code).",
-                "Automated form validation (Vitest + React Testing Library) and full end-to-end flow tests (Cypress).",
+                // "Automated form validation (Vitest + React Testing Library) and full end-to-end flow tests (Cypress).",
                 "Deployment on Netlify.",
             ],
         },
@@ -270,8 +270,50 @@ export const proyectInfoList: ProyectInformation[] = [
                 "Consolidació en l'ús de React (hooks personalitzats per separar la lògica de la UI).",
                 "Ús de TypeScript en components i hooks (tipatge de props i models).",
                 "Separació de funcions del backend i del frontend (neteja del codi).",
-                "Validació automatitzada del formulari (Vitest + React Testing Library) i proves de flux complet E2E (Cypress).",
+                // "Validació automatitzada del formulari (Vitest + React Testing Library) i proves de flux complet E2E (Cypress).",
                 "Desplegament a Netlify.",
+            ],
+        },
+    },
+    {
+        key: "landing-page-react",
+        es: {
+            description: "Portafolio profesional de Javi Cerezo - desarrollador web&móvil | ingeniero industrial.",
+            learnedList: [
+                
+            ],
+        },
+        en: {
+            description: "Professional portfolio of Javi Cerezo - web & mobile developer | industrial engineer.",
+            learnedList: [
+                
+            ],
+        },
+        cat: {
+            description: "Portafoli professional de Javi Cerezo - desenvolupador web i mòbil | enginyer industrial.",
+            learnedList: [
+                
+            ],
+        },
+    },
+    {
+        key: "tienda-online-react",
+        es: {
+            description: "Portafolio profesional de Javi Cerezo - desarrollador web&móvil | ingeniero industrial.",
+            learnedList: [
+                
+                        ],
+        },
+        en: {
+            description: "Professional portfolio of Javi Cerezo - web & mobile developer | industrial engineer.",
+            learnedList: [
+                
+                        ],
+        },
+        cat: {
+            description: "Portafoli professional de Javi Cerezo - desenvolupador web i mòbil | enginyer industrial.",
+            learnedList: [
+                
             ],
         },
     },
