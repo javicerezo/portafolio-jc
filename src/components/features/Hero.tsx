@@ -24,11 +24,12 @@ export const Hero = () => {
                         <Icon language="kotlin" />
                         <Icon language="react-native" />
                         <Icon language="scss" />
+                        <Icon language="tailwind" />
                         <Icon language="astro" />
                         <Icon language="javascript" />
                         <Icon language="typescript" />
                         <Icon language="react" />
-                        <Icon language="nodejs" />
+                        <Icon language="node" />
                         <Icon language="firebase" />
                         <Icon language="mysql" />
                         <Icon language="postgresql" />

@@ -81,31 +81,31 @@ export const IconsList: IconList[] = [
     },
     {
         languageName: "react",
-        textTooltip: "ReactJS",
+        textTooltip: "React",
         icon: "SiReact",
         color: "#61DAFB"
     },
     {
         languageName: "vite",
-        textTooltip: "Vite",
+        textTooltip: "Vite.js",
         icon: "SiVite",
         color: "#646CFF"
     },
     {
-        languageName: "nodejs",
-        textTooltip: "NodeJs",
+        languageName: "node",
+        textTooltip: "Node.js",
         icon: "SiNodedotjs",
         color: "#5FA04E"
     },
     {
-        languageName: "nextjs",
-        textTooltip: "NextJS",
+        languageName: "next",
+        textTooltip: "Next.js",
         icon: "SiNextdotjs",
         color: "#000"
     },
     {
         languageName: "express",
-        textTooltip: "ExpressJs",
+        textTooltip: "Express.js",
         icon: "SiExpress",
         color: "#E5E7EB"
     },
