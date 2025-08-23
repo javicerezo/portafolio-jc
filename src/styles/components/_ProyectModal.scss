@@ -163,7 +163,7 @@
             width: 1.25rem;
             margin-left: 2rem;
             transform: rotate(0deg);
-            transition: rotate 1s ease;
+            transition: all 0.7s ease;        // le doy all, con rotate no funciona la transición
             &--show {
                 transform: rotate(90deg);
             }
