@@ -4,8 +4,10 @@ import { Paragraph } from "../../ui/Paragraph";
 
 import { useLanguage } from "../../../utils/hooks/useLanguage";
 import { useIntersectionObserver } from "../../../utils/hooks/useIntersectionObserver";
+import { useState } from "react";
 
 export const AboutMe = () => {
+    const [ showAboutMe, setShowAboutMe ] = useState<boolean>(true);
     const { t } = useLanguage();
     const { ref, visible } = useIntersectionObserver();
 
@@ -31,7 +33,7 @@ export const AboutMe = () => {
                         ))}
                     </ul>
                 </div>
-                <ul className="About-description">
+                <ul className={`About-description ${showAboutMe ? "" : "About-description--mod"}`}>
                     <Paragraph text={t.about_1}/>
                     <Paragraph text={t.about_2}/>
                     <Paragraph text={t.about_3}/>
@@ -40,6 +42,11 @@ export const AboutMe = () => {
                     <Paragraph text={t.about_6}/>
                     <Paragraph text={t.about_7}/>
                 </ul>
+                {showAboutMe ? (
+                    <p className="About-p" onClick={ () => ( setShowAboutMe(!showAboutMe) )}>leer más...</p>
+                    ) : (
+                    <p className="About-p" onClick={ () => ( setShowAboutMe(!showAboutMe) )}>leer menos...</p>
+                )}
             </div>
         </section>
     );
