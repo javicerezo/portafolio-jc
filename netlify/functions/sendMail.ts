@@ -4,7 +4,7 @@ import { checkRateLimit } from "./server/rateLimit";
 import { validateContactForm } from "./server/validateContactForm";
 
 import type { Handler } from '@netlify/functions';
-import type { ContactFormData } from '../../src/types/form';
+import type { ContactFormData } from '../../src/utils/types/form';
 
 const RATE_LIMIT_WINDOW = 60*1000; // 1 minuto
 const MAX_REQUEST = 3; // 1 envío
