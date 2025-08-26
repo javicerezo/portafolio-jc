@@ -328,7 +328,7 @@ export const proyectInfoList: ProyectInformation[] = [
         cat: {
             description: "Refactor de la botiga en línia a Astro + Tailwind + React (illes). HTML estàtic per defecte i hidratació només en catàleg, filtres i cistella.",
             learnedList: [
-               "Arquitectura d’illes amb Astro: hidratar només el que és interactiu per reduir JS i millorar el rendiment.",
+               "Arquitectura d'illes amb Astro: hidratar només el que és interactiu per reduir JS i millorar el rendiment.",
                 "Maquetació amb Tailwind i components accessibles.",
                 "Gestió de la cistella amb React (context + localStorage) separant UI i lògica de negoci.",
                 "Càrrega de dades amb fetch/REST i enrutament per fitxers; prefetch i code-splitting de components.", 
