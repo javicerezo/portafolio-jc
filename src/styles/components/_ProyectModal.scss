@@ -75,10 +75,10 @@
             @include m.position(absolute, 0, 0, 0, null);
             &:hover {
                 .ProyectModal-handRight {
-                    @include m.position(relative, 40%, 7rem, null, null);
+                    @include m.position(relative, 40%, 9rem, null, null);
                 }
                 .ProyectModal-phone {
-                    @include m.position (relative, null, 1rem, 4rem, null); 
+                    @include m.position (relative, null, 3rem, 4rem, null); 
                     rotate: 0deg;
                 }
             }
@@ -86,7 +86,7 @@
     }
     &-handRight {
         @include m.position(relative, 40%, 2rem, null, null);
-        font-size: 1.5rem;
+        font-size: 2rem;
         padding: 2rem;
         padding-right: 4rem;
         z-index: 15;
@@ -103,8 +103,8 @@
             content: '';
             position: absolute;
             top: 50%;
-            width: 0.55rem;
-            height: 0.55rem;
+            width: 0.75rem;
+            height: 0.75rem;
             border-radius: 50%;
             background-color: #000;
             animation: hand-pulse 1.8s ease infinite;
@@ -112,7 +112,7 @@
         }
     }
     &-phone {
-        @include m.position (relative, null, -7rem, 4rem, null);
+        @include m.position (relative, null, -8rem, 4rem, null);
         rotate: 45deg;
         height: min(90%, 45rem);            // No supera la altura de la imagen 
         width: auto;                        // el ancho lo calcula solo con aspect-ratio 
@@ -122,6 +122,9 @@
         cursor: pointer;
         filter: brightness(1.65) contrast(1.02) saturate(1.10);
         transition: all 1.5s ease, filter .25s ease;
+        @include m.desktop-l {
+            right: -14rem;
+        }
     }
     &-frame, &-imgPhone {
         position: absolute;
