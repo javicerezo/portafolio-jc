@@ -186,7 +186,7 @@ export const proyectInfoList: ProyectInformation[] = [
         },
     },
     {
-        key: "portafolio-ejemplo-react",
+        key: "portafolio-ejemplo-v2",
         es: {
             description: "Ejemplo de portafolio web. Construido en React, JavaScript y usando metodología SUITCSS.",
             learnedList: [
@@ -276,44 +276,62 @@ export const proyectInfoList: ProyectInformation[] = [
         },
     },
     {
-        key: "landing-page-react",
+        key: "landing-page-v2",
         es: {
-            description: "Portafolio profesional de Javi Cerezo - desarrollador web&móvil | ingeniero industrial.",
+            description: "Landing page migrada a Astro y Tailwind. HTML estático por defecto y JavaScript nativo solo para la validación del formulario.",
             learnedList: [
-                
+                "Adopción de Astro: ruteo por archivos y filosofía de 'cero JS' por defecto.",
+                "Maquetación rápida con Tailwind.",
+                "Validación del formulario con JavaScript vanilla.",
+                "Gestión de rutas y assets (imports en Astro y configuración de site/base para despliegues en subruta).",
             ],
         },
         en: {
-            description: "Professional portfolio of Javi Cerezo - web & mobile developer | industrial engineer.",
-            learnedList: [
-                
+            description: "Landing page migrated to Astro and Tailwind. Static HTML by default and vanilla JS only for form validation.",
+            learnedList: [   
+                "Adopting Astro: file-based routing and a 'zero-JS by default' philosophy.",
+                "Fast layout with Tailwind.",
+                "Form validation using vanilla JavaScript.",
+                "Correct routing & asset handling (Astro imports and site/base config for subpath deployments).",
             ],
         },
         cat: {
-            description: "Portafoli professional de Javi Cerezo - desenvolupador web i mòbil | enginyer industrial.",
+            description: "Landing page migrada a Astro i Tailwind. HTML estàtic per defecte i JavaScript només per a la validació del formulari.",
             learnedList: [
-                
+                "Adopció d'Astro: enrutament per fitxers i filosofia de 'zero JS' per defecte.",
+                "Maquetació ràpida amb Tailwind.",
+                "Validació del formulari amb JavaScript.",
+                "Gestió de rutes i assets (imports a Astro i configuració de site/base per a desplegaments en subruta).",
             ],
         },
     },
     {
-        key: "tienda-online-react",
+        key: "tienda-online-v2",
         es: {
-            description: "Portafolio profesional de Javi Cerezo - desarrollador web&móvil | ingeniero industrial.",
+            description: "Refactor de la tienda online a Astro + Tailwind + React (islas). HTML estático por defecto e hidratación solo en catálogo, filtros y carrito.",
             learnedList: [
-                
-                        ],
+                "Arquitectura de islas con Astro: hidratar solo lo interactivo para reducir JS y mejorar rendimiento.",
+                "Maquetación con Tailwind y componentes accesibles.",
+                "Gestión del carrito con React (context + localStorage) separando UI y lógica de negocio.",
+                "Carga de datos con fetch/REST y enrutado por archivos; prefetch y code-splitting de componentes.",
+            ],
         },
         en: {
-            description: "Professional portfolio of Javi Cerezo - web & mobile developer | industrial engineer.",
+            description:  "Refactor of the online store to Astro + Tailwind + React (islands). Static HTML by default and hydration only for catalog, filters, and cart.",
             learnedList: [
-                
-                        ],
+                "Astro islands architecture: hydrate only interactive parts to cut JS and boost performance.",
+                "Layout with Tailwind and accessible components.",
+                "Cart state with React (context + localStorage), clean separation of UI vs. business logic.",
+                "Data fetching via fetch/REST and file-based routing; prefetching and component code-splitting.",
+            ],
         },
         cat: {
-            description: "Portafoli professional de Javi Cerezo - desenvolupador web i mòbil | enginyer industrial.",
+            description: "Refactor de la botiga en línia a Astro + Tailwind + React (illes). HTML estàtic per defecte i hidratació només en catàleg, filtres i cistella.",
             learnedList: [
-                
+               "Arquitectura d’illes amb Astro: hidratar només el que és interactiu per reduir JS i millorar el rendiment.",
+                "Maquetació amb Tailwind i components accessibles.",
+                "Gestió de la cistella amb React (context + localStorage) separant UI i lògica de negoci.",
+                "Càrrega de dades amb fetch/REST i enrutament per fitxers; prefetch i code-splitting de components.", 
             ],
         },
     },
