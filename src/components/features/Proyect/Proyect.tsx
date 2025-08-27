@@ -23,6 +23,7 @@ export const Proyect = () => {
     const userName: string = "javicerezo";
     const { repos, loading } = useConnectGithub(userName);
 
+    // Formateo a conveniencia los repositorios.
     // Aprovecho este bucle para cambiar TODOS los datos que quiero mostrar en los demás componentes (y así en los componentes solo es mostrar datos).
     const formatedRepos: ProyectRepo[] = repos.map( (repo) => {
         // Agrego la ruta correcta de la imagen a mostrar en portada

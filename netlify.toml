@@ -5,3 +5,7 @@
 [dev]
   functions = "netlify/functions"
   publish = "dist"
+
+  [functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
