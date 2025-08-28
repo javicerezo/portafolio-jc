@@ -1,11 +1,7 @@
 
-/**
- * Representa un repositorio de GitHub,
- * usado en hook useConnectGithub y en componentes proyect.tsx
- */
-// Es el tipo del repositorio que se consulta en GitHub
+// Es el type del repositorio público que se consulta con API-REST en GitHub
 export interface Repo  {
-    id: number;
+    id: string;
     name: string;               // nombre del repo
     description: string;        // descrición del repo
     html_url: string;           // url del repo
@@ -16,6 +12,19 @@ export interface Repo  {
     archived: boolean;          // Indica si el proyecto está archivado o no (lo uso para separar proyectos con stack antiguos de proyectos con staks modernos).
     created_at: string;         // fecha de creación del proyecto
 };
+
+// Es el type del repositorio privado que se consulta con graphQL en GitHub
+export interface privateRepo {
+    id: string;
+    name: string;               
+    description: string;        
+    html_url: null;             // Hago null PORQUE ES REPOSITORIO PRIVADO PARA NO MOSTRAR
+    homepage: null;             // Hago null PORQUE ES REPOSITORIO PRIVADO PARA NO MOSTRAR      
+    language: string;              
+    languagesList: string[];    
+    archived: boolean;          
+    created_at: string;         
+}
 
 // Es el tipo del repositorio que yo construyo (con elementos añadidos para mostrar en la UI)
 export interface ProyectRepo extends Repo {
