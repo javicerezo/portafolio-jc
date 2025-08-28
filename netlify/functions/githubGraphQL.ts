@@ -6,6 +6,8 @@ const TOKEN = process.env.GITHUB_GRAPHQL_TOKEN!;
 const USER = process.env.GITHUB_USER!.toLowerCase();
 
 // Almaceno todos los repositorios privados que quiero pedir en una variable.
+// NOTA IMPORTANTE, EL TOKEN PARA ESTA PETICIÓN ES DEL TIPO FINE-GRAINED TOKEN, POR LO QUE PARA PEDIR LOS NUEVOS REPOSITORIOS 
+// (PRIVADOS), HAY QUE AGREGAR ESE NUEVO REPOSITORIO (PRIVADO) AL TOKEN DESDE GITHUB
 const PRIVATE_REPOS = ['app-escalada'];
 
 const buildQuery = (owner: string, repo: string) => `
