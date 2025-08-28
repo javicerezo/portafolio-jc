@@ -39,7 +39,7 @@ export const Proyect = () => {
 
         // Agrego el nombre del proyecto a mostrar en la UI
         let nameUI: string =  repo.name.substring(0, 1).toUpperCase() + repo.name.substring(1);
-        nameUI = nameUI.includes("-") ? nameUI.replace("-", " ") : nameUI;
+        nameUI = nameUI.includes("-") ? nameUI.replaceAll("-", " ") : nameUI;
 
         // Busco el repositorio de este mismo portafolio y hago isPortafolio true
         const isPortfolio: boolean = repo.name === "portafolio-jc" ? true : false; 
@@ -122,6 +122,8 @@ export const Proyect = () => {
                     <BsCaretRightFill className={`Proyect-divTitle-icon ${showPortfolioProyect ? "Proyect-divTitle-icon--show" : ""}`}/>
                 </div>
                 <ul className={`Proyect-ul ${showPortfolioProyect ? "Proyect-ul--show" : ""}`}>
+                    {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
+                    
                     {porfolioRepo && (<ProyectCard 
                         key={porfolioRepo.id}
                         nameUI={porfolioRepo.nameUI}

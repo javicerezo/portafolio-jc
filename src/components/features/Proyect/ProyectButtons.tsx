@@ -18,6 +18,7 @@ export const ProyectButtons = ({html_url, homepage, isButtonModal, isPortfolio}:
     }
 
     return (
+        // NOTA, is buttonModal es para agregar un className porque en ProyectCard.tsx y ProyecModal.tsx uso el mismo botón pero con estilos diferentes (solo es un poco más grande)
         <div className={isButtonModal ? "ProyectButtons ProyectButtons--mod" : "ProyectButtons"}>
             <a 
                 className={isButtonModal ? "ProyectButtons-button ProyectButtons-button--mod" : "ProyectButtons-button"} 

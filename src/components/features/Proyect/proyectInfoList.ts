@@ -245,7 +245,7 @@ export const proyectInfoList: ProyectInformation[] = [
     {
         key: "portafolio-jc",
         es: {
-            description: "Portafolio profesional de Javi Cerezo - desarrollador web&móvil | ingeniero industrial.",
+            description: "Portafolio profesional de Javi Cerezo - Desarrollador aplicaciones multiplataforma | Ingeniero industrial.",
             learnedList: [
                 "Consolidación en el uso de ReactJs (hooks personalizados para separar lógica de UI).",
                 "Uso de typeScritp en componentes y hooks (tipado de props y de modelos).",
@@ -255,7 +255,7 @@ export const proyectInfoList: ProyectInformation[] = [
             ],
         },
         en: {
-            description: "Professional portfolio of Javi Cerezo - web & mobile developer | industrial engineer.",
+            description: "Professional portfolio of Javi Cerezo - Multiplatform Applications Developer | Industrial Engineer.",
             learnedList: [
                 "Consolidation in using React (custom hooks to separate UI from logic).",
                 "Use of TypeScript in components and hooks (typed props and models).",
@@ -265,7 +265,7 @@ export const proyectInfoList: ProyectInformation[] = [
             ],
         },
         cat: {
-            description: "Portafoli professional de Javi Cerezo - desenvolupador web i mòbil | enginyer industrial.",
+            description: "Portafoli professional de Javi Cerezo - Desenvolupador d'aplicacions multiplataforma | Enginyer industrial..",
             learnedList: [
                 "Consolidació en l'ús de React (hooks personalitzats per separar la lògica de la UI).",
                 "Ús de TypeScript en components i hooks (tipatge de props i models).",
