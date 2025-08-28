@@ -65,7 +65,7 @@
         opacity: 0;
         transition: max-height 1s ease, all 1s ease;
         &--show {
-            max-height: 50rem;      // le doy de sobra, cada tarjeta max-width 246px (3 filas completas)
+            max-height: 100rem;      // le doy de sobra, cada tarjeta max-width 246px (6 filas completas aprox)
             opacity: 1;
             overflow-y: auto;
         }
