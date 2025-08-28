@@ -4,7 +4,7 @@ import { useLanguage } from "../../../utils/hooks/useLanguage";
 
 import type { ProyectCardProps } from "../../../utils/types/proyect";
 
-export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPortfolio, onClick }: ProyectCardProps) => {
+export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPublic, isPortfolio, onClick }: ProyectCardProps) => {
     const { t } = useLanguage();
 
     return (
@@ -24,6 +24,7 @@ export const ProyectCard = ({ nameUI, html_url, homepage, language, image, isPor
                 html_url={html_url}
                 homepage={homepage}
                 isButtonModal={false}
+                isPublic={isPublic}
                 isPortfolio={isPortfolio}
             />
         </li>

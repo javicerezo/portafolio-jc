@@ -71,6 +71,7 @@ export const Proyect = () => {
                             homepage={repo.homepage || null}
                             language={repo.languagesList?.join(', ') || repo.language}
                             image={repo.image}
+                            isPublic={repo.isPublic}
                             isPortfolio={repo.isPortfolio}
                             onClick={ () => setSelectedProyect(repo) }
                         />
@@ -96,6 +97,7 @@ export const Proyect = () => {
                             homepage={repo.homepage || null}
                             language={repo.languagesList?.join(', ') || repo.language}
                             image={repo.image}
+                            isPublic={repo.isPublic}
                             isPortfolio={repo.isPortfolio}
                             onClick={ () => setSelectedProyect(repo) }
                         />
@@ -120,6 +122,7 @@ export const Proyect = () => {
                         homepage={porfolioRepo.homepage || null}
                         language={porfolioRepo.languagesList?.join(', ') || porfolioRepo.language}
                         image={porfolioRepo.image}
+                        isPublic={porfolioRepo.isPublic}
                         isPortfolio={true}
                         onClick={ () => setSelectedProyect(porfolioRepo) }
                     />)}

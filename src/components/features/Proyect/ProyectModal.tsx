@@ -94,6 +94,7 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                     html_url={proyect.html_url}
                     homepage={proyect.homepage}
                     isButtonModal={true}
+                    isPublic={proyect.isPublic}
                     isPortfolio={proyect.isPortfolio}
                 />
             </div>

@@ -40,7 +40,8 @@ export interface ProyectCardProps {
     html_url: string | null;           // url de github para ver el código
     homepage: string | null;           // url del despliegue para ver el proyecto
     language: string | null;           // lenguaje/s usados del proyecto
-    image: string;                     // url de la imagen a mostrar en el ProyectCard
+    image: string;    
+    isPublic: boolean;                 // url de la imagen a mostrar en el ProyectCard
     isPortfolio: boolean;
     onClick: () => void;
 }
@@ -69,8 +70,9 @@ export interface ProyectInformation {
  * type de los botones de cada proyecto
  */
 export interface ProyectButtonProps {
-    html_url: string;
-    homepage: string;
+    html_url: string | null;
+    homepage: string | null;
     isButtonModal: boolean;
+    isPublic: boolean;
     isPortfolio: boolean;
 }
