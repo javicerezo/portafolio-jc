@@ -4,21 +4,37 @@ import type { Repo } from "../types/proyect";
 
 export const useConnectGithub = (userName: string) => {
     const [repos, setRepos] = useState<Repo[]>([]);
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
         (async () => {
             try {
-                setLoading(true);
-                const res = await fetch(`/.netlify/functions/githubAPI_REST?user=${encodeURIComponent(userName)}`);
-                if (!res.ok) throw new Error(`HTTP ${res.status}`);
-                const data = await res.json();
-                setRepos(data); // ya vienen filtrados/ordenados/enriquecidos
+                // Hago las peticiones, NO PARALELAS para saber si alguna falla
+                const publicRes = await fetch(`/.netlify/functions/githubAPI_REST?user=${encodeURIComponent(userName)}`);
+                const privateRes = await fetch(`/.netlify/functions/githubGraphQL`);
+
+                // Compruebo el estado de la petición, lanzo error si alguna falla.
+                if (!publicRes.ok) throw new Error(`HTTP ${publicRes.status}`);
+                if (!privateRes.ok) throw new Error(`HTTP ${privateRes.status}`);
+                
+                // Traduzco los datos recibidos
+                const publicData = await publicRes.json();
+                const privateData = await privateRes.json();
+                
+                const filterPublicData = publicData.filter(Boolean);
+                const filterPrivateData = privateData.filter(Boolean);
+
+                // Junto todo y ordeno por fecha
+                const allData = [...filterPublicData,...filterPrivateData].sort( (a: Repo, b: Repo) => {
+                    return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
+                }) ;
+                
+                setLoading(false);
+                setRepos(allData);
             } catch (e) {
                 console.error(e);
+                setLoading(true);
                 setRepos([]);
-            } finally {
-                setLoading(false);
             }
         })();
     }, [userName]);

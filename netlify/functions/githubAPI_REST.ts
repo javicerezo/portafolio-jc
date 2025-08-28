@@ -2,23 +2,13 @@
 
 import type { Handler } from '@netlify/functions';
 
-type Repo = {
-  id: number; 
-  name: string; 
-  description: string | null; 
-  created_at: string;
-  archived: boolean; 
-  homepage: string | null; 
-  html_url: string; 
-  language: string | null; 
-  fork: boolean;
-};
+import type { Repo } from '../../src/utils/types/proyect';
 
 type TopicsResponse = { names: string[] };
 
 const GITHUB_API = "https://api.github.com";
-const TOKEN = process.env.GITHUB_TOKEN!; 
-const USER = process.env.GITHUB_USER!;
+const TOKEN = process.env.GITHUB_APIREST_TOKEN!; 
+const USER = process.env.GITHUB_USER!.toLowerCase();
 
 export const handler: Handler = async () => {
     try {
@@ -33,8 +23,9 @@ export const handler: Handler = async () => {
         const data: Repo[] = await res.json();
 
         // Filtro los datos
-        const result = data.filter(
-        (repo) => !repo.fork && repo.name.toLowerCase() !== USER.toLowerCase()
+        const result = data.filter( (repo) => 
+            !repo.fork 
+            && repo.name.toLowerCase() !== USER.toLowerCase()
         );
 
         // Ordeno los proyectos por fecha de creación
@@ -52,7 +43,7 @@ export const handler: Handler = async () => {
                     }, 
                 });
 
-                const topicsData: TopicsResponse = topicsRes.ok ? await topicsRes.json() : { names: [] };
+                const topicsData: TopicsResponse = topicsRes.ok ? await topicsRes.json() : { names: [] };   // Array de nombres
                 const topics = topicsData.names.map( t => t.substring(0, 1).toUpperCase() + t.substring(1));
 
                 const languagesList = Array.from(
