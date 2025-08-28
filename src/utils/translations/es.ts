@@ -53,6 +53,8 @@ const es = {
   contact_botDetected: "Bot detectado.",
   contact_errorSending: "Error al enviar el mensaje. Por favor inténtalo de nuevo.",
   contact_p: "Sígueme en",
+  tooltip_private_code: "El código de esta app es privado.",
+  tooltip_private_site: "La demostración de esta app no está disponible.",
   tooltip_portafolio_jc: "Estás en la web del portafolio de Javi Cerezo.",
   tooltip_credentialcard: "Haz clic encima de la imagen para ver el certificado",
   footer: "Desarrollador web&móvil | Ingeniero industrial",
