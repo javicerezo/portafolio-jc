@@ -23,33 +23,22 @@ export const Proyect = () => {
     const userName: string = "javicerezo";
     const { repos, loading } = useConnectGithub(userName);
 
-    // Formateo a conveniencia los repositorios.
-    // Aprovecho este bucle para cambiar TODOS los datos que quiero mostrar en los demás componentes (y así en los componentes solo es mostrar datos).
+
     const formatedRepos: ProyectRepo[] = repos.map( (repo) => {
-        // Agrego la ruta correcta de la imagen a mostrar en portada
-        // NOTA: Para que funcione correcto, el nombre de los repositorios de aplicaciones móviles deben empezar por app, los demás no importan.
-        const image: string = repo.name.toLowerCase().includes("app")  
-            ? `https://raw.githubusercontent.com/${userName}/${repo.name}/master/app/src/main/res/drawable/preview.png` 
-            : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/preview.png`;
-
-        // Agrego la ruta correcta de la imagen para resolución móvil a mostrar en el modal
-        const imagePhone: string = repo.name.toLowerCase().includes("app")  
-            ? `https://raw.githubusercontent.com/${userName}/${repo.name}/master/app/src/main/res/drawable/previewPhone.png` 
-            : `https://raw.githubusercontent.com/${userName}/${repo.name}/master/public/assets/imgs/previewPhone.png`;
-
         // Agrego el nombre del proyecto a mostrar en la UI
         let nameUI: string =  repo.name.substring(0, 1).toUpperCase() + repo.name.substring(1);
         nameUI = nameUI.includes("-") ? nameUI.replaceAll("-", " ") : nameUI;
 
         // Busco el repositorio de este mismo portafolio y hago isPortafolio true
-        const isPortfolio: boolean = repo.name === "portafolio-jc" ? true : false; 
+        const isPortfolio = repo.name === "portafolio-jc" ? true : false; 
 
-        return { ...repo, image, imagePhone, nameUI, isPortfolio};
+        // image, imagePhone,
+        return { ...repo,  nameUI, isPortfolio};
     });
 
     // Separo los repositorios en diferentes listas (proyectos con stack moderno, proyectos con stack no modernos y este mismo proyecto de portafolio)
-    const modernRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.archived === false && repo.name.toLowerCase() !== 'portafolio-jc');
-    const noModernRepos: ProyectRepo[] | [] = formatedRepos.filter( repo => repo.archived === true && repo.name.toLowerCase() !== 'portafolio-jc');
+    const modernRepos: ProyectRepo[] = formatedRepos.filter( repo => repo.archived === false && repo.name.toLowerCase() !== 'portafolio-jc');
+    const noModernRepos: ProyectRepo[] = formatedRepos.filter( repo => repo.archived === true && repo.name.toLowerCase() !== 'portafolio-jc');
     const porfolioRepo: ProyectRepo | null = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc') || null;
 
     return (
@@ -78,8 +67,8 @@ export const Proyect = () => {
                         <ProyectCard
                             key={repo.id}
                             nameUI={repo.nameUI}
-                            html_url={repo.html_url}
-                            homepage={repo.homepage}
+                            html_url={repo.html_url || null}
+                            homepage={repo.homepage || null}
                             language={repo.languagesList?.join(', ') || repo.language}
                             image={repo.image}
                             isPortfolio={repo.isPortfolio}
@@ -103,8 +92,8 @@ export const Proyect = () => {
                         <ProyectCard
                             key={repo.id}
                             nameUI={repo.nameUI}
-                            html_url={repo.html_url}
-                            homepage={repo.homepage}
+                            html_url={repo.html_url || null}
+                            homepage={repo.homepage || null}
                             language={repo.languagesList?.join(', ') || repo.language}
                             image={repo.image}
                             isPortfolio={repo.isPortfolio}
@@ -127,8 +116,8 @@ export const Proyect = () => {
                     {porfolioRepo && (<ProyectCard 
                         key={porfolioRepo.id}
                         nameUI={porfolioRepo.nameUI}
-                        html_url={porfolioRepo.html_url}
-                        homepage={porfolioRepo.homepage}
+                        html_url={porfolioRepo.html_url || null}
+                        homepage={porfolioRepo.homepage || null}
                         language={porfolioRepo.languagesList?.join(', ') || porfolioRepo.language}
                         image={porfolioRepo.image}
                         isPortfolio={true}

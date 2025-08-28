@@ -28,14 +28,24 @@ export const handler: Handler = async () => {
             && repo.name.toLowerCase() !== USER.toLowerCase()
         );
 
-        // Ordeno los proyectos por fecha de creación
-        const sortedResult = result.sort( (a: Repo, b: Repo) => {
-            return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
-        }) 
-
-        // Hacemos peticiones paralelas (obtener tecnologías a mostrar escritas a mano en topics dentro del about de cada proyecto)
+        // PETICIONES PARALELAS 
         const enrichedResult = await Promise.all(
-            sortedResult.map(async (repo) => {
+            result.map(async (repo) => {
+                // Agrego el tipo de repositorio que es
+                repo.isPublic = true;
+
+                // Agrego la ruta correcta de la imagen a mostrar en portada
+                // NOTA: Para que funcione correcto, el nombre de los repositorios de aplicaciones móviles deben empezar por app, los demás no importan.
+                repo.image = repo.name.toLowerCase().includes("app")  
+                ? (`https://raw.githubusercontent.com/${USER}/${repo.name}/master/app/src/main/res/drawable/preview.png`) 
+                : (`https://raw.githubusercontent.com/${USER}/${repo.name}/master/public/assets/imgs/preview.png`);
+                
+                // Agrego la ruta correcta de la imagen para resolución móvil a mostrar en el modal
+                repo.imagePhone = repo.name.toLowerCase().includes("app")  
+                    ? `https://raw.githubusercontent.com/${USER}/${repo.name}/master/app/src/main/res/drawable/previewPhone.png` 
+                    : `https://raw.githubusercontent.com/${USER}/${repo.name}/master/public/assets/imgs/previewPhone.png`;
+
+                // Obtenemos las tecnologías a mostrar (escritas a mano en topics dentro del about de cada proyecto)
                 const topicsRes = await fetch(`${GITHUB_API}/repos/${USER}/${repo.name}/topics`, { 
                     headers: {
                         Authorization: `token ${TOKEN}`,
@@ -47,9 +57,7 @@ export const handler: Handler = async () => {
                 const topics = topicsData.names.map( t => t.substring(0, 1).toUpperCase() + t.substring(1));
 
                 const languagesList = Array.from(
-                    new Set<string>([
-                        ...topics
-                    ])
+                    new Set<string>([...topics])
                 ).sort();
 
                 return { ...repo, languagesList };

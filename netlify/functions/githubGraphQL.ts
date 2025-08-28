@@ -1,5 +1,5 @@
 import type { Handler } from '@netlify/functions';
-import type { privateRepo } from '../../src/utils/types/proyect';
+import type { Repo } from '../../src/utils/types/proyect';
 
 const GITHUB_GRAPHQL = 'https://api.github.com/graphql';
 const TOKEN = process.env.GITHUB_GRAPHQL_TOKEN!; 
@@ -11,13 +11,13 @@ const PRIVATE_REPOS = ['app-escalada'];
 const buildQuery = (owner: string, repo: string) => `
     {
         repository(owner: "${owner}", name: "${repo}") {
-        id
-        name
-        description
-        primaryLanguage { name }
-        repositoryTopics(first: 20) { nodes { topic { name } } }
-        isArchived
-        createdAt
+            id
+            name
+            description
+            primaryLanguage { name }
+            repositoryTopics(first: 20) { nodes { topic { name } } }
+            isArchived
+            createdAt
         }
     }
 `;
@@ -41,35 +41,23 @@ export const handler: Handler = async () => {
 
             const objInfo = await res.json();
 
-
-
-
-            console.log(objInfo)           // LO LEE CORRECTO
-            console.log(objInfo.data.repository.repositoryTopics.nodes)
-
-            // COMPROBACIONES EN CONSOLA
-            console.log('owner:', USER, 'repo:', PRIVATE_REPOS[0], 'status:', res.status); // LO LEE CON DATOS CORRECTOS
-            
-            if (objInfo.errors) console.log('graphql errors:', objInfo.errors);
-            console.log('repository is', objInfo?.data?.repository ? 'OK' : 'NULL'); // LO LEE CON OK
-
-            // REVISTAR AQUI
-
-            
-            
-            if (!objInfo) return null; // no existe o no hay permisos
+            if (!objInfo) return null; // no existe o no hay permisos me retorna objeto Null
             
             // importante leer los datos de objInfo.data.repository: {id, name ....} (porque es aquí dentro donde se encuentran los datos)
-            const repositorio: privateRepo = {
+            const repositorio: Repo = {
                 id: objInfo.data.repository.id,
                 name: objInfo.data.repository.name,
                 description: objInfo.data.repository.description,
-                html_url: null,      // NO MOSTRAR
-                homepage: null,      // NO MOSTRAR
+                html_url: null,      // PARA NO MOSTRAR
+                homepage: null,      // PARA NO MOSTRAR
                 language: objInfo.data.repository.primaryLanguage?.name ?? null,
+                fork: false,
                 languagesList: objInfo.data.repository.repositoryTopics.nodes.map( element => element.topic.name.substring(0, 1).toUpperCase() + element.topic.name.substring(1)),
                 created_at: objInfo.data.repository.createdAt,
                 archived: objInfo.data.repository.isArchived,
+                isPublic: false,
+                image: `/assets/imgs/${objInfo.data.repository.name}/preview.png`,
+                imagePhone: `/assets/imgs/${objInfo.data.repository.name}/previewPhone.png`,
             };
 
             return { ...repositorio };

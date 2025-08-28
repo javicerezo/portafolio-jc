@@ -21,6 +21,7 @@ export const useConnectGithub = (userName: string) => {
                 const publicData = await publicRes.json();
                 const privateData = await privateRes.json();
                 
+                // Filtro posibles null para que no rompa el frontend
                 const filterPublicData = publicData.filter(Boolean);
                 const filterPrivateData = privateData.filter(Boolean);
 
@@ -28,7 +29,7 @@ export const useConnectGithub = (userName: string) => {
                 const allData = [...filterPublicData,...filterPrivateData].sort( (a: Repo, b: Repo) => {
                     return new Date(b.created_at).getTime() - new Date(a.created_at).getTime();
                 }) ;
-                
+                console.log(allData)
                 setLoading(false);
                 setRepos(allData);
             } catch (e) {
