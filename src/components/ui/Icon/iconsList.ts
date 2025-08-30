@@ -86,6 +86,12 @@ export const IconsList: IconList[] = [
         color: "#61DAFB"
     },
     {
+        languageName: "redux",
+        textTooltip: "Redux",
+        icon: "SiRedux",
+        color: "#3498db"
+    },
+    {
         languageName: "vite",
         textTooltip: "Vite.js",
         icon: "SiVite",
@@ -144,6 +150,12 @@ export const IconsList: IconList[] = [
         textTooltip: "Api Rest",
         icon: "TbApi",
         color: "#4B5563"
+    },
+    {
+        languageName: "graphql",
+        textTooltip: "GraphQL",
+        icon: "SiGraphql",
+        color: "#E10098"
     },
     {
         languageName: "railway",
