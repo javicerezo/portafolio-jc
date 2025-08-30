@@ -250,7 +250,7 @@ export const proyectInfoList: ProyectInformation[] = [
                 "Consolidación en el uso de ReactJs (hooks personalizados para separar lógica de UI).",
                 "Uso de typeScritp en componentes y hooks (tipado de props y de modelos).",
                 "Separación de funciones del backend y frontend.",
-                // "Validación automatizada del formulario (Vitest + React Testing Library) y pruebas de flujo completo E2E (Cypress).",
+                "Uso de peticiones con API-REST y con GraphQL.",
                 "Despliegue en Netlify.",
             ],
         },
@@ -260,7 +260,7 @@ export const proyectInfoList: ProyectInformation[] = [
                 "Consolidation in using React (custom hooks to separate UI from logic).",
                 "Use of TypeScript in components and hooks (typed props and models).",
                 "Separation of backend and frontend functions (cleaner code).",
-                // "Automated form validation (Vitest + React Testing Library) and full end-to-end flow tests (Cypress).",
+                "Use of requests with REST API and GraphQL.",
                 "Deployment on Netlify.",
             ],
         },
@@ -270,7 +270,7 @@ export const proyectInfoList: ProyectInformation[] = [
                 "Consolidació en l'ús de React (hooks personalitzats per separar la lògica de la UI).",
                 "Ús de TypeScript en components i hooks (tipatge de props i models).",
                 "Separació de funcions del backend i del frontend (neteja del codi).",
-                // "Validació automatitzada del formulari (Vitest + React Testing Library) i proves de flux complet E2E (Cypress).",
+                "Ús de peticions amb API REST i amb GraphQL.",
                 "Desplegament a Netlify.",
             ],
         },
@@ -280,28 +280,25 @@ export const proyectInfoList: ProyectInformation[] = [
         es: {
             description: "Landing page migrada a Astro y Tailwind. HTML estático por defecto y JavaScript nativo solo para la validación del formulario.",
             learnedList: [
-                "Adopción de Astro: ruteo por archivos y filosofía de 'cero JS' por defecto.",
+                "Uso de Astro.",
                 "Maquetación rápida con Tailwind.",
                 "Validación del formulario con JavaScript vanilla.",
-                "Gestión de rutas y assets (imports en Astro y configuración de site/base para despliegues en subruta).",
             ],
         },
         en: {
             description: "Landing page migrated to Astro and Tailwind. Static HTML by default and vanilla JS only for form validation.",
             learnedList: [   
-                "Adopting Astro: file-based routing and a 'zero-JS by default' philosophy.",
+                "Use of Astro.",
                 "Fast layout with Tailwind.",
                 "Form validation using vanilla JavaScript.",
-                "Correct routing & asset handling (Astro imports and site/base config for subpath deployments).",
             ],
         },
         cat: {
             description: "Landing page migrada a Astro i Tailwind. HTML estàtic per defecte i JavaScript només per a la validació del formulari.",
             learnedList: [
-                "Adopció d'Astro: enrutament per fitxers i filosofia de 'zero JS' per defecte.",
+                "Ús d'Astro.",
                 "Maquetació ràpida amb Tailwind.",
                 "Validació del formulari amb JavaScript.",
-                "Gestió de rutes i assets (imports a Astro i configuració de site/base per a desplegaments en subruta).",
             ],
         },
     },
@@ -312,8 +309,8 @@ export const proyectInfoList: ProyectInformation[] = [
             learnedList: [
                 "Arquitectura de islas con Astro: hidratar solo lo interactivo para reducir JS y mejorar rendimiento.",
                 "Maquetación con Tailwind y componentes accesibles.",
-                "Gestión del carrito con React (context + localStorage) separando UI y lógica de negocio.",
-                "Carga de datos con fetch/REST y enrutado por archivos; prefetch y code-splitting de componentes.",
+                "Control de estados con Redux.",
+                ".",
             ],
         },
         en: {
@@ -321,8 +318,8 @@ export const proyectInfoList: ProyectInformation[] = [
             learnedList: [
                 "Astro islands architecture: hydrate only interactive parts to cut JS and boost performance.",
                 "Layout with Tailwind and accessible components.",
-                "Cart state with React (context + localStorage), clean separation of UI vs. business logic.",
-                "Data fetching via fetch/REST and file-based routing; prefetching and component code-splitting.",
+                "State control with Redux.",
+                ".",
             ],
         },
         cat: {
@@ -330,8 +327,8 @@ export const proyectInfoList: ProyectInformation[] = [
             learnedList: [
                "Arquitectura d'illes amb Astro: hidratar només el que és interactiu per reduir JS i millorar el rendiment.",
                 "Maquetació amb Tailwind i components accessibles.",
-                "Gestió de la cistella amb React (context + localStorage) separant UI i lògica de negoci.",
-                "Càrrega de dades amb fetch/REST i enrutament per fitxers; prefetch i code-splitting de components.", 
+                "Control d'estats amb Redux.",
+                ".", 
             ],
         },
     },
