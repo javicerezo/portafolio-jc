@@ -281,24 +281,24 @@ export const proyectInfoList: ProyectInformation[] = [
             description: "Landing page migrada a Astro y Tailwind. HTML estático por defecto y JavaScript nativo solo para la validación del formulario.",
             learnedList: [
                 "Uso de Astro.",
-                "Maquetación rápida con Tailwind.",
-                "Validación del formulario con JavaScript vanilla.",
+                // "Maquetación rápida con Tailwind.",
+                // "Validación del formulario con JavaScript vanilla.",
             ],
         },
         en: {
             description: "Landing page migrated to Astro and Tailwind. Static HTML by default and vanilla JS only for form validation.",
             learnedList: [   
                 "Use of Astro.",
-                "Fast layout with Tailwind.",
-                "Form validation using vanilla JavaScript.",
+                // "Fast layout with Tailwind.",
+                // "Form validation using vanilla JavaScript.",
             ],
         },
         cat: {
             description: "Landing page migrada a Astro i Tailwind. HTML estàtic per defecte i JavaScript només per a la validació del formulari.",
             learnedList: [
                 "Ús d'Astro.",
-                "Maquetació ràpida amb Tailwind.",
-                "Validació del formulari amb JavaScript.",
+                // "Maquetació ràpida amb Tailwind.",
+                // "Validació del formulari amb JavaScript.",
             ],
         },
     },
