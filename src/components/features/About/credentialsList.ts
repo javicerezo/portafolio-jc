@@ -20,10 +20,16 @@ export const credentialsList: Credential[] = [
         href: "https://drive.google.com/file/d/11I46YJUrn32idkQO4Y2M1p385gkHj8C7/view?usp=sharing"
     },
     {
-        title: "Programación aplicaciones Android con Kotlin",
+        title: "Programación app`s Android con Kotlin",
         image: "/assets/imgs/udemy.avif",
         alt: "Logo Udemy",
         href: "https://drive.google.com/file/d/1OZRZFoge17U3pXVKBCNe3n1RiKMt5oUj/view?usp=sharing"
+    },
+    {
+        title: "React y TypeScript",
+        image: "/assets/imgs/udemy.avif",
+        alt: "Logo Udemy",
+        href: "https://drive.google.com/file/d/1bWiHHHedpj9v-r-uzIOOzdMzzAUgXOHl/view?usp=drive_link"
     },
     {
         title: "JavaScript Moderno",
