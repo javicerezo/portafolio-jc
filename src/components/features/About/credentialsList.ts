@@ -8,7 +8,7 @@ export const credentialsList: Credential[] = [
         href: "https://drive.google.com/file/d/1T9pz9jW1I2d6Ae3Ji_eahBUleeQXxBoZ/view?usp=sharing"
     },
     {
-        title: "Desarrollador aplicaciones multiplataforma DAM",
+        title: "Desarrollador aplicaciones multiplataforma (DAM)",
         image: "/assets/imgs/ilerna.png",
         alt: "Logo Ilerna",
         href: "sd"
