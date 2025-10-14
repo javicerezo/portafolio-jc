@@ -17,7 +17,7 @@ export const Proyect = () => {
     const [ selectedProyect, setSelectedProyect ] = useState<ProyectRepo | null>(null);
     const [ showNoModernProyect, setShowNoModernProyect ] = useState<boolean>(false);
     const [ showModernProyect, setShowModernProyect ] = useState<boolean>(true);
-    const [ showPortfolioProyect, setShowPortfolioProyect ] = useState<boolean>(true);
+    const [ showPortfolioProyect, setShowPortfolioProyect ] = useState<boolean>(false);
     const  { ref, visible } = useIntersectionObserver(); 
     
     const userName: string = "javicerezo";
