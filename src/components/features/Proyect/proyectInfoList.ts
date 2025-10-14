@@ -80,7 +80,7 @@ export const proyectInfoList: ProyectInformation[] = [
     {
         key: "tienda-online",
         es: {
-            description: "Frontend para e-commerce de deportes de montaña. Nomenclatura BEMIT. Base de Datos creada con JSON.SERVER. Usa locatlStorage para los productos de la cesta.",
+            description: "Frontend para e-commerce de deportes de montaña (inspirada en la icónica tienda de Barrabes). Nomenclatura BEMIT. Base de Datos creada con JSON.SERVER. Usa locatlStorage para los productos de la cesta.",
             learnedList: [
                 "Manipulación dinámica del DOM con JS vanilla.",
                 "Persistencia de datos con LocaleStore.",
@@ -88,7 +88,7 @@ export const proyectInfoList: ProyectInformation[] = [
             ],
         },
         en: {
-            description: "Frontend for a mountain sports e-commerce. BEMIT naming. Database built with JSON Server. Uses locatlStorage for catrt items.",
+            description: "Frontend for a mountain sports e-commerce (inspired by the iconic Barrabes store). BEMIT naming. Database built with JSON Server. Uses locatlStorage for catrt items.",
             learnedList: [
                 "Dynamic DOM manipulation with vanilla JS.",
                 "Data persistence with localStorage.",
@@ -96,7 +96,7 @@ export const proyectInfoList: ProyectInformation[] = [
             ],
         },
         cat: {
-            description: "Frontend per a un e-commerce d'esports de muntanya. Nomenclatura BEMIT. Base de dades creada amb JSON Server. Fa servir el locatlStorage per als productes de la cistella.",
+            description: "Frontend per a un e-commerce d'esports de muntanya (inspirada en la icònica botiga de Barrabes). Nomenclatura BEMIT. Base de dades creada amb JSON Server. Fa servir el locatlStorage per als productes de la cistella.",
             learnedList: [
                 "Manipulació dinàmica del DOM amb JS pur.",
                 "Persistència de dades amb localStorage.",
@@ -248,7 +248,7 @@ export const proyectInfoList: ProyectInformation[] = [
             description: "Portafolio profesional de Javi Cerezo - Desarrollador aplicaciones multiplataforma | Ingeniero industrial.",
             learnedList: [
                 "Consolidación en el uso de ReactJs (hooks personalizados para separar lógica de UI).",
-                "Uso de typeScritp en componentes y hooks (tipado de props y de modelos).",
+                "Uso de TypeScript en componentes y hooks (tipado de props y de modelos).",
                 "Separación de funciones del backend y frontend.",
                 "Uso de peticiones con API-REST y con GraphQL.",
                 "Despliegue en Netlify.",
@@ -280,55 +280,42 @@ export const proyectInfoList: ProyectInformation[] = [
         es: {
             description: "Landing page migrada a Astro y Tailwind. HTML estático por defecto y JavaScript nativo solo para la validación del formulario.",
             learnedList: [
-                "Uso de Astro.",
-                // "Maquetación rápida con Tailwind.",
-                // "Validación del formulario con JavaScript vanilla.",
+                "Uso del framework Astro para construir el proyecto.",
             ],
         },
         en: {
             description: "Landing page migrated to Astro and Tailwind. Static HTML by default and vanilla JS only for form validation.",
             learnedList: [   
-                "Use of Astro.",
-                // "Fast layout with Tailwind.",
-                // "Form validation using vanilla JavaScript.",
+                "Use of the Astro framework to build the project.",
             ],
         },
         cat: {
             description: "Landing page migrada a Astro i Tailwind. HTML estàtic per defecte i JavaScript només per a la validació del formulari.",
             learnedList: [
-                "Ús d'Astro.",
-                // "Maquetació ràpida amb Tailwind.",
-                // "Validació del formulari amb JavaScript.",
+                "Ús del framework Astro per construir el projecte.",
             ],
         },
     },
     {
         key: "tienda-online-v2",
         es: {
-            description: "Refactor de la tienda online a Astro + Tailwind + React (islas). HTML estático por defecto e hidratación solo en catálogo, filtros y carrito.",
+            description: "Refactor del e-commerce (inspirada en la icónica tienda de Barrabes) a Next.js + React + TypeScritp + SCSS + Redux + Firebase.",
             learnedList: [
-                "Arquitectura de islas con Astro: hidratar solo lo interactivo para reducir JS y mejorar rendimiento.",
-                "Maquetación con Tailwind y componentes accesibles.",
-                "Control de estados con Redux.",
-                ".",
+                "Uso del framework Next.js para la construcción del proyecto.",
+                "Tipado de datos con TypeScript",
+                "Base de datos con Firebase (NoSQL).",
             ],
         },
         en: {
-            description:  "Refactor of the online store to Astro + Tailwind + React (islands). Static HTML by default and hydration only for catalog, filters, and cart.",
+            description:  "E-commerce refactor (inspired by the iconic Barrabes store) to Next.js + React + TypeScritp + SCSS + Redux + Firebase.",
             learnedList: [
-                "Astro islands architecture: hydrate only interactive parts to cut JS and boost performance.",
-                "Layout with Tailwind and accessible components.",
-                "State control with Redux.",
-                ".",
+                
             ],
         },
         cat: {
-            description: "Refactor de la botiga en línia a Astro + Tailwind + React (illes). HTML estàtic per defecte i hidratació només en catàleg, filtres i cistella.",
+            description: "Refactor del e-commerce (inspirada en la icònica botiga de Barrabes) a Next.js + React + TypeScritp + SCSS + Redux + Firebase.",
             learnedList: [
-               "Arquitectura d'illes amb Astro: hidratar només el que és interactiu per reduir JS i millorar el rendiment.",
-                "Maquetació amb Tailwind i components accessibles.",
-                "Control d'estats amb Redux.",
-                ".", 
+               
             ],
         },
     },
