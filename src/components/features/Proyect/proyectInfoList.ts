@@ -299,23 +299,54 @@ export const proyectInfoList: ProyectInformation[] = [
     {
         key: "tienda-online-v2",
         es: {
-            description: "Refactor del e-commerce (inspirada en la icónica tienda de Barrabes) a Next.js + React + TypeScritp + SCSS + Redux + Firebase.",
+            description: "Unión de dos proyectos anteriores (e-commerse de montaña y blog de montaña) y refactor a Next.js + React + TypeScritp + SCSS + Redux + Firebase.",
             learnedList: [
-                "Uso del framework Next.js para la construcción del proyecto.",
-                "Tipado de datos con TypeScript",
-                "Base de datos con Firebase (NoSQL).",
+                "Uso de Next.js para mejorar el rendimiento mediante SSR, SSG y optimización de rutas, con Hot Reload durante el desarrollo.",
+                "Tipado estricto de datos con TypeScript y desarrollo de componentes reutilizables con React.",
+                "Gestión de la base de datos, autenticación y almacenamiento con Firebase.",
+                "Implementación del backend para login/logout, registro de usuarios, cálculo del precio final de la cesta, pasarela de pago y sistema de comentarios del blog.",
             ],
         },
         en: {
-            description:  "E-commerce refactor (inspired by the iconic Barrabes store) to Next.js + React + TypeScritp + SCSS + Redux + Firebase.",
+            description: "Union of two previous projects (mountain e-commerce and mountain blog) and refactor to Next.js + React + TypeScript + SCSS + Redux + Firebase.",
             learnedList: [
-                
+                "Use of Next.js to improve performance through SSR, SSG and route optimization, with Hot Reload during development.",
+                "Strict data typing with TypeScript and development of reusable components using React.",
+                "Database management, authentication and storage with Firebase.",
+                "Backend implementation for login/logout, user registration, final cart price calculation, payment gateway and blog comment system.",
             ],
         },
         cat: {
-            description: "Refactor del e-commerce (inspirada en la icònica botiga de Barrabes) a Next.js + React + TypeScritp + SCSS + Redux + Firebase.",
+            description: "Unió de dos projectes anteriors (e-commerce de muntanya i blog de muntanya) i refactor a Next.js + React + TypeScript + SCSS + Redux + Firebase.",
             learnedList: [
-               
+                "Ús de Next.js per millorar el rendiment mitjançant SSR, SSG i optimització de rutes, amb Hot Reload durant el desenvolupament.",
+                "Tipatge estricte de dades amb TypeScript i desenvolupament de components reutilitzables amb React.",
+                "Gestió de la base de dades, autenticació i emmagatzematge amb Firebase.",
+                "Implementació del backend per a login/logout, registre d’usuaris, càlcul del preu final de la cistella, passarel·la de pagament i sistema de comentaris del blog.",
+            ],
+        },
+    },
+    {
+        key: "app-Marian",
+        es: {
+            description: "descripción del proyecto",
+            learnedList: [
+                "",
+                ""
+            ],
+        },
+        en: {
+            description: "",
+            learnedList: [
+                "",
+                ""
+            ],
+        },
+        cat: {
+            description: "",
+            learnedList: [
+                "",
+                ""
             ],
         },
     },
