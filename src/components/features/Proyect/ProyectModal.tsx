@@ -4,14 +4,13 @@ import { ProyectButtons } from "./ProyectButtons";
 import { Paragraph } from "../../ui/Paragraph";
 import { Icon } from "../../ui/Icon/Icon";
 import { Tooltip } from "../../ui/Tooltip";
+import { BsCaretRightFill } from "react-icons/bs";
 
 import { useState } from "react";
 import { useLanguage } from "../../../utils/hooks/useLanguage";
 import { proyectInfoList } from "./proyectInfoList";
 
 import type { ProyectModalProps } from "../../../utils/types/proyect";
-
-import { BsCaretRightFill } from "react-icons/bs";
 
 export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) => {
     const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
@@ -84,8 +83,8 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                             <p>{t.modal_learned}</p>
                             <BsCaretRightFill className={`ProyectModal-learnedTitle-icon ${showLearned ? "ProyectModal-learnedTitle-icon--show" : ""}`}/>
                         </div>
-                        <ul className={`ProyectModal-learnedList ${showLearned ? "ProyectModal-learnedList--show" : ""}`}>
-                            {info?.learnedList.map( (element, key) => <li key={key} className="ProyectModal-li">- {element}</li> )}
+                        <ul className={`ProyectModal-features ${showLearned ? "ProyectModal-features--show" : ""}`}>
+                            {info?.features.map( (element, key) => <li key={key} className="ProyectModal-li">- {element}</li> )}
                         </ul>
                     </div>
                 </div>

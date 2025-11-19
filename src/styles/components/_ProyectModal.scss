@@ -172,13 +172,13 @@
             }
         }
     }
-    &-techList, &-learnedList {
+    &-techList, &-features {
         margin: 0.6rem 0 1rem 0;
     }
     &-techList {
         @include m.flex(row, wrap, center, center);
     }
-    &-learnedList {
+    &-features {
         @include m.flex(column, nowrap, center, flex-start);
         overflow: hidden;
         max-height: 0;

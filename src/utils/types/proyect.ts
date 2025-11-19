@@ -54,15 +54,15 @@ export interface ProyectInformation {
     key: string;
     es: {
         description: string;
-        learnedList: string[];
+        features: string[];
     },
     en: {
         description: string;
-        learnedList: string[];
+        features: string[];
     },
     cat: {
         description: string;
-        learnedList: string[];
+        features: string[];
     },
 }
 
