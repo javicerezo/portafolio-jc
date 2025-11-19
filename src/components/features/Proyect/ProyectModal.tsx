@@ -13,8 +13,10 @@ import { proyectInfoList } from "./proyectInfoList";
 import type { ProyectModalProps } from "../../../utils/types/proyect";
 
 export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) => {
+    const [ showDescription, setShowDescription ] = useState<boolean>(true);
+    const [ showFeatures, setShowFeatures ] = useState<boolean>(false);
+    const [ showTech, setShowTech ] = useState<boolean>(false);
     const [ showTooltip, setShowTooltip ] = useState<boolean>(false);
-    const [ showLearned, setShowLearned ] = useState<boolean>(false);
 
     const { t } = useLanguage();
     if (!isOpen || !proyect) return null;
@@ -32,7 +34,8 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
 
     const resetUI = () => {
         setShowTooltip(false);
-        setShowLearned(false);
+        setShowFeatures(false);
+        setShowTech(false);
     }
     const handleClose = () => {
         onClose();      // Función para cerrar un modal por defecto en react
@@ -64,12 +67,22 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                     </div>
                 </div>
 
-                <Paragraph text={info?.description}/>
+                <div className={`ProyectModal-paragraph ${showDescription ? "" : "ProyectModal-paragraph--mod"}`}>
+                    <Paragraph text={info?.description}/>
+                </div>
+                {showDescription ? (
+                    <p className="ProyectModal-readMore" onClick={ () => ( setShowDescription(!showDescription) )}>{t.about_readMore}</p>
+                    ) : (
+                    <p className="ProyectModal-readMore" onClick={ () => ( setShowDescription(!showDescription) )}>{t.about_readLess}</p>
+                )}
 
                 <div className="ProyectModal-div">
                     <div>
-                        <p className="ProyectModal-techTitle">{t.modal_languages}</p>
-                        <ul className="ProyectModal-techList">
+                        <div className="ProyectModal-techDiv" onClick={ () => (setShowTech(!showTech))}>
+                            <p className="ProyectModal-techTitle">{t.modal_languages}</p>
+                            <BsCaretRightFill className={`ProyectModal-techDiv-icon ${showTech ? "ProyectModal-techDiv-icon--turn" : ""}`}/>
+                        </div>
+                        <ul className={`ProyectModal-techList ${showTech ? "ProyectModal-techList--show" : ""}`}>
                             {proyect.languagesList
                                 ? proyect.languagesList.map((lang: string) => (
                                     <Icon key={lang} language={lang} />
@@ -79,11 +92,11 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                         </ul>
                     </div>
                     <div>
-                        <div className="ProyectModal-learnedTitle" onClick={ () => (setShowLearned(!showLearned))}>
-                            <p>{t.modal_learned}</p>
-                            <BsCaretRightFill className={`ProyectModal-learnedTitle-icon ${showLearned ? "ProyectModal-learnedTitle-icon--show" : ""}`}/>
+                        <div className="ProyectModal-featuresDiv" onClick={ () => (setShowFeatures(!showFeatures))}>
+                            <p className="ProyectModal-featuresTitle">{t.modal_learned}</p>
+                            <BsCaretRightFill className={`ProyectModal-featuresDiv-icon ${showFeatures ? "ProyectModal-featuresDiv-icon--turn" : ""}`}/>
                         </div>
-                        <ul className={`ProyectModal-features ${showLearned ? "ProyectModal-features--show" : ""}`}>
+                        <ul className={`ProyectModal-featuresList ${showFeatures ? "ProyectModal-featuresList--show" : ""}`}>
                             {info?.features.map( (element, key) => <li key={key} className="ProyectModal-li">- {element}</li> )}
                         </ul>
                     </div>
