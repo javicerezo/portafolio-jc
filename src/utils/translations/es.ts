@@ -29,14 +29,14 @@ const es = {
   proyect_site: "Sitio web",
   proyect_cv: "Si quieres, también puedes echarle un vistazo a mi cv.",
   modal_languages: "Lenguajes empleados:",
-  modal_learned: "¿Qué he aprendido?",
+  modal_learned: "Aspectos técnicos",
   modal_phone: "Previsualización móvil.",
   buttonCV_text: "Descargar CV",
   about_1: "Si has llegado hasta aquí, es que quieres saber más. ¡Gracias!.",
   about_2: "Ingeniero industrial con especialidad en química industrial por la Universidad de Granada, actualmente reconvertido en desarrollador web & móvil, técnico superior DAM.",
   about_3: "Mis tecnologías de trabajo habituales para la web son HTML, SCSS, React, Vite, JavaScript/TypeScritp, Node.js y MySQL/PostgreSQL.",
   about_4: "Para desarrollo móvil, me especializo en sistemas operativos Android, trabajando en Kotlin y Firebase. Actualmente estoy ampliando mis conocimientos con React Native y en el futuro me gustaría adentrarme en Swift.",
-  about_5: "El 'Javi Cerezo' ingeniero hace que tenga ese pensamiento matemático optimizado, ideal para aquellos proyectos en los que cada línea es importante.",
+  about_5: "El 'Javier Cerezo' ingeniero hace que tenga ese pensamiento matemático optimizado, ideal para aquellos proyectos en los que cada línea es importante.",
   about_6: "Soy fan del código sostenible, la buena documentación y la formación contínua (ver en credenciales).",
   about_7: "Por último y no menos importante, soy un apasionado de la montaña en todas sus formas - escalada, barranquismo, espeleología, alpinismo, etc -. La experiencia en la montaña hace que no le tenga miedo al cambio ni a lo desconocido, buscando siempre soluciones a los problemas.",
   contact_name: "nombre ",
@@ -57,7 +57,7 @@ const es = {
   tooltip_private_site: "Demo bajo solicitud en entrevista. Versión pública en desarrollo.",
   tooltip_portafolio_jc: "Estás en la web del portafolio de Javi Cerezo.",
   tooltip_credentialcard: "Haz clic encima de la imagen para ver el certificado",
-  footer: "Desarrollador web&móvil | Ingeniero industrial",
+  footer: "Desarrollador de aplicaciones multiplataforma | Ingeniero industrial",
 };
 
 export default es;

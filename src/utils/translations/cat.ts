@@ -29,14 +29,14 @@ const cat = {
   proyect_site: "Lloc web",
   proyect_cv: "Si vols, també pots fer un cop d'ull al meu cv.",
   modal_languages: "Llenguatges utilitzats:",
-  modal_learned: "Què he après?",
+  modal_learned: "Aspectes tècnics",
   modal_phone: "Previsualització mòbil.",
   buttonCV_text: "Descarregar CV",
   about_1: "Si has arribat fins aquí és perquè vols saber més. ¡Gràcies!.",
   about_2: "Enginyer industrial especialitzat en química industrial per la Universitat de Granada, actualment reconvertit en desenvolupador web i mòbil, tècnic superior en DAM.",
   about_3: "Les meves tecnologies habituals per al desenvolupament web són HTML, SCSS, React, Vite, JavaScript/TypeScript, Node.js i MySQL/PostgreSQL.",
   about_4: "En el desenvolupament mòbil, em centro en sistemes operatius Android, treballant amb Kotlin i Firebase. Actualment estic ampliant els meus coneixements amb React Native i en un futur m'agradaria endinsar-me en Swift.",
-  about_5: "El 'Javi Cerezo' enginyer em dona una manera de pensar matemàtica i optimitzada, ideal per a aquells projectes on cada línia de codi compta.",
+  about_5: "El 'Javier Cerezo' enginyer em dona una manera de pensar matemàtica i optimitzada, ideal per a aquells projectes on cada línia de codi compta.",
   about_6: "Sóc fan del codi sostenible, la bona documentació i la formació contínua (vegeu les credencials).",
   about_7: "I finalment, però no menys important, sóc un apassionat de la muntanya en totes les seves formes - escalada, barranquisme, espeleologia, alpinisme, etc -. L'experiència a la muntanya m'ha ensenyat a no tenir por al canvi ni a allò desconegut, i a buscar sempre solucions als problemes.",
   contact_name: "nom",
@@ -57,7 +57,7 @@ const cat = {
   tooltip_private_site: "Demostració disponible sota sol·licitud en entrevista. Versió pública en desenvolupament.",
   tooltip_portafolio_jc: "Ets al web del portafoli de Javi Cerezo.",
   tooltip_credentialcard: "Fes clic a sobre de la imatge per veure el certificat.",
-  footer: "Desenvolupador web&mòbil | Enginyer industrial",
+  footer: "Desenvolupador d'aplicacions multiplataforma | Enginyer industrial",
 };
 
 export default cat;
