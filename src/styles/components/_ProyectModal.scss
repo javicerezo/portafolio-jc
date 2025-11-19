@@ -12,7 +12,7 @@
         position: relative;
         @include m.flex(column, nowrap, center, center);
         width: 95%;
-        max-height: 90%;
+        max-height: 97%;
         max-width: 43.75rem;
         background-color: var(--color-negro);
         color: var(--color-blanco);
@@ -25,6 +25,7 @@
         }
         @include m.tablet {
             width: auto;
+            width: 90%;
             max-height: 98%;
             max-width: 65rem;
         }
@@ -146,19 +147,48 @@
             top: 2.1rem;
         }
     }
+    &-paragraph {
+        max-height: 3rem;
+        margin-bottom: 0.5rem;
+        overflow: hidden;
+        transition: max-height 1s ease;
+        p {
+            font-size: 0.7rem;
+            @include m.tablet {
+                font-size: 0.9rem;
+            }
+        }
+        &--mod {
+            max-height: 75rem;
+        }
+        @include m.tablet {
+            overflow: visible;
+            max-height: 75rem;
+            height: auto;
+        }
+    }
+    &-readMore {
+        @include m.flex(row, nowrap, flex-end, center);
+        width: 100%;
+        font-family: map.get(v.$fuentes, textos);
+        font-style: italic;
+        @include m.tablet {
+            display: none;
+        }
+    }
     &-div {
         margin-top: 0.5rem;
         width: 100%;
         @include m.flex(column, nowrap, center, flex-start);
-        @include m.desktop {
-            @include m.grid(2, 3rem);
+        @include m.tablet {
+            margin-top: 1rem;
         }
     }
-    &-techTitle, &-learnedTitle {
-        width: 100%;
+    &-techTitle, &-featuresTitle {
+        // width: 100%;
         font-weight: bold;
     }
-    &-learnedTitle {
+    &-featuresDiv, &-techDiv {
         @include m.flex(row, nowrap, flex-start, center);
         cursor: pointer;
         &-icon {
@@ -167,19 +197,13 @@
             margin-left: 2rem;
             transform: rotate(0deg);
             transition: all 0.7s ease;        // le doy all, con rotate no funciona la transición
-            &--show {
+            &--turn {
                 transform: rotate(90deg);
             }
         }
     }
-    &-techList, &-features {
+    &-featuresList, &-techList {
         margin: 0.6rem 0 1rem 0;
-    }
-    &-techList {
-        @include m.flex(row, wrap, center, center);
-    }
-    &-features {
-        @include m.flex(column, nowrap, center, flex-start);
         overflow: hidden;
         max-height: 0;
         opacity: 0;
@@ -189,11 +213,17 @@
             opacity: 1;
         }
     }
+    &-techList {
+        @include m.flex(column, nowrap, center, flex-start);
+    }
+    &-techList {
+        @include m.flex(row, wrap, center, center);
+    }
     &-li {
-        font-size: 0.8rem;
-        // @include m.telefono-l {
-        //     font-size: 1rem;
-        // }
+        font-size: 0.7rem;
+        @include m.tablet {
+            font-size: 0.9rem;
+        }
     }
 }
 

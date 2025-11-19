@@ -4,10 +4,13 @@
 
 .Icon {
     position: relative;     // para mostrar el toolTip correctamente
-    width: 2.5rem;
+    width: 2rem;
     margin: 0.5rem 1rem;
     cursor: pointer;
+    @include m.telefono-l {
+        width: 2.2rem;
+    }
     @include m.desktop-l {
-        width: 3rem;
+        width: 2.6rem;
     }
 }
