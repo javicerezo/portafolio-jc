@@ -43,9 +43,9 @@ export const AboutMe = () => {
                     <Paragraph text={t.about_7}/>
                 </ul>
                 {showAboutMe ? (
-                    <p className="About-p" onClick={ () => ( setShowAboutMe(!showAboutMe) )}>leer más...</p>
+                    <p className="About-p" onClick={ () => ( setShowAboutMe(!showAboutMe) )}>{t.about_readMore}</p>
                     ) : (
-                    <p className="About-p" onClick={ () => ( setShowAboutMe(!showAboutMe) )}>leer menos...</p>
+                    <p className="About-p" onClick={ () => ( setShowAboutMe(!showAboutMe) )}>{t.about_readLess}</p>
                 )}
             </div>
         </section>
