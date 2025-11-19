@@ -163,7 +163,6 @@ export const proyectInfoList: ProyectInformation[] = [
                 "Implementación de arquitectura MVC en un entorno backend con Node.js.",
                 "Modelado de datos y creación de operaciones CRUD utilizando PostgreSQL.",
                 "Gestión de enrutado y renderizado del lado del servidor con Express.",
-                "Despliegue y configuración de migraciones en Railway en un entorno de producción.",
             ],
         },
         en: {
@@ -172,7 +171,6 @@ export const proyectInfoList: ProyectInformation[] = [
                 "Implementation of an MVC architecture in a backend environment using Node.js.",
                 "Data modeling and creation of CRUD operations with PostgreSQL.",
                 "Management of routing and server-side rendering with Express.",
-                "Deployment and migration configuration in Railway within a production environment.",
             ],
         },
         cat: {
@@ -181,7 +179,6 @@ export const proyectInfoList: ProyectInformation[] = [
                 "Implementació d'una arquitectura MVC en un entorn backend amb Node.js.",
                 "Modelatge de dades i creació d'operacions CRUD amb PostgreSQL.",
                 "Gestió de l'enrutament i la renderització del costat del servidor amb Express.",
-                "Desplegament i configuració de migracions a Railway en un entorn de producció.",
             ],
         },
     },
