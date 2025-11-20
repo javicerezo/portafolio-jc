@@ -65,8 +65,10 @@
         width: 100%;
         max-height: 18rem;
         overflow: hidden;
+        border-radius: 15px;
         @include m.tablet {
             max-height: 45rem;
+            padding: 0.5rem;
         }
     }
     &-containerPhone {
@@ -149,7 +151,7 @@
     }
     &-paragraph {
         max-height: 3rem;
-        margin-bottom: 0.5rem;
+        margin: 0.5rem 0;
         overflow: hidden;
         transition: max-height 1s ease;
         p {
@@ -165,6 +167,8 @@
             overflow: visible;
             max-height: 75rem;
             height: auto;
+            margin-top: 1rem;
+            margin-left: 0.5rem;
         }
     }
     &-readMore {
@@ -172,38 +176,49 @@
         width: 100%;
         font-family: map.get(v.$fuentes, textos);
         font-style: italic;
+        margin: 0.5rem 0;
         @include m.tablet {
             display: none;
         }
     }
     &-div {
-        margin-top: 0.5rem;
         width: 100%;
         @include m.flex(column, nowrap, center, flex-start);
         @include m.tablet {
-            margin-top: 1rem;
+            margin: 0.5rem 1rem;
+            padding: 0 0.5rem;
         }
     }
-    &-techTitle, &-featuresTitle {
-        // width: 100%;
-        font-weight: bold;
-    }
-    &-featuresDiv, &-techDiv {
+    // &-techDiv, &-featuresDiv {
+        
+    //     @include m.tablet {
+        
+    //     }
+    // }
+    &-featuresTitleDiv, &-techTitleDiv {
         @include m.flex(row, nowrap, flex-start, center);
+        // margin: 0.5rem 1rem;
         cursor: pointer;
-        &-icon {
-            display: inline-block;
-            width: 1.25rem;
-            margin-left: 2rem;
-            transform: rotate(0deg);
-            transition: all 0.7s ease;        // le doy all, con rotate no funciona la transición
-            &--turn {
-                transform: rotate(90deg);
-            }
+    }
+    &-techTitle, &-featuresTitle {
+        font-weight: bold;
+        font-size: 0.8rem;
+        @include m.tablet {
+            font-size: 1rem;
+        }
+    }
+    &-icon {
+        display: inline-block;
+        width: 1.25rem;
+        margin-left: 2rem;
+        transform: rotate(0deg);
+        transition: all 0.7s ease;        // le doy all, con rotate no funciona la transición
+        &--turn {
+            transform: rotate(90deg);
         }
     }
     &-featuresList, &-techList {
-        margin: 0.6rem 0 1rem 0;
+        padding: 1rem 0;
         overflow: hidden;
         max-height: 0;
         opacity: 0;
@@ -211,13 +226,17 @@
         &--show {
             max-height: 30rem;
             opacity: 1;
+            @include m.tablet {
+                margin-left: 1rem;
+            }
         }
     }
     &-techList {
-        @include m.flex(column, nowrap, center, flex-start);
-    }
-    &-techList {
-        @include m.flex(row, wrap, center, center);
+        @include m.flex(row, wrap, flex-start, center);
+        padding-right: 1.2rem;
+        @include m.telefono-l {
+            padding-right: 2.8rem;
+        }
     }
     &-li {
         font-size: 0.7rem;

@@ -3,7 +3,7 @@
 @use 'sass:map';
 
 .Tooltip {
-    @include m.position(absolute, null, 0, null, null);
+    @include m.position(absolute, null, null, null, null);
     @include m.flex(row, nowrap, center, center);
     min-width: 5rem;
     max-width: 7rem;

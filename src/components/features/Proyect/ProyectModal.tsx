@@ -77,10 +77,10 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                 )}
 
                 <div className="ProyectModal-div">
-                    <div>
-                        <div className="ProyectModal-techDiv" onClick={ () => (setShowTech(!showTech))}>
+                    <div className="ProyectModal-techDiv">
+                        <div className="ProyectModal-techTitleDiv" onClick={ () => (setShowTech(!showTech))}>
                             <p className="ProyectModal-techTitle">{t.modal_languages}</p>
-                            <BsCaretRightFill className={`ProyectModal-techDiv-icon ${showTech ? "ProyectModal-techDiv-icon--turn" : ""}`}/>
+                            <BsCaretRightFill className={`ProyectModal-icon ${showTech ? "ProyectModal-icon--turn" : ""}`}/>
                         </div>
                         <ul className={`ProyectModal-techList ${showTech ? "ProyectModal-techList--show" : ""}`}>
                             {proyect.languagesList
@@ -91,10 +91,10 @@ export const ProyectModal = ({ proyect, isOpen, onClose }: ProyectModalProps) =>
                                 }
                         </ul>
                     </div>
-                    <div>
-                        <div className="ProyectModal-featuresDiv" onClick={ () => (setShowFeatures(!showFeatures))}>
+                    <div className="ProyectModal-featuresDiv">
+                        <div className="ProyectModal-featuresTitleDiv" onClick={ () => (setShowFeatures(!showFeatures))}>
                             <p className="ProyectModal-featuresTitle">{t.modal_learned}</p>
-                            <BsCaretRightFill className={`ProyectModal-featuresDiv-icon ${showFeatures ? "ProyectModal-featuresDiv-icon--turn" : ""}`}/>
+                            <BsCaretRightFill className={`ProyectModal-icon ${showFeatures ? "ProyectModal-icon--turn" : ""}`}/>
                         </div>
                         <ul className={`ProyectModal-featuresList ${showFeatures ? "ProyectModal-featuresList--show" : ""}`}>
                             {info?.features.map( (element, key) => <li key={key} className="ProyectModal-li">- {element}</li> )}
