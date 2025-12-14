@@ -16,7 +16,7 @@ const en = {
   buttonConfig_spanish: "Spanish",
   buttonConfig_english: "English",
   buttonConfig_catalan: "Catalán",
-  proyect_paragraph_1_title: "Web Projects (modern stack):",
+  proyect_paragraph_1_title: "Web & Mobile Projects:",
   proyect_paragraph_1_1: "I like to go beyond 'it works': my goal is to build solid, optimized solutions that follow good practices.",
   proyect_paragraph_1_2: "These are my projects developed with modern technologies such as React, Next.js, TypeScript, Firebase, or React Native.",
   proyect_paragraph_1_3: "In these projects, I prioritize architecture, performance, user experience, and clean code. Each one is built with a professional approach, aiming for modular, maintainable and well-structured solutions.",

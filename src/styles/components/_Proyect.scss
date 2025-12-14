@@ -26,6 +26,9 @@
                 margin-top: 3rem;
             }
         }
+        &--none {
+            display: none;
+        }
     }
     &-bloqTitle {
         @include m.flex(row, nowrap, flex-start, center);
@@ -70,7 +73,7 @@
         &--show {
             max-height: 35rem;
         }
-        @include m.desktop-l {
+        @include m.desktop {
             overflow: visible;
             max-height: 35rem;
         }
@@ -82,7 +85,8 @@
         font-family: map.get(v.$fuentes, textos);
         font-style: italic;
         margin: 0.5rem 0;
-        @include m.desktop-l {
+        cursor: pointer;
+        @include m.desktop {
             display: none;
         }
     }

@@ -19,8 +19,9 @@ export const Proyect = () => {
     const [ showModernProyect, setShowModernProyect ] = useState<boolean>(true);
     const [ showMoreModern, setShowMoreModern ] = useState<boolean>(true);
 
-    const [ showMobileProyect, setShowMobileProyect ] = useState<boolean>(true);
-    const [ showMoreMobile, setShowMoreMobile ] = useState<boolean>(true);
+    // LO COMENTO...DE MOMENTO NO HAGO SEPARACIÓN ENTRE PROYECTOS MÓVILES Y PROYECTOS WEB...LO DEJO PARA EL FUTURO CUANDO TENGA MÁS PROYECTOS
+    // const [ showMobileProyect, setShowMobileProyect ] = useState<boolean>(true);
+    // const [ showMoreMobile, setShowMoreMobile ] = useState<boolean>(true);
 
     const [ showNoModernProyect, setShowNoModernProyect ] = useState<boolean>(false);
     const [ showMoreNoModern, setShowMoreNoModern ] = useState<boolean>(true);
@@ -57,6 +58,8 @@ export const Proyect = () => {
             >
             <h2 className="Proyect-title">{`${t.title_proyect}:`}</h2>
 
+            {/* LOS DEMÁS BLOQUES LOS HE COMENTADO O DEJADO EN DISPLAY NONE...HAY QUE DARLE UNA VUELTA PARA VER CON EXACTITUD COMO MOSTRAR 
+            LOS PROYECTOS MÓVILES Y WEB SI DIVIDIDOS O SIMPLEMENTE JUSTO */}
             {/* LISTA DE PROYECTOS WEB CON STACK MODERNO */}
             <div className="Proyect-bloq">
                 <div className="Proyect-bloqTitle" onClick={ () => (setShowModernProyect(!showModernProyect))}>
@@ -97,7 +100,8 @@ export const Proyect = () => {
 
                 {/* //todo hacer la lista de app moviles para mostrar */}
             {/* LISTA DE PROYECTOS MÓVIL */}
-            <div className="Proyect-bloq">
+            {/* // LO COMENTO...DE MOMENTO NO HAGO SEPARACIÓN ENTRE PROYECTOS MÓVILES Y PROYECTOS WEB...LO DEJO PARA EL FUTURO CUANDO TENGA MÁS PROYECTOS */}
+            {/* <div className="Proyect-bloq">
                 <div className="Proyect-bloqTitle" onClick={ () => (setShowMobileProyect(!showMobileProyect))}>
                     <Paragraph text={t.proyect_paragraph_2_title}/>
                     <BsCaretRightFill className={`Proyect-bloqTitle-icon ${showMobileProyect ? "Proyect-bloqTitle-icon--show" : ""}`}/>
@@ -131,10 +135,13 @@ export const Proyect = () => {
                         </ul>
                     </div>
                 )}
-            </div>
+            </div> */}
 
+            {/* ESTE BLOQUE LO DEJO MONTADO PERO EL BLOQUE LO TENGO COMO DISPLAY NONE POR SI EN ALGUNA ENTREVISTA ME INTERESA MOSTRAR MI EVOLUCIÓN EN LOS PROYECTOS (desde
+            la web puedo hacer display block)...REVISTAR SCSS*/}
+            {/* EN EL FUTURO LA IDEA ES BORRARLO Y BORRAR QUIZÁS BORRAR ESOS PROYECTOS DE GITHUB. */}
             {/* LISTA DE PROYECTOS WEB STACK CLÁSICO */}
-            <div className="Proyect-bloq">
+            <div className="Proyect-bloq Proyect-bloq--none">
                 <div className="Proyect-bloqTitle" onClick={ () => (setShowNoModernProyect(!showNoModernProyect))}>
                     <Paragraph text={t.proyect_paragraph_3_title}/>
                     <BsCaretRightFill className={`Proyect-bloqTitle-icon ${showNoModernProyect ? "Proyect-bloqTitle-icon--show" : ""}`}/>
@@ -169,8 +176,9 @@ export const Proyect = () => {
                 )}
             </div>
 
+            {/* IGUAL QUE EN EL BLOQUE ANTERIOR, LO DEJO COMENTADO POR SI ME INTERESA MOSTRARLO EN LA ENTREVISTA */}
             {/* TARJETA PARA EL REPOSITORIO DE ESTE PORTAFOLIO */}
-            <div className="Proyect-bloq">
+            <div className="Proyect-bloq Proyect-bloq--none">
                 <div className="Proyect-bloqTitle" onClick={ () => (setShowPorfolioProyect(!showPorfolioProyect))}>
                     <Paragraph text={t.proyect_paragraph_4_title}/>
                     <BsCaretRightFill className={`Proyect-bloqTitle-icon ${showPorfolioProyect ? "Proyect-bloqTitle-icon--show" : ""}`}/>

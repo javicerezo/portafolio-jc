@@ -16,7 +16,7 @@ const es = {
   buttonConfig_spanish: "Español",
   buttonConfig_english: "Inglés",
   buttonConfig_catalan: "Catalán",
-  proyect_paragraph_1_title: "Proyectos Web (stack moderno):",
+  proyect_paragraph_1_title: "Proyectos Web & Móvil:",
   proyect_paragraph_1_1: "Me gusta ir más allá del 'funciona': mi objetivo es construir soluciones sólidas, optimizadas y con buenas prácticas.",
   proyect_paragraph_1_2: "Estos son mis proyectos desarrollados con tecnologías modernas como React, Next.js, TypeScript, Firebase o React Native.",
   proyect_paragraph_1_3: "Son proyectos donde priorizo la arquitectura, el rendimiento, la experiencia de usuario y el uso de buenas prácticas. Cada uno está construido con un enfoque profesional, buscando código limpio, modular y mantenible.",
