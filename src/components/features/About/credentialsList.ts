@@ -11,7 +11,7 @@ export const credentialsList: Credential[] = [
         title: "Desarrollador aplicaciones multiplataforma (DAM)",
         image: "/assets/imgs/ilerna.png",
         alt: "Logo Ilerna",
-        href: "sd"
+        href: "https://drive.google.com/file/d/1owsCf3_Xa7qUxmnFinRgJw0ZyU-kwLhW/view?usp=drive_link"
     },
     {
         title: "Analista - programador Java, Python y C++",
