@@ -15,11 +15,11 @@
         font-family: map.get(v.$fuentes, titulos);
         font-weight: bold;
     }
-    &-div {
+    &-bloq {
         margin-top: 1rem;
         padding: 1rem 0;
         @include m.tablet {
-            padding: 0 2rem;
+            padding: 1rem 2rem;
         }
         &:last-child {
             @include m.desktop {
@@ -27,7 +27,7 @@
             }
         }
     }
-    &-divTitle {
+    &-bloqTitle {
         @include m.flex(row, nowrap, flex-start, center);
         font-style: italic;
         font-weight: bold;
@@ -51,6 +51,41 @@
             }
         }
     }
+    &-bloqDiv {
+        max-height: 0;
+        opacity: 0;
+        overflow-y: hidden;
+        transition: max-height 1s ease, all 1s ease;
+        &--show {
+            max-height: 100rem;      // le doy de sobra, cada tarjeta max-width 246px (6 filas completas aprox)
+            opacity: 1;
+            overflow-y: auto;
+        }
+        
+    }
+    &-description {
+        max-height: 3rem;
+        overflow: hidden;
+        transition: max-height 1s ease;
+        &--show {
+            max-height: 35rem;
+        }
+        @include m.desktop-l {
+            overflow: visible;
+            max-height: 35rem;
+        }
+        
+    }
+    &-readMore {
+        @include m.flex(row, nowrap, flex-end, center);
+        width: 100%;
+        font-family: map.get(v.$fuentes, textos);
+        font-style: italic;
+        margin: 0.5rem 0;
+        @include m.desktop-l {
+            display: none;
+        }
+    }
     &-ul {
         @include m.flex(row, nowrap, flex-start, center);
         display: flex;
@@ -59,16 +94,6 @@
         overflow-x: auto;
         // height: auto;
         scroll-snap-type: x mandatory;
-
-        overflow-y: hidden;
-        max-height: 0;
-        opacity: 0;
-        transition: max-height 1s ease, all 1s ease;
-        &--show {
-            max-height: 100rem;      // le doy de sobra, cada tarjeta max-width 246px (6 filas completas aprox)
-            opacity: 1;
-            overflow-y: auto;
-        }
         @include m.desktop {
             @include m.grid-auto-fill(23rem, 2rem);
         }

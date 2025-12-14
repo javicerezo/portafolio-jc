@@ -43,10 +43,13 @@
         }
     }
     &-h2 {
-        @include m.flex(row, wrap, center, flex-end);
+        @include m.flex(column, wrap, center, flex-start);
         font-family: map.get(v.$fuentes, titulos);
         font-size: 1.7rem;
         margin-bottom: 1rem;
+        @include m.telefono-l {
+            @include m.flex(row, wrap, center, flex-end);
+        }
     }
     &-year {
         margin-top: 0.5rem;

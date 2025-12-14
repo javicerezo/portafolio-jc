@@ -13,13 +13,21 @@ import { BsCaretRightFill } from "react-icons/bs";
 import type { ProyectRepo } from "../../../utils/types/proyect";
 
 export const Proyect = () => {
+    const { ref, visible } = useIntersectionObserver();
     const { t } = useLanguage();
     const [ selectedProyect, setSelectedProyect ] = useState<ProyectRepo | null>(null);
-    const [ showNoModernProyect, setShowNoModernProyect ] = useState<boolean>(false);
     const [ showModernProyect, setShowModernProyect ] = useState<boolean>(true);
-    const [ showPortfolioProyect, setShowPortfolioProyect ] = useState<boolean>(false);
-    const  { ref, visible } = useIntersectionObserver(); 
-    
+    const [ showMoreModern, setShowMoreModern ] = useState<boolean>(true);
+
+    const [ showMobileProyect, setShowMobileProyect ] = useState<boolean>(true);
+    const [ showMoreMobile, setShowMoreMobile ] = useState<boolean>(true);
+
+    const [ showNoModernProyect, setShowNoModernProyect ] = useState<boolean>(false);
+    const [ showMoreNoModern, setShowMoreNoModern ] = useState<boolean>(true);
+
+    const [ showPorfolioProyect, setShowPorfolioProyect ] = useState<boolean>(false);
+    const [ showMorePorfolio, setShowMorePorfolio ] = useState<boolean>(true);
+
     const userName: string = "javicerezo";
     const { repos, loading } = useConnectGithub(userName);
 
@@ -30,7 +38,7 @@ export const Proyect = () => {
         nameUI = nameUI.includes("-") ? nameUI.replaceAll("-", " ") : nameUI;
 
         // Busco el repositorio de este mismo portafolio y hago isPortafolio true
-        const isPortfolio = repo.name === "portafolio-jc" ? true : false; 
+        const isPortfolio = repo.name === "portafolio-jc" ? true : false;
 
         // image, imagePhone,
         return { ...repo,  nameUI, isPortfolio};
@@ -42,102 +50,170 @@ export const Proyect = () => {
     const porfolioRepo: ProyectRepo | null = formatedRepos.find( repo => repo.name.toLowerCase() === 'portafolio-jc') || null;
 
     return (
-        <section 
+        <section
             className={`Proyect effectAppear ${visible ? "effectAppear--show" : ""}`}
             id="Proyect"
             ref={ref}
             >
             <h2 className="Proyect-title">{`${t.title_proyect}:`}</h2>
 
-            {/* LISTA DE PROYECTOS QUE USAN STACK TECNOLÓGICO MODERNO */}
-            <div className="Proyect-div">
-                <Paragraph text={t.proyect_paragraph_1_1}/>
-                <Paragraph text={t.proyect_paragraph_1_2}/>
-                <Paragraph text={t.proyect_paragraph_1_3}/>
-
-                <div className="Proyect-divTitle" onClick={ () => (setShowModernProyect(!showModernProyect))}>
-                    <Paragraph text={t.proyect_paragraph_1_4}/>
-                    <BsCaretRightFill className={`Proyect-divTitle-icon ${showModernProyect ? "Proyect-divTitle-icon--show" : ""}`}/>
+            {/* LISTA DE PROYECTOS WEB CON STACK MODERNO */}
+            <div className="Proyect-bloq">
+                <div className="Proyect-bloqTitle" onClick={ () => (setShowModernProyect(!showModernProyect))}>
+                    <Paragraph text={t.proyect_paragraph_1_title}/>
+                    <BsCaretRightFill className={`Proyect-bloqTitle-icon ${showModernProyect ? "Proyect-bloqTitle-icon--show" : ""}`}/>
                 </div>
-
-                <ul className={`Proyect-ul ${showModernProyect ? "Proyect-ul--show" : ""}`}>
-                    {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
-
-                    {modernRepos.map( (repo) => (
-                        <ProyectCard
-                            key={repo.id}
-                            nameUI={repo.nameUI}
-                            html_url={repo.html_url || null}
-                            homepage={repo.homepage || null}
-                            language={repo.languagesList?.join(', ') || repo.language}
-                            image={repo.image}
-                            isPublic={repo.isPublic}
-                            isPortfolio={repo.isPortfolio}
-                            onClick={ () => setSelectedProyect(repo) }
-                        />
-                    ))}
-                </ul>
+                {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
+                {!loading && (
+                    <div className={`Proyect-bloqDiv ${showModernProyect ? "Proyect-bloqDiv--show" : ""}`}>
+                         <ul className={`Proyect-description ${showMoreModern ? "" : "Proyect-description--show"}`}>
+                            <Paragraph text={t.proyect_paragraph_1_1}/>
+                            <Paragraph text={t.proyect_paragraph_1_2}/>
+                            <Paragraph text={t.proyect_paragraph_1_3}/>
+                         </ul>
+                        {showMoreModern ? (
+                            <p className="Proyect-readMore" onClick={ () => ( setShowMoreModern(!showMoreModern) )}>{t.about_readMore}</p>
+                            ) : (
+                            <p className="Proyect-readMore" onClick={ () => ( setShowMoreModern(!showMoreModern) )}>{t.about_readLess}</p>
+                        )}
+                        <ul className="Proyect-ul" >
+                            {modernRepos.map( (repo) => (
+                                <ProyectCard
+                                    key={repo.id}
+                                    nameUI={repo.nameUI}
+                                    html_url={repo.html_url || null}
+                                    homepage={repo.homepage || null}
+                                    language={repo.languagesList?.join(', ') || repo.language}
+                                    image={repo.image}
+                                    isPublic={repo.isPublic}
+                                    isPortfolio={repo.isPortfolio}
+                                    onClick={ () => setSelectedProyect(repo) }
+                                />
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </div>
 
-            {/* LISTA DE PROYECTOS CON STACK TECNOLÓGICO ANTIGUO */}
-            <div className="Proyect-div">
-                <Paragraph text={t.proyect_paragraph_2_2} />
-                <div className="Proyect-divTitle" onClick={ () => (setShowNoModernProyect(!showNoModernProyect))}>
-                    <Paragraph text={t.proyect_paragraph_2_1} />
-                    <BsCaretRightFill className={`Proyect-divTitle-icon ${showNoModernProyect ? "Proyect-divTitle-icon--show" : ""}`}/>
+                {/* //todo hacer la lista de app moviles para mostrar */}
+            {/* LISTA DE PROYECTOS MÓVIL */}
+            <div className="Proyect-bloq">
+                <div className="Proyect-bloqTitle" onClick={ () => (setShowMobileProyect(!showMobileProyect))}>
+                    <Paragraph text={t.proyect_paragraph_2_title}/>
+                    <BsCaretRightFill className={`Proyect-bloqTitle-icon ${showMobileProyect ? "Proyect-bloqTitle-icon--show" : ""}`}/>
                 </div>
-                <ul className={`Proyect-ul ${showNoModernProyect ? "Proyect-ul--show" : ""}`}>
-                    {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
-
-                    {noModernRepos.map( (repo) => (
-                        <ProyectCard
-                            key={repo.id}
-                            nameUI={repo.nameUI}
-                            html_url={repo.html_url || null}
-                            homepage={repo.homepage || null}
-                            language={repo.languagesList?.join(', ') || repo.language}
-                            image={repo.image}
-                            isPublic={repo.isPublic}
-                            isPortfolio={repo.isPortfolio}
-                            onClick={ () => setSelectedProyect(repo) }
-                        />
-                    ))}
-                </ul>
+                {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
+                {!loading && (
+                    <div className={`Proyect-bloqDiv ${showMobileProyect ? "Proyect-bloqDiv--show" : ""}`}>
+                        <ul className={`Proyect-description ${showMoreMobile ? "" : "Proyect-description--show"}`}>
+                            <Paragraph text={t.proyect_paragraph_2_1}/>
+                            <Paragraph text={t.proyect_paragraph_2_2}/>
+                        </ul>
+                        {showMoreMobile ? (
+                            <p className="Proyect-readMore" onClick={ () => ( setShowMoreMobile(!showMoreMobile) )}>{t.about_readMore}</p>
+                            ) : (
+                            <p className="Proyect-readMore" onClick={ () => ( setShowMoreMobile(!showMoreMobile) )}>{t.about_readLess}</p>
+                        )}
+                        <ul className="Proyect-ul" >
+                            {modernRepos.map( (repo) => (
+                                <ProyectCard
+                                    key={repo.id}
+                                    nameUI={repo.nameUI}
+                                    html_url={repo.html_url || null}
+                                    homepage={repo.homepage || null}
+                                    language={repo.languagesList?.join(', ') || repo.language}
+                                    image={repo.image}
+                                    isPublic={repo.isPublic}
+                                    isPortfolio={repo.isPortfolio}
+                                    onClick={ () => setSelectedProyect(repo) }
+                                />
+                            ))}
+                        </ul>
+                    </div>
+                )}
             </div>
-            
+
+            {/* LISTA DE PROYECTOS WEB STACK CLÁSICO */}
+            <div className="Proyect-bloq">
+                <div className="Proyect-bloqTitle" onClick={ () => (setShowNoModernProyect(!showNoModernProyect))}>
+                    <Paragraph text={t.proyect_paragraph_3_title}/>
+                    <BsCaretRightFill className={`Proyect-bloqTitle-icon ${showNoModernProyect ? "Proyect-bloqTitle-icon--show" : ""}`}/>
+                </div>
+                {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
+                {!loading && (
+                    <div className={`Proyect-bloqDiv ${showNoModernProyect ? "Proyect-bloqDiv--show" : ""}`}>
+                        <ul className={`Proyect-description ${showMoreNoModern ? "" : "Proyect-description--show"}`}>
+                            <Paragraph text={t.proyect_paragraph_3_1}/>
+                        </ul>
+                        {showMoreNoModern ? (
+                            <p className="Proyect-readMore" onClick={ () => ( setShowMoreNoModern(!showMoreNoModern) )}>{t.about_readMore}</p>
+                            ) : (
+                            <p className="Proyect-readMore" onClick={ () => ( setShowMoreNoModern(!showMoreNoModern) )}>{t.about_readLess}</p>
+                        )}
+                        <ul className="Proyect-ul" >
+                            {noModernRepos.map( (repo) => (
+                                <ProyectCard
+                                    key={repo.id}
+                                    nameUI={repo.nameUI}
+                                    html_url={repo.html_url || null}
+                                    homepage={repo.homepage || null}
+                                    language={repo.languagesList?.join(', ') || repo.language}
+                                    image={repo.image}
+                                    isPublic={repo.isPublic}
+                                    isPortfolio={repo.isPortfolio}
+                                    onClick={ () => setSelectedProyect(repo) }
+                                />
+                            ))}
+                        </ul>
+                    </div>
+                )}
+            </div>
+
             {/* TARJETA PARA EL REPOSITORIO DE ESTE PORTAFOLIO */}
-            <div className="Proyect-div">
-                <Paragraph text={t.proyect_paragraph_3_1}/>
-                <div className="Proyect-divTitle" onClick={ () => (setShowPortfolioProyect(!showPortfolioProyect))}>
-                    <Paragraph text={t.proyect_paragraph_3_2}/>
-                    <BsCaretRightFill className={`Proyect-divTitle-icon ${showPortfolioProyect ? "Proyect-divTitle-icon--show" : ""}`}/>
+            <div className="Proyect-bloq">
+                <div className="Proyect-bloqTitle" onClick={ () => (setShowPorfolioProyect(!showPorfolioProyect))}>
+                    <Paragraph text={t.proyect_paragraph_4_title}/>
+                    <BsCaretRightFill className={`Proyect-bloqTitle-icon ${showPorfolioProyect ? "Proyect-bloqTitle-icon--show" : ""}`}/>
                 </div>
-                <ul className={`Proyect-ul ${showPortfolioProyect ? "Proyect-ul--show" : ""}`}>
-                    {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
-                    
-                    {porfolioRepo && (<ProyectCard 
-                        key={porfolioRepo.id}
-                        nameUI={porfolioRepo.nameUI}
-                        html_url={porfolioRepo.html_url || null}
-                        homepage={porfolioRepo.homepage || null}
-                        language={porfolioRepo.languagesList?.join(', ') || porfolioRepo.language}
-                        image={porfolioRepo.image}
-                        isPublic={porfolioRepo.isPublic}
-                        isPortfolio={true}
-                        onClick={ () => setSelectedProyect(porfolioRepo) }
-                    />)}
-                </ul>
+                {loading ? <p className="Proyect-pError">Cargando los proyectos...</p> : "" }
+                {!loading && (
+                    <div className={`Proyect-bloqDiv ${showPorfolioProyect ? "Proyect-bloqDiv--show" : ""}`}>
+                        <ul className={`Proyect-description ${showMorePorfolio ? "" : "Proyect-description--show"}`}>
+                            <Paragraph text={t.proyect_paragraph_4_1}/>
+                        </ul>
+                        {showMorePorfolio ? (
+                            <p className="Proyect-readMore" onClick={ () => ( setShowMorePorfolio(!showMorePorfolio) )}>{t.about_readMore}</p>
+                            ) : (
+                            <p className="Proyect-readMore" onClick={ () => ( setShowMorePorfolio(!showMorePorfolio) )}>{t.about_readLess}</p>
+                        )}
+                        <ul className="Proyect-ul" >
+                            {porfolioRepo && (
+                                <ProyectCard
+                                    key={porfolioRepo.id}
+                                    nameUI={porfolioRepo.nameUI}
+                                    html_url={porfolioRepo.html_url || null}
+                                    homepage={porfolioRepo.homepage || null}
+                                    language={porfolioRepo.languagesList?.join(', ') || porfolioRepo.language}
+                                    image={porfolioRepo.image}
+                                    isPublic={porfolioRepo.isPublic}
+                                    isPortfolio={porfolioRepo.isPortfolio}
+                                    onClick={ () => setSelectedProyect(porfolioRepo) }
+                                />
+                            )}
+                        </ul>
+                    </div>
+                )}
             </div>
 
-            <div className="Proyect-div">
+            <div className="Proyect-bloq">
                 <Paragraph text={t.proyect_cv} />
                 <ButtonCV text={t.buttonCV_text} />
             </div>
-            
+
             {/* COMPONENTE MODAL, SE ACTIVA AL HACER CLIC EN UNA TARJETA */}
-            <ProyectModal 
+            <ProyectModal
                 proyect={selectedProyect}
-                isOpen={!!selectedProyect} 
+                isOpen={!!selectedProyect}
                 onClose={ ()=> setSelectedProyect(null)}
             />
         </section>
